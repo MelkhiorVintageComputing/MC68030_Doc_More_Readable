@@ -108,13 +108,34 @@ Two CSVs, because the AC and DC tables have genuinely different shapes — the A
 
 ### Redrawn figures
 
-| File | Figure |
+All seven figures have been redrawn as scalable SVG. Each has a markdown page carrying the diagram plus the specifications marked on it.
+
+| Page | Figure | Signals | Callouts |
+|---|---|--:|--:|
+| [`figure-02-clock-input-timing.md`](figure-02-clock-input-timing.md) | Clock Input Timing Diagram | 1 | 5 |
+| [`figure-03-asynchronous-read-cycle.md`](figure-03-asynchronous-read-cycle.md) | Asynchronous Read Cycle | 17 | 33 |
+| [`figure-04-asynchronous-write-cycle.md`](figure-04-asynchronous-write-cycle.md) | Asynchronous Write Cycle | 15 | 34 |
+| [`figure-05-synchronous-read-cycle.md`](figure-05-synchronous-read-cycle.md) | Synchronous Read Cycle | 16 | 17 |
+| [`figure-06-synchronous-write-cycle.md`](figure-06-synchronous-write-cycle.md) | Synchronous Write Cycle | 15 | 20 |
+| [`figure-07-bus-arbitration.md`](figure-07-bus-arbitration.md) | Bus Arbitration | 16 | 8 |
+| [`figure-08-other-signal-timings.md`](figure-08-other-signal-timings.md) | Other Signal Timings | 6 | 5 |
+
+**Why SVG.** It is the only diagram format that survives GitHub's markdown pipeline. GitHub renders Mermaid, but Mermaid has no timing or waveform diagram type at all; it does not render WaveDrom, the usual choice for digital timing in markdown; and it strips inline `<svg>` from markdown. A plain `.svg` file referenced as an ordinary image works everywhere, scales, and adapts to light and dark themes.
+
+**How they are built.**
+
+| Script | Produces |
 |---|---|
-| [`figure-02-clock-input-timing.md`](figure-02-clock-input-timing.md) | **Figure 2 — Clock Input Timing Diagram**, redrawn as scalable SVG, with the clock-input specifications alongside it |
+| [`timingsvg.py`](timingsvg.py) | the renderer — a small timing-diagram engine (clock, two-level signals, valid/high-impedance buses, numbered dimension callouts) |
+| [`make-figure-svg.py`](make-figure-svg.py) | figures 3–8, from a declarative description of each |
+| [`make-figure-tables.py`](make-figure-tables.py) | the specification table inside every `figure-*.md`, from the CSVs |
+| [`make-figure-pages.py`](make-figure-pages.py) | the figure-3–8 markdown pages themselves |
 
-Each figure page carries its specification table between `BEGIN TABLE` / `END TABLE` comments, generated from the CSVs by [`make-figure-tables.py`](make-figure-tables.py) so the figures cannot drift from the extracted data. Run it with no arguments to refresh every `figure-*.md`.
+Figure 2's SVG is hand-authored rather than generated — it is the only figure that is about edge shape rather than signal sequencing, so it does not fit the engine's model.
 
-Figures 3–8 have not been redrawn; the scans remain in [`06-timing-diagrams.pdf`](06-timing-diagrams.pdf).
+Each page's table sits between `BEGIN TABLE` / `END TABLE` comments and is generated from [`ac-electrical-specifications.csv`](ac-electrical-specifications.csv), so a figure page cannot drift from the extracted data. Naming a specification number that does not exist in the CSV is a hard error rather than a silently dropped row.
+
+**Fidelity.** Waveform transitions were measured off the 300 dpi scans against the state grid printed in each figure; callout anchors follow what each specification actually measures, per its description in the CSV. Horizontal placement is nonetheless schematic — as it is in the source, which has no time axis, exaggerates every edge ramp and is not to scale in any dimension. The figures are authoritative for *ordering* and for *which edges a specification is measured between*; the numbers come from the table.
 
 Both were produced by the same method and subjected to the same checks; see [How the values were obtained](#how-the-values-were-obtained).
 

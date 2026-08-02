@@ -56,7 +56,13 @@ def render(attrs):
     if "nums" in a:
         want = a["nums"].replace("_", " ").split("|")
         idx = {r["num"]: r for r in rows}
-        rows = [idx[n] for n in want if n in idx]
+        missing = [n for n in want if n not in idx]
+        if missing:
+            # fail loudly: a silently dropped row would look like the figure
+            # simply does not reference that specification
+            raise SystemExit("%s: no such specification number(s) in %s: %s"
+                             % (a.get("from"), a.get("table", "<all>"), ", ".join(missing)))
+        rows = [idx[n] for n in want]
 
     out = ["| On figure | Num. | Characteristic | Unit | " +
            " | ".join(g for g, _ in GRADES) + " |",
