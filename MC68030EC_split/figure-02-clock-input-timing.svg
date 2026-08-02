@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 740 430" width="740" height="430"
+     font-family="'DejaVu Sans',Verdana,Arial,sans-serif" role="img"
+     aria-label="MC68030 clock input timing diagram: trapezoidal clock waveform with cycle time, high and low pulse widths, and rise and fall times marked">
+  <title>Figure 2. Clock Input Timing Diagram — MC68030</title>
+  <style>
+    .wave { stroke:#111; stroke-width:3.2; fill:none; stroke-linejoin:round; stroke-linecap:round; }
+    .cons { stroke:#111; stroke-width:0.9; fill:none; opacity:.55; }
+    .tick { stroke:#111; stroke-width:1.6; fill:none; }
+    .dim  { stroke:#111; stroke-width:1.4; fill:none; }
+    .lead { stroke:#111; stroke-width:1.1; fill:none; }
+    .lbl  { fill:#111; font-size:14px; }
+    .num  { fill:#111; font-size:15px; font-weight:700; text-anchor:middle; }
+    .disc { stroke:#111; stroke-width:1.5; fill:#fff; }
+    .ah   { fill:#111; }
+    @media (prefers-color-scheme: dark) {
+      .wave,.cons,.tick,.dim,.lead { stroke:#e8e8e8; }
+      .lbl,.num { fill:#e8e8e8; }
+      .disc { stroke:#e8e8e8; fill:#161616; }
+      .ah { fill:#e8e8e8; }
+    }
+  </style>
+  <!-- Arrowheads are explicit polygons rather than <marker> elements: several
+       SVG rasterisers used by documentation tools ignore markers entirely. -->
+
+  <!-- construction lines (drawn first, so the waveform sits on top) -->
+  <g class="cons">
+    <line x1="100" y1="266" x2="100" y2="352"/>
+    <line x1="130" y1="194" x2="130" y2="352"/>
+    <line x1="260" y1="194" x2="260" y2="396"/>
+    <line x1="260" y1="194" x2="260" y2="52"/>
+    <line x1="290" y1="266" x2="290" y2="396"/>
+    <line x1="290" y1="266" x2="290" y2="104"/>
+    <line x1="440" y1="266" x2="440" y2="104"/>
+    <line x1="470" y1="194" x2="470" y2="104"/>
+    <line x1="600" y1="194" x2="600" y2="52"/>
+  </g>
+
+  <!-- threshold reference ticks on every measured crossing -->
+  <g class="tick">
+    <line x1="93"  y1="266" x2="107" y2="266"/>
+    <line x1="123" y1="194" x2="137" y2="194"/>
+    <line x1="253" y1="194" x2="267" y2="194"/>
+    <line x1="283" y1="266" x2="297" y2="266"/>
+    <line x1="433" y1="266" x2="447" y2="266"/>
+    <line x1="463" y1="194" x2="477" y2="194"/>
+    <line x1="593" y1="194" x2="607" y2="194"/>
+    <line x1="623" y1="266" x2="637" y2="266"/>
+    <line x1="60"  y1="194" x2="76"  y2="194"/>
+    <line x1="60"  y1="266" x2="76"  y2="266"/>
+  </g>
+
+  <!-- clock waveform: low, rise, high, fall, low, rise, high, fall, low -->
+  <path class="wave" d="M 20,290 L 90,290 L 140,170 L 250,170 L 300,290
+                        L 430,290 L 480,170 L 590,170 L 640,290 L 720,290"/>
+
+  <!-- voltage level labels -->
+  <text class="lbl" x="55" y="199" text-anchor="end">2.0 V</text>
+  <text class="lbl" x="55" y="271" text-anchor="end">0.8 V</text>
+  <text class="lbl" x="20" y="312" font-size="13" font-weight="700">CLK</text>
+
+  <!-- 1 : cycle time, 2.0 V falling edge to 2.0 V falling edge -->
+  <line class="dim" x1="260" y1="60" x2="600" y2="60"/>
+  <path class="ah" d="M260,60 L269,55.5 L269,64.5 Z"/>
+  <path class="ah" d="M600,60 L591,55.5 L591,64.5 Z"/>
+  <circle class="disc" cx="430" cy="60" r="15"/>
+  <text class="num" x="430" y="65">1</text>
+
+  <!-- 2 : clock low width, measured 0.8 V to 0.8 V -->
+  <line class="dim" x1="290" y1="112" x2="440" y2="112"/>
+  <path class="ah" d="M290,112 L299,107.5 L299,116.5 Z"/>
+  <path class="ah" d="M440,112 L431,107.5 L431,116.5 Z"/>
+  <circle class="disc" cx="365" cy="112" r="15"/>
+  <text class="num" x="365" y="117">2</text>
+
+  <!-- 3 : clock high width, measured 2.0 V to 2.0 V -->
+  <line class="dim" x1="470" y1="112" x2="600" y2="112"/>
+  <path class="ah" d="M470,112 L479,107.5 L479,116.5 Z"/>
+  <path class="ah" d="M600,112 L591,107.5 L591,116.5 Z"/>
+  <circle class="disc" cx="535" cy="112" r="15"/>
+  <text class="num" x="535" y="117">3</text>
+
+  <!-- 4 : rise time, 0.8 V to 2.0 V (arrows point inward, callout offset right) -->
+  <line class="dim" x1="55"  y1="352" x2="100" y2="352"/>
+  <path class="ah" d="M100,352 L91,347.5 L91,356.5 Z"/>
+  <line class="dim" x1="190" y1="352" x2="130" y2="352"/>
+  <path class="ah" d="M130,352 L139,347.5 L139,356.5 Z"/>
+  <circle class="disc" cx="205" cy="352" r="15"/>
+  <text class="num" x="205" y="357">4</text>
+
+  <!-- 5 : fall time, 2.0 V to 0.8 V -->
+  <line class="dim" x1="215" y1="396" x2="260" y2="396"/>
+  <path class="ah" d="M260,396 L251,391.5 L251,400.5 Z"/>
+  <line class="dim" x1="350" y1="396" x2="290" y2="396"/>
+  <path class="ah" d="M290,396 L299,391.5 L299,400.5 Z"/>
+  <circle class="disc" cx="365" cy="396" r="15"/>
+  <text class="num" x="365" y="401">5</text>
+</svg>

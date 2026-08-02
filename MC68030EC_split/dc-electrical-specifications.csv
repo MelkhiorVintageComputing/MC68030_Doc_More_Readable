@@ -1,0 +1,16 @@
+pdf_page,printed_page,characteristic,condition,signals,symbol,min,max,unit,confidence,note
+7,5,Input High Voltage,,all inputs,VIH,2.0,VCC,V,high,Max is the symbol VCC (5.0 Vdc +/- 5%) not a number.
+7,5,Input Low Voltage,,all inputs,VIL,GND-0.5,0.8,V,high,Min is symbolic: GND minus 0.5 V. Printed on two lines as GND / -0.5.
+7,5,Input Leakage Current,GND <= Vin <= VCC,"BERR, BR, BGACK, CLK, IPL0-IPL2, AVEC, CDIS, DSACK0, DSACK1",Iin,-2.5,2.5,uA,high,
+7,5,Input Leakage Current,GND <= Vin <= VCC,"HALT, RESET",Iin,-20,20,uA,high,Second signal group of the same row; the wider limit applies to the open-drain pins.
+7,5,Hi-Z (Off-State) Leakage Current,@ 2.4 V / 0.5 V,"A0-A31, AS, DBEN, DS, D0-D31, FC0-FC2, R/W, RMC, SIZ0-SIZ1",ITSI,-20,20,uA,high,
+7,5,Output High Voltage,IOH = 400 uA,"A0-A31, AS, BG, D0-D31, DBEN, DS, ECS, R/W, IPEND, OCS, RMC, SIZ0-SIZ1, FC0-FC2, CBREQ, CIOUT, STATUS, REFILL",VOH,2.4,,V,high,
+7,5,Output Low Voltage,IOL = 3.2 mA,"A0-A31, FC0-FC2, SIZ0-SIZ1, BG, D0-D31",VOL,,0.5,V,high,
+7,5,Output Low Voltage,IOL = 5.3 mA,"CBREQ, AS, DS, R/W, RMC, DBEN, IPEND",VOL,,0.5,V,high,
+7,5,Output Low Voltage,IOL = 2.0 mA,"STATUS, REFILL, CIOUT, ECS, OCS",VOL,,0.5,V,high,
+7,5,Output Low Voltage,IOL = 10.7 mA,RESET,VOL,,0.5,V,high,Largest sink current in the table; RESET is open drain.
+7,5,Power Dissipation,TA = 0 C,,PD,,2.6,W,high,
+7,5,Capacitance,"Vin = 0 V, TA = 25 C, f = 1 MHz",,Cin,,20,pF,high,Table note: capacitance is periodically sampled rather than 100% tested.
+7,5,Load Capacitance,,"ECS, OCS",CL,,50,pF,high,
+7,5,Load Capacitance,,"CIOUT, STATUS, REFILL",CL,,70,pF,high,
+7,5,Load Capacitance,,All Other,CL,,130,pF,high,Maximum load the AC specifications are guaranteed into.
