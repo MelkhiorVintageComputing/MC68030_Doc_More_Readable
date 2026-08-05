@@ -11,8 +11,9 @@
     .disc { stroke:#111; stroke-width:1.3; fill:#fff; }
     .ah   { fill:#111; }
     .ovl  { stroke:#111; stroke-width:1.1; fill:none; }
+    .alt  { stroke:#111; stroke-width:1.6; fill:none; stroke-dasharray:7 5; }
     @media (prefers-color-scheme: dark) {
-      .w,.grid,.tick,.dim,.ovl { stroke:#e8e8e8; }
+      .w,.grid,.tick,.dim,.ovl,.alt { stroke:#e8e8e8; }
       .lbl,.st,.num { fill:#e8e8e8; }
       .disc { stroke:#e8e8e8; fill:#161616; }
       .ah { fill:#e8e8e8; }

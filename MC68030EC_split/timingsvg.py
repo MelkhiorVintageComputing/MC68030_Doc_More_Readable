@@ -34,9 +34,11 @@ LEAD    = 34.0   # leader length for callouts drawn from outside
 
 
 class Fig:
-    def __init__(self, title, states=6, lead=0.9, trail=1.0, top=44.0, labels=None):
+    def __init__(self, title, states=6, lead=0.9, trail=1.0, top=44.0, labels=None,
+                 grid=True):
         self.title  = title
         self.states = states
+        self.grid   = grid        # off for figures that have no clock to divide
         self.labels = labels if labels is not None else ["S%d" % i for i in range(states)]
         self.lead   = lead
         self.trail  = trail
@@ -202,6 +204,16 @@ class Fig:
         self._disc(a + s * (LEAD + R), y, text)
         return self
 
+    def alt(self, sig, t0, t1, level=1):
+        """A dashed alternative edge: the source draws one where a signal may
+        legitimately change at either of two times."""
+        r = self.rows[sig]
+        a, b = (r["top"], r["top"] + AMP) if level else (r["top"] + AMP, r["top"])
+        self.parts.append('<path class="alt" d="M %.1f,%.1f L %.1f,%.1f L %.1f,%.1f"/>'
+                          % (self.x(t0), a, self.x(t1) - SLOPE / 2, a,
+                             self.x(t1) + SLOPE / 2, b))
+        return self
+
     def brk(self, t, note=None):
         """The drafting 'time passes here' break the source figures use."""
         x = self.x(t)
@@ -230,8 +242,9 @@ class Fig:
     .disc { stroke:#111; stroke-width:1.3; fill:#fff; }
     .ah   { fill:#111; }
     .ovl  { stroke:#111; stroke-width:1.1; fill:none; }
+    .alt  { stroke:#111; stroke-width:1.6; fill:none; stroke-dasharray:7 5; }
     @media (prefers-color-scheme: dark) {
-      .w,.grid,.tick,.dim,.ovl { stroke:#e8e8e8; }
+      .w,.grid,.tick,.dim,.ovl,.alt { stroke:#e8e8e8; }
       .lbl,.st,.num { fill:#e8e8e8; }
       .disc { stroke:#e8e8e8; fill:#161616; }
       .ah { fill:#e8e8e8; }
@@ -242,9 +255,10 @@ class Fig:
             if lab:
                 out.append('  <text class="st" x="%.1f" y="30">%s</text>' % (self.x(s + .5), esc(lab)))
         # full-height guides on every state boundary
-        for s in range(self.states + 1):
-            out.append('  <line class="grid" x1="%.1f" y1="36" x2="%.1f" y2="%.1f"/>'
-                       % (self.x(s), self.x(s), h - 16))
+        if self.grid:
+            for s in range(self.states + 1):
+                out.append('  <line class="grid" x1="%.1f" y1="36" x2="%.1f" y2="%.1f"/>'
+                           % (self.x(s), self.x(s), h - 16))
         # signal names
         for n in self.order:
             r = self.rows[n]
