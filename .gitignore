@@ -1,4 +1,4 @@
-# The three source manuals are deliberately NOT tracked, and must never be.
+# The source manuals are deliberately NOT tracked, and must never be.
 # They are large, third-party Motorola/NXP copyrighted documents. Everything in
 # this repository is derived from them; the root README.md records each one's
 # name, byte size and SHA-256 so a local copy can be verified as the exact
@@ -6,6 +6,7 @@
 /M68000PRM.pdf
 /MC68030EC.pdf
 /MC68030UM.pdf
+/MC68881UM.pdf
 
 # Any other PDF dropped in the repository root is a source document too.
 /*.pdf

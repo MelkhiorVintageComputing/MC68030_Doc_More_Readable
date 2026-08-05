@@ -1,10 +1,10 @@
-# Motorola M68000 / MC68030 documentation — split and extracted
+# Motorola M68000 documentation — split and extracted
 
-Three Motorola manuals, each broken into one PDF per section so the parts can be opened
-and navigated on their own, with a markdown index describing every part. Two of them
+Four Motorola manuals, each broken into one PDF per section so the parts can be opened
+and navigated on their own, with a markdown index describing every part. Three of them
 carry further extracted material: a per-processor instruction matrix for the
 programmer's reference manual, and machine-readable electrical specifications plus
-redrawn timing diagrams for the MC68030 data sheet.
+redrawn timing diagrams for the MC68030 data sheet and the MC68881/MC68882 manual.
 
 **The source PDFs are not in this repository** and never will be — see
 [Source documents](#source-documents) below for how to identify the exact editions
@@ -17,6 +17,7 @@ everything here was derived from.
 | [`MC68030UM_split/`](MC68030UM_split/) | MC68030 Enhanced 32-Bit Microprocessor User's Manual | 19 | — |
 | [`M68000PRM_split/`](M68000PRM_split/) | M68000 Family Programmer's Reference Manual | 15 | instruction-support matrix |
 | [`MC68030EC_split/`](MC68030EC_split/) | MC68030 Electrical Specifications | 8 | specification CSVs, redrawn timing figures |
+| [`MC68881UM_split/`](MC68881UM_split/) | MC68881/MC68882 Floating-Point Coprocessor User's Manual | 23 | specification CSVs, redrawn timing figures |
 
 ### [`MC68030UM_split/`](MC68030UM_split/README.md) — MC68030 User's Manual
 
@@ -70,6 +71,31 @@ images and then cross-checked three ways. One value survives as an anomaly in th
 document itself: specification **#48** is the only non-monotonic limit in the tables, and
 is flagged as such.
 
+### [`MC68881UM_split/`](MC68881UM_split/README.md) — MC68881/MC68882 Coprocessor User's Manual
+
+The 409-page floating-point coprocessor manual as **23 PDFs**: front matter, contents,
+the two reference lists, the preface, the thirteen numbered sections, Appendices A and B,
+the index, the timing-diagram foldout and the back cover. The source has 23 top-level
+bookmarks and nothing at all below them, so all 311 sub-bookmarks were rebuilt — the
+paragraph headings from the manual's own table of contents, verified one by one against
+the page each claims, and the **49 instruction descriptions** in Section 4 (`FABS`
+through `FTWOTOX`) from the running headers.
+
+Also here:
+
+- **[`ac-electrical-specifications.csv`](MC68881UM_split/ac-electrical-specifications.csv)**
+  and **[`dc-electrical-specifications.csv`](MC68881UM_split/dc-electrical-specifications.csv)**
+  — Section 12's timing and DC tables as data, at 16.67, 20, 25 and 33.33 MHz.
+- **Four redrawn timing diagrams** — Figures 12-1 to 12-4 as scalable SVG, each with a
+  markdown page carrying the diagram beside the specifications marked on it. The three
+  bus-cycle figures are printed side by side on a single foldout sheet in the source.
+
+The same reading-and-checking method was used as for the MC68030 data sheet, and it
+turned up two errors in this manual: the 33.33 MHz maximum clock pulse width (66 ns)
+does not fit inside the 33.33 MHz maximum cycle time (60 ns), and all three foldout
+figures label specifications 11 and 11A the opposite way round from the table that
+defines them.
+
 ## Source documents
 
 These are third-party copyrighted manuals and are **not tracked here** — `.gitignore`
@@ -81,12 +107,14 @@ derived material, place your own copies in the repository root and check them ag
 | `MC68030UM.pdf` | 22,470,628 | `07a676828a5e476b96f24a8b963fd06b79b5860dac35166a182205ecbb9c7f95` |
 | `M68000PRM.pdf` | 4,725,896 | `06e4864b78da0e815054cead9326b7ec9914661f240fd39a455f2061ff47c4e8` |
 | `MC68030EC.pdf` | 574,322 | `d0de2af8cb4e806bc1d2f776baf1adb42174243167dcf9a6ed64d53cd812084e` |
+| `MC68881UM.pdf` | 9,440,147 | `bb8cbc5262212a431ecb56fd4e5ba6334ecdc5f5ff996bedd729180c91700f2c` |
 
 ```sh
 sha256sum -c <<'EOF'
 07a676828a5e476b96f24a8b963fd06b79b5860dac35166a182205ecbb9c7f95  MC68030UM.pdf
 06e4864b78da0e815054cead9326b7ec9914661f240fd39a455f2061ff47c4e8  M68000PRM.pdf
 d0de2af8cb4e806bc1d2f776baf1adb42174243167dcf9a6ed64d53cd812084e  MC68030EC.pdf
+bb8cbc5262212a431ecb56fd4e5ba6334ecdc5f5ff996bedd729180c91700f2c  MC68881UM.pdf
 EOF
 ```
 
@@ -97,6 +125,7 @@ Editions, for identification:
 | `MC68030UM.pdf` | MC68030 Enhanced 32-Bit Microprocessor User's Manual | `MC68030UM/AD` Rev. 2, © 1990 Motorola, published by Prentice-Hall | 599 |
 | `M68000PRM.pdf` | M68000 Family Programmer's Reference Manual (Includes CPU32 Instructions) | © 1992 Motorola; owner-password encrypted (RC4) | 646 |
 | `MC68030EC.pdf` | MC68030 Electrical Specifications | `MC68030EC/D` Rev. 1, © 1990 Motorola | 19 |
+| `MC68881UM.pdf` | MC68881/MC68882 Floating-Point Coprocessor User's Manual | Second Edition, © 1989 Motorola, published by Prentice-Hall; reprinted 12/93 | 409 |
 
 A checksum mismatch does not necessarily mean the wrong manual — these scans circulate in
 several distinct digitisations. It does mean page numbers and bookmark offsets in the split
@@ -107,7 +136,10 @@ from the file above.
 
 Splitting used `pdftk` throughout: dump the bookmarks, derive section boundaries, confirm
 each boundary against the page text, `pdftk cat` the range, then reinject the sub-bookmarks
-remapped to the new page numbering. Every split was verified afterwards for page-count
+remapped to the new page numbering. Where a manual has no usable outline of its own, the
+sub-bookmarks are reconstructed — from running headers, or from the manual's own table of
+contents — and every reconstructed entry is verified against the page it points at before
+it is kept. Every split was verified afterwards for page-count
 conservation, readability under `mutool`, and the absence of the blank placeholder bookmarks
 `pdftk` inserts when an outline skips a level.
 
