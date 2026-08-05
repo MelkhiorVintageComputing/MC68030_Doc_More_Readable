@@ -1,0 +1,38 @@
+table,pdf_page,printed_page,num,footnotes,characteristic,condition,unit,f1667_min,f1667_max,f20_min,f20_max,f25_min,f25_max,f33_min,f33_max,min_clks,max_clks,confidence,note
+clock,379,12-3,,,Frequency of Operation,"VCC = 5.0 Vdc +/- 5%; GND = 0 Vdc, TA = 0 to 70 C",MHz,8,16.67,12.5,20,12.5,25,16.7,33.33,,,high,
+clock,379,12-3,1,,Cycle Time,"VCC = 5.0 Vdc +/- 5%; GND = 0 Vdc, TA = 0 to 70 C",ns,60,125,50,80,40,80,30,60,,,high,
+clock,379,12-3,"2, 3",,Clock Pulse Width (Measured from 1.5 V to 1.5 V for 33 MHz),"VCC = 5.0 Vdc +/- 5%; GND = 0 Vdc, TA = 0 to 70 C",ns,24,95,20,54,15,59,14,66,,,high,"Figure 12-1 marks 3 on the high pulse and 2 on the low pulse; the table gives one row for both. At 33.33 MHz the maximum (66 ns) exceeds the maximum cycle time of 60 ns, which cannot hold: min pulse + max pulse = 14 + 66 = 80 ns. Read from the page and corroborated by the text layer."
+clock,379,12-3,"4, 5",,Rise and Fall Times,"VCC = 5.0 Vdc +/- 5%; GND = 0 Vdc, TA = 0 to 70 C",ns,,5,,5,,4,,3,,,high,Figure 12-1 marks 5 on the rising edge and 4 on the falling edge.
+read-write,380,12-4,6,5,Address Valid to AS Asserted,"VCC = 5.0 Vdc +/- 5%; GND = 0 Vdc, TA = 0 to 70 C",ns,15,,10,,5,,5,,,,high,
+read-write,380,12-4,6A,5,Address Valid to DS Asserted (Read),"VCC = 5.0 Vdc +/- 5%; GND = 0 Vdc, TA = 0 to 70 C",ns,15,,10,,5,,5,,,,high,
+read-write,380,12-4,6B,5,Address Valid to DS Asserted (Write),"VCC = 5.0 Vdc +/- 5%; GND = 0 Vdc, TA = 0 to 70 C",ns,50,,50,,35,,26,,,,high,
+read-write,380,12-4,7,6,AS Negated to Address Invalid,"VCC = 5.0 Vdc +/- 5%; GND = 0 Vdc, TA = 0 to 70 C",ns,10,,10,,5,,5,,,,high,
+read-write,380,12-4,7A,6,DS Negated to Address Invalid,"VCC = 5.0 Vdc +/- 5%; GND = 0 Vdc, TA = 0 to 70 C",ns,10,,10,,5,,5,,,,high,
+read-write,380,12-4,8,9,CS Negated to AS Asserted,"VCC = 5.0 Vdc +/- 5%; GND = 0 Vdc, TA = 0 to 70 C",ns,0,,0,,0,,0,,,,high,
+read-write,380,12-4,8A,9,CS Negated to DS Asserted (Read),"VCC = 5.0 Vdc +/- 5%; GND = 0 Vdc, TA = 0 to 70 C",ns,0,,0,,0,,0,,,,high,
+read-write,380,12-4,8B,,CS Asserted to DS Asserted (Write),"VCC = 5.0 Vdc +/- 5%; GND = 0 Vdc, TA = 0 to 70 C",ns,30,,25,,20,,15,,,,high,
+read-write,380,12-4,9,,AS Negated to CS Negated,"VCC = 5.0 Vdc +/- 5%; GND = 0 Vdc, TA = 0 to 70 C",ns,10,,10,,5,,5,,,,high,
+read-write,380,12-4,9A,,DS Negated to CS Negated,"VCC = 5.0 Vdc +/- 5%; GND = 0 Vdc, TA = 0 to 70 C",ns,10,,10,,5,,5,,,,high,
+read-write,380,12-4,10,,R/W High to AS Asserted (Read),"VCC = 5.0 Vdc +/- 5%; GND = 0 Vdc, TA = 0 to 70 C",ns,15,,10,,5,,5,,,,high,
+read-write,380,12-4,10A,,R/W High to DS Asserted (Read),"VCC = 5.0 Vdc +/- 5%; GND = 0 Vdc, TA = 0 to 70 C",ns,15,,10,,5,,5,,,,high,
+read-write,380,12-4,10B,,R/W Low to DS Asserted (Write),"VCC = 5.0 Vdc +/- 5%; GND = 0 Vdc, TA = 0 to 70 C",ns,35,,30,,25,,25,,,,high,
+read-write,380,12-4,11,,AS Negated to R/W Low (Read) or AS Negated to R/W High (Write),"VCC = 5.0 Vdc +/- 5%; GND = 0 Vdc, TA = 0 to 70 C",ns,10,,10,,5,,5,,,,high,
+read-write,380,12-4,11A,,DS Negated to R/W Low (Read) or DS Negated to R/W High (Write),"VCC = 5.0 Vdc +/- 5%; GND = 0 Vdc, TA = 0 to 70 C",ns,10,,10,,5,,5,,,,high,
+read-write,380,12-4,12,,DS Width Asserted (Write),"VCC = 5.0 Vdc +/- 5%; GND = 0 Vdc, TA = 0 to 70 C",ns,40,,38,,30,,23,,,,high,
+read-write,380,12-4,13,,DS Width Negated,"VCC = 5.0 Vdc +/- 5%; GND = 0 Vdc, TA = 0 to 70 C",ns,40,,38,,30,,23,,,,high,
+read-write,380,12-4,13A,4,DS Negated to AS Asserted,"VCC = 5.0 Vdc +/- 5%; GND = 0 Vdc, TA = 0 to 70 C",ns,30,,30,,25,,18,,,,high,
+read-write,380,12-4,14,2,"CS, DS Asserted to Data-Out Valid (Read)","VCC = 5.0 Vdc +/- 5%; GND = 0 Vdc, TA = 0 to 70 C",ns,,80,,45,,45,,30,,,high,"The source prints a stray closing parenthesis: ""CS, DS Asserted to Data-Out Valid) (Read)""."
+read-write,380,12-4,15,,DS Negated to Data-Out Invalid (Read),"VCC = 5.0 Vdc +/- 5%; GND = 0 Vdc, TA = 0 to 70 C",ns,0,,0,,0,,0,,,,high,
+read-write,380,12-4,16,,DS Negated to Data-Out High Impedance (Read),"VCC = 5.0 Vdc +/- 5%; GND = 0 Vdc, TA = 0 to 70 C",ns,,50,,30,,30,,20,,,high,
+read-write,380,12-4,17,,Data-In Valid to DS Asserted (Write),"VCC = 5.0 Vdc +/- 5%; GND = 0 Vdc, TA = 0 to 70 C",ns,15,,10,,5,,5,,,,high,
+read-write,380,12-4,18,,DS Negated to Data-In Invalid (Write),"VCC = 5.0 Vdc +/- 5%; GND = 0 Vdc, TA = 0 to 70 C",ns,15,,10,,5,,5,,,,high,
+read-write,380,12-4,19,2,START True to DSACK0 and DSACK1 Asserted,"VCC = 5.0 Vdc +/- 5%; GND = 0 Vdc, TA = 0 to 70 C",ns,,50,,35,,25,,20,,,high,
+read-write,380,12-4,19A,7,DSACK0 Asserted to DSACK1 Asserted (Skew),"VCC = 5.0 Vdc +/- 5%; GND = 0 Vdc, TA = 0 to 70 C",ns,-15,15,-10,10,-10,10,,5,,,high,"The 33.33 MHz column gives no minimum, where the three slower grades are symmetric about zero. Read from the page, not inferred."
+read-write,380,12-4,20,,DSACK0 or DSACK1 Asserted to Data-Out Valid,"VCC = 5.0 Vdc +/- 5%; GND = 0 Vdc, TA = 0 to 70 C",ns,,50,,43,,32,,17,,,high,
+read-write,380,12-4,21,8,START False to DSACK0 and DSACK1 Negated,"VCC = 5.0 Vdc +/- 5%; GND = 0 Vdc, TA = 0 to 70 C",ns,,50,,30,,30,,20,,,high,
+read-write,380,12-4,22,8,START False to DSACK0 and DSACK1 High Impedance,"VCC = 5.0 Vdc +/- 5%; GND = 0 Vdc, TA = 0 to 70 C",ns,,70,,40,,40,,30,,,high,
+read-write,381,12-5,23,"3, 8",START True to Clock High (Synchronous Read),"VCC = 5.0 Vdc +/- 5%; GND = 0 Vdc, TA = 0 to 70 C",ns,0,,0,,0,,0,,,,high,
+read-write,381,12-5,24,3,Clock Low to Data-Out Valid (Synchronous Read),"VCC = 5.0 Vdc +/- 5%; GND = 0 Vdc, TA = 0 to 70 C",ns,,105,,80,,60,,45,,,high,
+read-write,381,12-5,25,"3, 8",START True to Data-Out Valid (Synchronous Read),"VCC = 5.0 Vdc +/- 5%; GND = 0 Vdc, TA = 0 to 70 C",ns,,105,,80,,60,,45,1.5,2.5,high,"Two-term limit: max is the nanosecond figure plus 2.5 clocks, min is 1.5 clocks with no nanosecond term."
+read-write,381,12-5,26,3,Clock Low to DSACK0 and DSACK1 Asserted (Synchronous Read),"VCC = 5.0 Vdc +/- 5%; GND = 0 Vdc, TA = 0 to 70 C",ns,,75,,55,,45,,30,,,high,
+read-write,381,12-5,27,"3, 8",START True to DSACK0 and DSACK1 Asserted (Synchronous Read),"VCC = 5.0 Vdc +/- 5%; GND = 0 Vdc, TA = 0 to 70 C",ns,,75,,55,,45,,30,1.5,2.5,high,"Two-term limit: max is the nanosecond figure plus 2.5 clocks, min is 1.5 clocks with no nanosecond term."

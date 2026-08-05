@@ -1,0 +1,11 @@
+pdf_page,printed_page,characteristic,condition,signals,symbol,min,max,unit,confidence,note
+378,12-2,Input High Voltage,,,VIH,2.0,VCC,V,high,"Max is the symbol VCC, not a number."
+378,12-2,Input Low Voltage,,,VIL,GND-0.5,0.8,V,high,Min is symbolic: GND minus 0.5 V.
+378,12-2,Input Leakage Current,@ 5.25 V,"CLK, RESET, R/W, A0-A4, CS, DS, AS, SIZE",Iin,,10,uA,high,
+378,12-2,Hi-Z (Off State) Input Current,@ 2.4 V / 0.4 V,"DSACK0, DSACK1, D0-D31",ITSI,,20,uA,high,
+378,12-2,Output High Voltage,IOH = -400 uA,"DSACK0, DSACK1, D0-D31",VOH,2.4,,V,high,
+378,12-2,Output Low Voltage,IOL = 5.3 mA,"DSACK0, DSACK1, D0-D31",VOL,,0.5,V,high,
+378,12-2,Output Low Current,VOL = GND,SENSE,IOL,,500,uA,high,
+378,12-2,Power Dissipation,,,PD,,0.75,W,high,
+378,12-2,Capacitance,"Vin = 0, TA = 25 C, f = 1 MHz",,Cin,,20,pF,high,Periodically sampled rather than 100% tested.
+378,12-2,Output Load Capacitance,,,CL,,130,pF,high,

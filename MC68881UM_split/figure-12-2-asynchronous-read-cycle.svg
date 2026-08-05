@@ -1,0 +1,238 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1417 783" width="1417" height="783" font-family="'DejaVu Sans',Verdana,Arial,sans-serif" role="img" aria-label="Figure 12-2. Asynchronous Read Cycle Timing Diagram">
+  <title>Figure 12-2. Asynchronous Read Cycle Timing Diagram</title>
+  <style>
+    .w    { stroke:#111; stroke-width:2.4; fill:none; stroke-linejoin:round; stroke-linecap:round; }
+    .grid { stroke:#111; stroke-width:0.8; opacity:.30; }
+    .tick { stroke:#111; stroke-width:0.9; opacity:.75; }
+    .dim  { stroke:#111; stroke-width:1.2; }
+    .lbl  { fill:#111; font-size:12.5px; font-weight:700; text-anchor:end; }
+    .st   { fill:#111; font-size:12px; font-weight:700; text-anchor:middle; }
+    .num  { fill:#111; font-size:11.5px; font-weight:700; text-anchor:middle; }
+    .disc { stroke:#111; stroke-width:1.3; fill:#fff; }
+    .ah   { fill:#111; }
+    .ovl  { stroke:#111; stroke-width:1.1; fill:none; }
+    .alt  { stroke:#111; stroke-width:1.6; fill:none; stroke-dasharray:7 5; }
+    @media (prefers-color-scheme: dark) {
+      .w,.grid,.tick,.dim,.ovl,.alt { stroke:#e8e8e8; }
+      .lbl,.st,.num { fill:#e8e8e8; }
+      .disc { stroke:#e8e8e8; fill:#161616; }
+      .ah { fill:#e8e8e8; }
+    }
+  </style>
+  <text class="lbl" x="144.0" y="61.5">A0-A4</text>
+  <text class="lbl" x="144.0" y="152.5">R/W</text>
+  <text class="lbl" x="144.0" y="243.5">AS</text>
+  <text class="lbl" x="144.0" y="334.5">DS</text>
+  <text class="lbl" x="144.0" y="425.5">CS</text>
+  <text class="lbl" x="144.0" y="491.5">START</text>
+  <text class="lbl" x="144.0" y="582.5">DSACK1</text>
+  <text class="lbl" x="144.0" y="648.5">DSACK0</text>
+  <text class="lbl" x="144.0" y="739.5">D0-D31</text>
+  <path class="w" d="M 335.9,44.0 L 344.9,70.0 M 335.9,70.0 L 344.9,44.0"/>
+  <path class="w" d="M 1036.7,44.0 L 1045.7,70.0 M 1036.7,70.0 L 1045.7,44.0"/>
+  <line class="w" x1="158.0" y1="44.0" x2="335.9" y2="44.0"/>
+  <line class="w" x1="344.9" y1="44.0" x2="1036.7" y2="44.0"/>
+  <line class="w" x1="1045.7" y1="44.0" x2="1377.2" y2="44.0"/>
+  <line class="w" x1="158.0" y1="70.0" x2="335.9" y2="70.0"/>
+  <line class="w" x1="344.9" y1="70.0" x2="1036.7" y2="70.0"/>
+  <line class="w" x1="1045.7" y1="70.0" x2="1377.2" y2="70.0"/>
+  <path class="w" d="M 158.0,161.0 L 350.3,161.0 L 359.3,135.0 L 1051.1,135.0 L 1060.1,161.0 L 1377.2,161.0"/>
+  <path class="w" d="M 158.0,226.0 L 422.3,226.0 L 431.3,252.0 L 916.7,252.0 L 925.7,226.0 L 1147.1,226.0 L 1156.1,252.0 L 1377.2,252.0"/>
+  <path class="w" d="M 158.0,317.0 L 470.3,317.0 L 479.3,343.0 L 974.3,343.0 L 983.3,317.0 L 1195.1,317.0 L 1204.1,343.0 L 1377.2,343.0"/>
+  <path class="w" d="M 158.0,408.0 L 374.3,408.0 L 383.3,434.0 L 1075.1,434.0 L 1084.1,408.0 L 1377.2,408.0"/>
+  <path class="alt" d="M 378.8,408.0 L 532.7,408.0 L 541.7,434.0"/>
+  <path class="w" d="M 158.0,474.0 L 470.3,474.0 L 479.3,500.0 L 940.7,500.0 L 949.7,474.0 L 1377.2,474.0"/>
+  <path class="alt" d="M 474.8,474.0 L 532.7,474.0 L 541.7,500.0"/>
+  <path class="w" d="M 158.0,565.0 L 571.1,565.0 L 580.1,591.0 L 988.7,591.0 L 997.7,565.0 L 1094.3,565.0 L 1103.3,578.0 L 1377.2,578.0"/>
+  <path class="w" d="M 158.0,631.0 L 614.3,631.0 L 623.3,657.0 L 988.7,657.0 L 997.7,631.0 L 1094.3,631.0 L 1103.3,644.0 L 1377.2,644.0"/>
+  <line class="w" x1="158.0" y1="735.0" x2="667.1" y2="735.0"/>
+  <path class="w" d="M 667.1,735.0 L 676.1,722.0 M 667.1,735.0 L 676.1,748.0"/>
+  <path class="w" d="M 1094.3,722.0 L 1103.3,735.0 M 1094.3,748.0 L 1103.3,735.0"/>
+  <line class="w" x1="1103.3" y1="735.0" x2="1377.2" y2="735.0"/>
+  <line class="w" x1="676.1" y1="722.0" x2="1094.3" y2="722.0"/>
+  <line class="w" x1="676.1" y1="748.0" x2="1094.3" y2="748.0"/>
+  <line class="tick" x1="340.4" y1="76.0" x2="340.4" y2="94.0"/>
+  <line class="tick" x1="426.8" y1="76.0" x2="426.8" y2="94.0"/>
+  <line class="dim" x1="306.4" y1="85.0" x2="340.4" y2="85.0"/>
+  <path class="ah" d="M 340.4,85.0 L 332.4,80.4 L 332.4,89.6 Z"/>
+  <line class="dim" x1="426.8" y1="85.0" x2="460.8" y2="85.0"/>
+  <path class="ah" d="M 426.8,85.0 L 434.8,80.4 L 434.8,89.6 Z"/>
+  <circle class="disc" cx="292.9" cy="85.0" r="13.5"/>
+  <text class="num" x="292.9" y="89.2">6</text>
+  <line class="tick" x1="921.2" y1="76.0" x2="921.2" y2="94.0"/>
+  <line class="tick" x1="1041.2" y1="76.0" x2="1041.2" y2="94.0"/>
+  <line class="dim" x1="887.2" y1="85.0" x2="921.2" y2="85.0"/>
+  <path class="ah" d="M 921.2,85.0 L 913.2,80.4 L 913.2,89.6 Z"/>
+  <line class="dim" x1="1041.2" y1="85.0" x2="1075.2" y2="85.0"/>
+  <path class="ah" d="M 1041.2,85.0 L 1049.2,80.4 L 1049.2,89.6 Z"/>
+  <circle class="disc" cx="873.7" cy="85.0" r="13.5"/>
+  <text class="num" x="873.7" y="89.2">7</text>
+  <line class="tick" x1="340.4" y1="101.0" x2="340.4" y2="119.0"/>
+  <line class="tick" x1="474.8" y1="101.0" x2="474.8" y2="119.0"/>
+  <line class="dim" x1="306.4" y1="110.0" x2="340.4" y2="110.0"/>
+  <path class="ah" d="M 340.4,110.0 L 332.4,105.4 L 332.4,114.6 Z"/>
+  <line class="dim" x1="474.8" y1="110.0" x2="508.8" y2="110.0"/>
+  <path class="ah" d="M 474.8,110.0 L 482.8,105.4 L 482.8,114.6 Z"/>
+  <circle class="disc" cx="522.3" cy="110.0" r="13.5"/>
+  <text class="num" x="522.3" y="114.2">6a</text>
+  <line class="tick" x1="978.8" y1="101.0" x2="978.8" y2="119.0"/>
+  <line class="tick" x1="1041.2" y1="101.0" x2="1041.2" y2="119.0"/>
+  <line class="dim" x1="944.8" y1="110.0" x2="978.8" y2="110.0"/>
+  <path class="ah" d="M 978.8,110.0 L 970.8,105.4 L 970.8,114.6 Z"/>
+  <line class="dim" x1="1041.2" y1="110.0" x2="1075.2" y2="110.0"/>
+  <path class="ah" d="M 1041.2,110.0 L 1049.2,105.4 L 1049.2,114.6 Z"/>
+  <circle class="disc" cx="1088.7" cy="110.0" r="13.5"/>
+  <text class="num" x="1088.7" y="114.2">7a</text>
+  <line class="tick" x1="354.8" y1="167.0" x2="354.8" y2="185.0"/>
+  <line class="tick" x1="426.8" y1="167.0" x2="426.8" y2="185.0"/>
+  <line class="dim" x1="320.8" y1="176.0" x2="354.8" y2="176.0"/>
+  <path class="ah" d="M 354.8,176.0 L 346.8,171.4 L 346.8,180.6 Z"/>
+  <line class="dim" x1="426.8" y1="176.0" x2="460.8" y2="176.0"/>
+  <path class="ah" d="M 426.8,176.0 L 434.8,171.4 L 434.8,180.6 Z"/>
+  <circle class="disc" cx="307.3" cy="176.0" r="13.5"/>
+  <text class="num" x="307.3" y="180.2">10</text>
+  <line class="tick" x1="921.2" y1="167.0" x2="921.2" y2="185.0"/>
+  <line class="tick" x1="1055.6" y1="167.0" x2="1055.6" y2="185.0"/>
+  <line class="dim" x1="887.2" y1="176.0" x2="921.2" y2="176.0"/>
+  <path class="ah" d="M 921.2,176.0 L 913.2,171.4 L 913.2,180.6 Z"/>
+  <line class="dim" x1="1055.6" y1="176.0" x2="1089.6" y2="176.0"/>
+  <path class="ah" d="M 1055.6,176.0 L 1063.6,171.4 L 1063.6,180.6 Z"/>
+  <circle class="disc" cx="1103.1" cy="176.0" r="13.5"/>
+  <text class="num" x="1103.1" y="180.2">11</text>
+  <line class="tick" x1="354.8" y1="192.0" x2="354.8" y2="210.0"/>
+  <line class="tick" x1="474.8" y1="192.0" x2="474.8" y2="210.0"/>
+  <line class="dim" x1="320.8" y1="201.0" x2="354.8" y2="201.0"/>
+  <path class="ah" d="M 354.8,201.0 L 346.8,196.4 L 346.8,205.6 Z"/>
+  <line class="dim" x1="474.8" y1="201.0" x2="508.8" y2="201.0"/>
+  <path class="ah" d="M 474.8,201.0 L 482.8,196.4 L 482.8,205.6 Z"/>
+  <circle class="disc" cx="307.3" cy="201.0" r="13.5"/>
+  <text class="num" x="307.3" y="205.2">10a</text>
+  <line class="tick" x1="978.8" y1="192.0" x2="978.8" y2="210.0"/>
+  <line class="tick" x1="1055.6" y1="192.0" x2="1055.6" y2="210.0"/>
+  <line class="dim" x1="944.8" y1="201.0" x2="978.8" y2="201.0"/>
+  <path class="ah" d="M 978.8,201.0 L 970.8,196.4 L 970.8,205.6 Z"/>
+  <line class="dim" x1="1055.6" y1="201.0" x2="1089.6" y2="201.0"/>
+  <path class="ah" d="M 1055.6,201.0 L 1063.6,196.4 L 1063.6,205.6 Z"/>
+  <circle class="disc" cx="1103.1" cy="201.0" r="13.5"/>
+  <text class="num" x="1103.1" y="205.2">11a</text>
+  <line class="tick" x1="378.8" y1="258.0" x2="378.8" y2="276.0"/>
+  <line class="tick" x1="426.8" y1="258.0" x2="426.8" y2="276.0"/>
+  <line class="dim" x1="344.8" y1="267.0" x2="378.8" y2="267.0"/>
+  <path class="ah" d="M 378.8,267.0 L 370.8,262.4 L 370.8,271.6 Z"/>
+  <line class="dim" x1="426.8" y1="267.0" x2="460.8" y2="267.0"/>
+  <path class="ah" d="M 426.8,267.0 L 434.8,262.4 L 434.8,271.6 Z"/>
+  <circle class="disc" cx="331.3" cy="267.0" r="13.5"/>
+  <text class="num" x="331.3" y="271.2">8</text>
+  <line class="tick" x1="978.8" y1="258.0" x2="978.8" y2="276.0"/>
+  <line class="tick" x1="1151.6" y1="258.0" x2="1151.6" y2="276.0"/>
+  <line class="dim" x1="978.8" y1="267.0" x2="1151.6" y2="267.0"/>
+  <path class="ah" d="M 978.8,267.0 L 986.8,262.4 L 986.8,271.6 Z"/>
+  <path class="ah" d="M 1151.6,267.0 L 1143.6,262.4 L 1143.6,271.6 Z"/>
+  <circle class="disc" cx="1065.2" cy="267.0" r="13.5"/>
+  <text class="num" x="1065.2" y="271.2">13a</text>
+  <line class="tick" x1="426.8" y1="283.0" x2="426.8" y2="301.0"/>
+  <line class="tick" x1="537.2" y1="283.0" x2="537.2" y2="301.0"/>
+  <line class="dim" x1="392.8" y1="292.0" x2="426.8" y2="292.0"/>
+  <path class="ah" d="M 426.8,292.0 L 418.8,287.4 L 418.8,296.6 Z"/>
+  <line class="dim" x1="537.2" y1="292.0" x2="571.2" y2="292.0"/>
+  <path class="ah" d="M 537.2,292.0 L 545.2,287.4 L 545.2,296.6 Z"/>
+  <circle class="disc" cx="584.7" cy="292.0" r="13.5"/>
+  <text class="num" x="584.7" y="296.2">8</text>
+  <line class="tick" x1="978.8" y1="283.0" x2="978.8" y2="301.0"/>
+  <line class="tick" x1="1199.6" y1="283.0" x2="1199.6" y2="301.0"/>
+  <line class="dim" x1="978.8" y1="292.0" x2="1199.6" y2="292.0"/>
+  <path class="ah" d="M 978.8,292.0 L 986.8,287.4 L 986.8,296.6 Z"/>
+  <path class="ah" d="M 1199.6,292.0 L 1191.6,287.4 L 1191.6,296.6 Z"/>
+  <circle class="disc" cx="1089.2" cy="292.0" r="13.5"/>
+  <text class="num" x="1089.2" y="296.2">13</text>
+  <line class="tick" x1="378.8" y1="349.0" x2="378.8" y2="367.0"/>
+  <line class="tick" x1="474.8" y1="349.0" x2="474.8" y2="367.0"/>
+  <line class="dim" x1="344.8" y1="358.0" x2="378.8" y2="358.0"/>
+  <path class="ah" d="M 378.8,358.0 L 370.8,353.4 L 370.8,362.6 Z"/>
+  <line class="dim" x1="474.8" y1="358.0" x2="508.8" y2="358.0"/>
+  <path class="ah" d="M 474.8,358.0 L 482.8,353.4 L 482.8,362.6 Z"/>
+  <circle class="disc" cx="331.3" cy="358.0" r="13.5"/>
+  <text class="num" x="331.3" y="362.2">8a</text>
+  <line class="tick" x1="921.2" y1="349.0" x2="921.2" y2="367.0"/>
+  <line class="tick" x1="1079.6" y1="349.0" x2="1079.6" y2="367.0"/>
+  <line class="dim" x1="921.2" y1="358.0" x2="1079.6" y2="358.0"/>
+  <path class="ah" d="M 921.2,358.0 L 929.2,353.4 L 929.2,362.6 Z"/>
+  <path class="ah" d="M 1079.6,358.0 L 1071.6,353.4 L 1071.6,362.6 Z"/>
+  <circle class="disc" cx="1000.4" cy="358.0" r="13.5"/>
+  <text class="num" x="1000.4" y="362.2">9</text>
+  <line class="tick" x1="474.8" y1="374.0" x2="474.8" y2="392.0"/>
+  <line class="tick" x1="537.2" y1="374.0" x2="537.2" y2="392.0"/>
+  <line class="dim" x1="440.8" y1="383.0" x2="474.8" y2="383.0"/>
+  <path class="ah" d="M 474.8,383.0 L 466.8,378.4 L 466.8,387.6 Z"/>
+  <line class="dim" x1="537.2" y1="383.0" x2="571.2" y2="383.0"/>
+  <path class="ah" d="M 537.2,383.0 L 545.2,378.4 L 545.2,387.6 Z"/>
+  <circle class="disc" cx="584.7" cy="383.0" r="13.5"/>
+  <text class="num" x="584.7" y="387.2">8a</text>
+  <line class="tick" x1="978.8" y1="374.0" x2="978.8" y2="392.0"/>
+  <line class="tick" x1="1079.6" y1="374.0" x2="1079.6" y2="392.0"/>
+  <line class="dim" x1="944.8" y1="383.0" x2="978.8" y2="383.0"/>
+  <path class="ah" d="M 978.8,383.0 L 970.8,378.4 L 970.8,387.6 Z"/>
+  <line class="dim" x1="1079.6" y1="383.0" x2="1113.6" y2="383.0"/>
+  <path class="ah" d="M 1079.6,383.0 L 1087.6,378.4 L 1087.6,387.6 Z"/>
+  <circle class="disc" cx="1127.1" cy="383.0" r="13.5"/>
+  <text class="num" x="1127.1" y="387.2">9a</text>
+  <line class="tick" x1="474.8" y1="440.0" x2="474.8" y2="458.0"/>
+  <line class="tick" x1="671.6" y1="440.0" x2="671.6" y2="458.0"/>
+  <line class="dim" x1="474.8" y1="449.0" x2="671.6" y2="449.0"/>
+  <path class="ah" d="M 474.8,449.0 L 482.8,444.4 L 482.8,453.6 Z"/>
+  <path class="ah" d="M 671.6,449.0 L 663.6,444.4 L 663.6,453.6 Z"/>
+  <circle class="disc" cx="573.2" cy="449.0" r="13.5"/>
+  <text class="num" x="573.2" y="453.2">14</text>
+  <line class="tick" x1="474.8" y1="506.0" x2="474.8" y2="524.0"/>
+  <line class="tick" x1="618.8" y1="506.0" x2="618.8" y2="524.0"/>
+  <line class="dim" x1="474.8" y1="515.0" x2="618.8" y2="515.0"/>
+  <path class="ah" d="M 474.8,515.0 L 482.8,510.4 L 482.8,519.6 Z"/>
+  <path class="ah" d="M 618.8,515.0 L 610.8,510.4 L 610.8,519.6 Z"/>
+  <circle class="disc" cx="546.8" cy="515.0" r="13.5"/>
+  <text class="num" x="546.8" y="519.2">19</text>
+  <line class="tick" x1="945.2" y1="506.0" x2="945.2" y2="524.0"/>
+  <line class="tick" x1="993.2" y1="506.0" x2="993.2" y2="524.0"/>
+  <line class="dim" x1="911.2" y1="515.0" x2="945.2" y2="515.0"/>
+  <path class="ah" d="M 945.2,515.0 L 937.2,510.4 L 937.2,519.6 Z"/>
+  <line class="dim" x1="993.2" y1="515.0" x2="1027.2" y2="515.0"/>
+  <path class="ah" d="M 993.2,515.0 L 1001.2,510.4 L 1001.2,519.6 Z"/>
+  <circle class="disc" cx="1040.7" cy="515.0" r="13.5"/>
+  <text class="num" x="1040.7" y="519.2">21</text>
+  <line class="tick" x1="945.2" y1="531.0" x2="945.2" y2="549.0"/>
+  <line class="tick" x1="1098.8" y1="531.0" x2="1098.8" y2="549.0"/>
+  <line class="dim" x1="911.2" y1="540.0" x2="945.2" y2="540.0"/>
+  <path class="ah" d="M 945.2,540.0 L 937.2,535.4 L 937.2,544.6 Z"/>
+  <line class="dim" x1="1098.8" y1="540.0" x2="1132.8" y2="540.0"/>
+  <path class="ah" d="M 1098.8,540.0 L 1106.8,535.4 L 1106.8,544.6 Z"/>
+  <circle class="disc" cx="1146.3" cy="540.0" r="13.5"/>
+  <text class="num" x="1146.3" y="544.2">22</text>
+  <line class="tick" x1="575.6" y1="597.0" x2="575.6" y2="615.0"/>
+  <line class="tick" x1="618.8" y1="597.0" x2="618.8" y2="615.0"/>
+  <line class="dim" x1="541.6" y1="606.0" x2="575.6" y2="606.0"/>
+  <path class="ah" d="M 575.6,606.0 L 567.6,601.4 L 567.6,610.6 Z"/>
+  <line class="dim" x1="618.8" y1="606.0" x2="652.8" y2="606.0"/>
+  <path class="ah" d="M 618.8,606.0 L 626.8,601.4 L 626.8,610.6 Z"/>
+  <circle class="disc" cx="528.1" cy="606.0" r="13.5"/>
+  <text class="num" x="528.1" y="610.2">19a</text>
+  <line class="tick" x1="575.6" y1="663.0" x2="575.6" y2="681.0"/>
+  <line class="tick" x1="671.6" y1="663.0" x2="671.6" y2="681.0"/>
+  <line class="dim" x1="575.6" y1="672.0" x2="671.6" y2="672.0"/>
+  <path class="ah" d="M 575.6,672.0 L 583.6,667.4 L 583.6,676.6 Z"/>
+  <path class="ah" d="M 671.6,672.0 L 663.6,667.4 L 663.6,676.6 Z"/>
+  <circle class="disc" cx="623.6" cy="672.0" r="13.5"/>
+  <text class="num" x="623.6" y="676.2">20</text>
+  <line class="tick" x1="978.8" y1="663.0" x2="978.8" y2="681.0"/>
+  <line class="tick" x1="1132.4" y1="663.0" x2="1132.4" y2="681.0"/>
+  <line class="dim" x1="978.8" y1="672.0" x2="1132.4" y2="672.0"/>
+  <path class="ah" d="M 978.8,672.0 L 986.8,667.4 L 986.8,676.6 Z"/>
+  <path class="ah" d="M 1132.4,672.0 L 1124.4,667.4 L 1124.4,676.6 Z"/>
+  <circle class="disc" cx="1055.6" cy="672.0" r="13.5"/>
+  <text class="num" x="1055.6" y="676.2">16</text>
+  <line class="tick" x1="978.8" y1="688.0" x2="978.8" y2="706.0"/>
+  <line class="tick" x1="1098.8" y1="688.0" x2="1098.8" y2="706.0"/>
+  <line class="dim" x1="978.8" y1="697.0" x2="1098.8" y2="697.0"/>
+  <path class="ah" d="M 978.8,697.0 L 986.8,692.4 L 986.8,701.6 Z"/>
+  <path class="ah" d="M 1098.8,697.0 L 1090.8,692.4 L 1090.8,701.6 Z"/>
+  <circle class="disc" cx="1038.8" cy="697.0" r="13.5"/>
+  <text class="num" x="1038.8" y="701.2">15</text>
+</svg>
