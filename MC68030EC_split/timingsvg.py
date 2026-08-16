@@ -92,7 +92,9 @@ class Fig:
 
         `z_from` releases the signal to high impedance at that time, drawn as a
         mid-rail line — this is what the arbitration figure shows when the
-        processor stops driving the bus."""
+        processor stops driving the bus.  A level of None inside `edges` does
+        the same thing at that instant and lets the signal come back, which is
+        what an arbitration figure needs when the bus is handed back."""
         r = self._row(name, label, lanes)
         hi, lo = r["top"], r["top"] + AMP
         mid = r["top"] + AMP / 2
@@ -102,7 +104,7 @@ class Fig:
         for t, v in edges:
             if z_from is not None and t >= z_from:
                 continue
-            want = hi if v else lo
+            want = mid if v is None else (hi if v else lo)
             a = self.x(t)
             d.append("L %.1f,%.1f L %.1f,%.1f" % (a - SLOPE / 2, lvl, a + SLOPE / 2, want))
             lvl = want
