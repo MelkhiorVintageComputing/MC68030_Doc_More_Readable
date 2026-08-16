@@ -4,6 +4,7 @@
 # name, byte size and SHA-256 so a local copy can be verified as the exact
 # edition the derived material was produced from.
 /M68000PRM.pdf
+/MC68000UM.pdf
 /MC68030EC.pdf
 /MC68030UM.pdf
 /MC68881UM.pdf

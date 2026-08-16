@@ -1,10 +1,11 @@
 # Motorola M68000 documentation — split and extracted
 
-Four Motorola manuals, each broken into one PDF per section so the parts can be opened
-and navigated on their own, with a markdown index describing every part. Three of them
+Five Motorola manuals, each broken into one PDF per section so the parts can be opened
+and navigated on their own, with a markdown index describing every part. Four of them
 carry further extracted material: a per-processor instruction matrix for the
 programmer's reference manual, and machine-readable electrical specifications plus
-redrawn timing diagrams for the MC68030 data sheet and the MC68881/MC68882 manual.
+redrawn timing diagrams for the MC68030 data sheet, the MC68881/MC68882 manual and the
+M68000 user's manual.
 
 **The source PDFs are not in this repository** and never will be — see
 [Source documents](#source-documents) below for how to identify the exact editions
@@ -18,6 +19,7 @@ everything here was derived from.
 | [`M68000PRM_split/`](M68000PRM_split/) | M68000 Family Programmer's Reference Manual | 15 | instruction-support matrix |
 | [`MC68030EC_split/`](MC68030EC_split/) | MC68030 Electrical Specifications | 8 | specification CSVs, redrawn timing figures |
 | [`MC68881UM_split/`](MC68881UM_split/) | MC68881/MC68882 Floating-Point Coprocessor User's Manual | 23 | specification CSVs, redrawn timing figures |
+| [`MC68000UM_split/`](MC68000UM_split/) | M68000 8-/16-/32-Bit Microprocessors User's Manual | 19 | specification CSVs, redrawn timing figures |
 
 ### [`MC68030UM_split/`](MC68030UM_split/README.md) — MC68030 User's Manual
 
@@ -96,6 +98,35 @@ does not fit inside the 33.33 MHz maximum cycle time (60 ns), and all three fold
 figures label specifications 11 and 11A the opposite way round from the table that
 defines them.
 
+### [`MC68000UM_split/`](MC68000UM_split/README.md) — M68000 8-/16-/32-Bit Microprocessors User's Manual
+
+The 216-page ninth edition — the manual that covers the MC68000, MC68008, MC68010,
+MC68HC000, MC68HC001 and MC68EC000 together — as **19 PDFs**: front matter, contents,
+the two reference lists, the eleven numbered sections, Appendices A and B, the index and
+the back cover. The source has **no outline whatsoever**, not one bookmark, so all 317
+were rebuilt: the paragraph headings from the manual's own table of contents, verified
+one by one against the page each claims, and 167 figure and table captions read off the
+body pages rather than off the two front-matter lists — which disagree with the body in
+several places.
+
+Also here:
+
+- **[`ac-electrical-specifications.csv`](MC68000UM_split/ac-electrical-specifications.csv)**
+  — all seven of Section 10's AC tables, 158 rows and 1092 limits, at 8, 10, 12.5, 16.67
+  (both the plain and the 12F part), 16 and 20 MHz.
+- **[`dc-electrical-specifications.csv`](MC68000UM_split/dc-electrical-specifications.csv)**
+  and **[`power-dissipation.csv`](MC68000UM_split/power-dissipation.csv)** — the maximum
+  ratings, the thermal characteristics, the three DC tables and Tables 10-1 and 10-2.
+- **Thirteen redrawn timing diagrams** — Figures 10-2 to 10-14 as scalable SVG, each with
+  a markdown page carrying the diagram beside the specifications marked on it.
+
+The same reading-and-checking method was used as for the other two, and this manual turns
+out to be the most self-contradictory of the set: **specification 47 is given three
+different values in three different tables**, specification 23's 16.67 MHz maximum is
+printed as 550 ns where another table gives 50, §10.10 has two rows both numbered 48, and
+a pull-up resistor is specified as 1.1 Ω rather than 1.1 kΩ. Twenty-three such findings
+are listed with the evidence in that directory's README.
+
 ## Source documents
 
 These are third-party copyrighted manuals and are **not tracked here** — `.gitignore`
@@ -108,6 +139,7 @@ derived material, place your own copies in the repository root and check them ag
 | `M68000PRM.pdf` | 4,725,896 | `06e4864b78da0e815054cead9326b7ec9914661f240fd39a455f2061ff47c4e8` |
 | `MC68030EC.pdf` | 574,322 | `d0de2af8cb4e806bc1d2f776baf1adb42174243167dcf9a6ed64d53cd812084e` |
 | `MC68881UM.pdf` | 9,440,147 | `bb8cbc5262212a431ecb56fd4e5ba6334ecdc5f5ff996bedd729180c91700f2c` |
+| `MC68000UM.pdf` | 11,152,468 | `e41cbe7e14dc7cb853f1185adb1dcd7043d2a2a3f43cdc909e0f6c146007a8e5` |
 
 ```sh
 sha256sum -c <<'EOF'
@@ -115,6 +147,7 @@ sha256sum -c <<'EOF'
 06e4864b78da0e815054cead9326b7ec9914661f240fd39a455f2061ff47c4e8  M68000PRM.pdf
 d0de2af8cb4e806bc1d2f776baf1adb42174243167dcf9a6ed64d53cd812084e  MC68030EC.pdf
 bb8cbc5262212a431ecb56fd4e5ba6334ecdc5f5ff996bedd729180c91700f2c  MC68881UM.pdf
+e41cbe7e14dc7cb853f1185adb1dcd7043d2a2a3f43cdc909e0f6c146007a8e5  MC68000UM.pdf
 EOF
 ```
 
@@ -126,6 +159,7 @@ Editions, for identification:
 | `M68000PRM.pdf` | M68000 Family Programmer's Reference Manual (Includes CPU32 Instructions) | © 1992 Motorola; owner-password encrypted (RC4) | 646 |
 | `MC68030EC.pdf` | MC68030 Electrical Specifications | `MC68030EC/D` Rev. 1, © 1990 Motorola | 19 |
 | `MC68881UM.pdf` | MC68881/MC68882 Floating-Point Coprocessor User's Manual | Second Edition, © 1989 Motorola, published by Prentice-Hall; reprinted 12/93 | 409 |
+| `MC68000UM.pdf` | M68000 8-/16-/32-Bit Microprocessors User's Manual | `M68000UM/AD` Rev. 5, Ninth Edition, © 1993 Motorola; printed 10/93 | 216 |
 
 A checksum mismatch does not necessarily mean the wrong manual — these scans circulate in
 several distinct digitisations. It does mean page numbers and bookmark offsets in the split
