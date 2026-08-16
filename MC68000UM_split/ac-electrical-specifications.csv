@@ -1,0 +1,159 @@
+table,pdf_page,printed_page,num,footnotes,characteristic,condition,unit,f8_min,f8_max,f10_min,f10_max,f12_5_min,f12_5_max,f16_67_min,f16_67_max,f16_min,f16_max,f20_min,f20_max,note
+clock,159,10-8,,,Frequency of Operation,VCC = 5.0 VDC +/- 5%; GND = 0 VDC; TA = TL to TH; applies to all processors except the MC68EC000,MHz,4.0,8.0,4.0,10.0,4.0,12.5,8.0,16.7,8.0,16.7,8.0,20.0,
+clock,159,10-8,1,,Cycle Time,VCC = 5.0 VDC +/- 5%; GND = 0 VDC; TA = TL to TH; applies to all processors except the MC68EC000,ns,125,250,100,250,80,250,60,125,60,125,50,125,
+clock,159,10-8,"2, 3",,Clock Pulse Width (Measured from 1.5 V to 1.5 V for 12F),VCC = 5.0 VDC +/- 5%; GND = 0 VDC; TA = TL to TH; applies to all processors except the MC68EC000,ns,55,125,45,125,35,125,27,62.5,27,62.5,21,62.5,"printed as two identical lines, one for specification 2 and one for 3"
+clock,159,10-8,"4, 5",,Clock Rise and Fall Times,VCC = 5.0 VDC +/- 5%; GND = 0 VDC; TA = TL to TH; applies to all processors except the MC68EC000,ns,,10,,10,,5,,5,,5,,4,"printed as two identical lines, one for specification 4 and one for 5"
+clock-mc68008,160,10-9,,,Frequency of Operation,VCC = 5.0 VDC +/- 5%; GND = 0 VDC; TA = TL to TH; MC68008 only,MHz,2.0,8.0,2.0,10.0,,,,,,,,,
+clock-mc68008,160,10-9,1,,Cycle Time,VCC = 5.0 VDC +/- 5%; GND = 0 VDC; TA = TL to TH; MC68008 only,ns,125,500,100,500,,,,,,,,,
+clock-mc68008,160,10-9,"2, 3",,Clock Pulse Width,VCC = 5.0 VDC +/- 5%; GND = 0 VDC; TA = TL to TH; MC68008 only,ns,55,250,45,250,,,,,,,,,
+clock-mc68008,160,10-9,"4, 5",,Clock Rise and Fall Times,VCC = 5.0 VDC +/- 5%; GND = 0 VDC; TA = TL to TH; MC68008 only,ns,,10,,10,,,,,,,,,
+read-write,161,10-10,6,,Clock Low to Address Valid,VCC = 5.0 VDC +/- 5%; GND = 0 V; TA = TL to TH; applies to all processors except the MC68EC000,ns,,62,,50,,50,,50,,30,,25,the 16 MHz minimum cell is blank rather than dashed
+read-write,161,10-10,6A,,Clock High to FC Valid,VCC = 5.0 VDC +/- 5%; GND = 0 V; TA = TL to TH; applies to all processors except the MC68EC000,ns,,62,,50,,45,,45,0,30,0,25,
+read-write,161,10-10,7,,"Clock High to Address, Data Bus High Impedance (Maximum)",VCC = 5.0 VDC +/- 5%; GND = 0 V; TA = TL to TH; applies to all processors except the MC68EC000,ns,,80,,70,,60,,50,,50,,42,the 16 MHz minimum cell is blank rather than dashed
+read-write,161,10-10,8,,"Clock High to Address, FC Invalid (Minimum)",VCC = 5.0 VDC +/- 5%; GND = 0 V; TA = TL to TH; applies to all processors except the MC68EC000,ns,0,,0,,0,,0,,0,,0,,
+read-write,161,10-10,9,1,"Clock High to AS, DS Asserted",VCC = 5.0 VDC +/- 5%; GND = 0 V; TA = TL to TH; applies to all processors except the MC68EC000,ns,3,60,3,50,3,40,3,40,3,30,3,25,
+read-write,161,10-10,11,2,"Address Valid to AS, DS Asserted (Read)/AS Asserted (Write)",VCC = 5.0 VDC +/- 5%; GND = 0 V; TA = TL to TH; applies to all processors except the MC68EC000,ns,30,,20,,15,,15,,15,,10,,
+read-write,161,10-10,11A,2,"FC Valid to AS, DS Asserted (Read)/AS Asserted (Write)",VCC = 5.0 VDC +/- 5%; GND = 0 V; TA = TL to TH; applies to all processors except the MC68EC000,ns,90,,70,,60,,30,,45,,40,,"printed with two stray closing parentheses: ""FC Valid to AS), DS Asserted (Read)/AS) Asserted (Write)"""
+read-write,161,10-10,12,1,"Clock Low to AS, DS Negated",VCC = 5.0 VDC +/- 5%; GND = 0 V; TA = TL to TH; applies to all processors except the MC68EC000,ns,,62,,50,,40,,40,3,30,3,25,
+read-write,161,10-10,13,2,"AS, DS Negated to Address, FC Invalid",VCC = 5.0 VDC +/- 5%; GND = 0 V; TA = TL to TH; applies to all processors except the MC68EC000,ns,40,,30,,20,,10,,15,,10,,
+read-write,161,10-10,14,2,AS (and DS Read) Width Asserted,VCC = 5.0 VDC +/- 5%; GND = 0 V; TA = TL to TH; applies to all processors except the MC68EC000,ns,270,,195,,160,,120,,120,,100,,"printed ""ASand DS Read) Width Asserted""; 10.14 prints the same specification as ""AS (and DS Read) Width Asserted"""
+read-write,161,10-10,14A,,DS Width Asserted (Write),VCC = 5.0 VDC +/- 5%; GND = 0 V; TA = TL to TH; applies to all processors except the MC68EC000,ns,140,,95,,80,,60,,60,,50,,the first four maximum cells are blank rather than dashed
+read-write,161,10-10,15,2,"AS, DS Width Negated",VCC = 5.0 VDC +/- 5%; GND = 0 V; TA = TL to TH; applies to all processors except the MC68EC000,ns,150,,105,,65,,60,,60,,50,,
+read-write,161,10-10,16,,Clock High to Control Bus High Impedance,VCC = 5.0 VDC +/- 5%; GND = 0 V; TA = TL to TH; applies to all processors except the MC68EC000,ns,,80,,70,,60,,50,,50,,42,
+read-write,161,10-10,17,2,"AS, DS Negated to R/W Invalid",VCC = 5.0 VDC +/- 5%; GND = 0 V; TA = TL to TH; applies to all processors except the MC68EC000,ns,40,,30,,20,,10,,15,,10,,
+read-write,161,10-10,18,1,Clock High to R/W High (Read),VCC = 5.0 VDC +/- 5%; GND = 0 V; TA = TL to TH; applies to all processors except the MC68EC000,ns,0,55,0,45,0,40,0,40,0,30,0,25,
+read-write,161,10-10,20,1,Clock High to R/W Low (Write),VCC = 5.0 VDC +/- 5%; GND = 0 V; TA = TL to TH; applies to all processors except the MC68EC000,ns,0,55,0,45,0,40,0,40,0,30,0,25,
+read-write,161,10-10,20A,"2, 6",AS Asserted to R/W Valid (Write),VCC = 5.0 VDC +/- 5%; GND = 0 V; TA = TL to TH; applies to all processors except the MC68EC000,ns,,10,,10,,10,,10,,10,,10,
+read-write,161,10-10,21,2,Address Valid to R/W Low (Write),VCC = 5.0 VDC +/- 5%; GND = 0 V; TA = TL to TH; applies to all processors except the MC68EC000,ns,20,,0,,0,,0,,0,,0,,
+read-write,161,10-10,21A,2,FC Valid to R/W Low (Write),VCC = 5.0 VDC +/- 5%; GND = 0 V; TA = TL to TH; applies to all processors except the MC68EC000,ns,60,,50,,30,,20,,30,,25,,
+read-write,161,10-10,22,2,R/W Low to DS Asserted (Write),VCC = 5.0 VDC +/- 5%; GND = 0 V; TA = TL to TH; applies to all processors except the MC68EC000,ns,80,,50,,30,,20,,30,,25,,
+read-write,161,10-10,23,,Clock Low to Data-Out Valid (Write),VCC = 5.0 VDC +/- 5%; GND = 0 V; TA = TL to TH; applies to all processors except the MC68EC000,ns,,62,,50,,50,,550,,30,,25,SOURCE ERROR: the 16.67 MHz maximum prints as 550; 10.11 gives 50 for the same specification and grade
+read-write,161,10-10,25,"2, 10","AS, DS Negated to Data-Out Invalid (Write)",VCC = 5.0 VDC +/- 5%; GND = 0 V; TA = TL to TH; applies to all processors except the MC68EC000,ns,40,,30,,20,,15,,15,,10,,"the 8 MHz cell prints ""40"" with the footnote marker 10 broken across two lines; note 10 reads ""245 ns for the MC68008"", which fits specification 28, not this one"
+read-write,162,10-11,26,2,Data-Out Valid to DS Asserted (Write),VCC = 5.0 VDC +/- 5%; GND = 0 V; TA = TL to TH; applies to all processors except the MC68EC000,ns,40,,30,,20,,15,,15,,10,,
+read-write,162,10-11,27,5,Data-In Valid to Clock Low (Setup Time on Read),VCC = 5.0 VDC +/- 5%; GND = 0 V; TA = TL to TH; applies to all processors except the MC68EC000,ns,10,,10,,10,,7,,5,,5,,
+read-write,162,10-11,27A,5,Late BERR Asserted to Clock Low (Setup Time),VCC = 5.0 VDC +/- 5%; GND = 0 V; TA = TL to TH; applies to all processors except the MC68EC000,ns,45,,45,,45,,,,,,,,not specified above 12.5 MHz
+read-write,162,10-11,28,"2, 11","AS, DS Negated to DTACK Negated (Asynchronous Hold)",VCC = 5.0 VDC +/- 5%; GND = 0 V; TA = TL to TH; applies to all processors except the MC68EC000,ns,0,240,0,190,0,150,0,110,0,110,0,95,"the 8 MHz maximum prints ""240"" with the footnote marker 11 broken across two lines; note 11 reads ""50 ns for the MC68008"", which fits specification 25, not this one"
+read-write,162,10-11,28A,,"AS, DS Negated to Data-In High Impedance",VCC = 5.0 VDC +/- 5%; GND = 0 V; TA = TL to TH; applies to all processors except the MC68EC000,ns,,187,,150,,120,,110,,110,,95,
+read-write,162,10-11,29,,"AS, DS Negated to Data-In Invalid (Hold Time on Read)",VCC = 5.0 VDC +/- 5%; GND = 0 V; TA = TL to TH; applies to all processors except the MC68EC000,ns,0,,0,,0,,0,,0,,0,,
+read-write,162,10-11,29A,,"AS, DS Negated to Data-In High Impedance",VCC = 5.0 VDC +/- 5%; GND = 0 V; TA = TL to TH; applies to all processors except the MC68EC000,ns,,187,,150,,120,,90,,90,,75,same characteristic text as 28A but different limits above 12.5 MHz
+read-write,162,10-11,30,,"AS, DS Negated to BERR Negated",VCC = 5.0 VDC +/- 5%; GND = 0 V; TA = TL to TH; applies to all processors except the MC68EC000,ns,0,,0,,0,,0,,0,,0,,
+read-write,162,10-11,31,"2, 5",DTACK Asserted to Data-In Valid (Setup Time),VCC = 5.0 VDC +/- 5%; GND = 0 V; TA = TL to TH; applies to all processors except the MC68EC000,ns,,90,,65,,50,,40,,50,,42,
+read-write,162,10-11,32,,HALT and RESET Input Transition Time,VCC = 5.0 VDC +/- 5%; GND = 0 V; TA = TL to TH; applies to all processors except the MC68EC000,ns,0,200,0,200,0,200,0,150,,150,0,150,the 16 MHz minimum is dashed where every other grade gives 0
+read-write,162,10-11,33,,Clock High to BG Asserted,VCC = 5.0 VDC +/- 5%; GND = 0 V; TA = TL to TH; applies to all processors except the MC68EC000,ns,,62,,50,,40,,40,0,30,0,25,
+read-write,162,10-11,34,,Clock High to BG Negated,VCC = 5.0 VDC +/- 5%; GND = 0 V; TA = TL to TH; applies to all processors except the MC68EC000,ns,,62,,50,,40,,40,0,30,0,25,
+read-write,162,10-11,35,,BR Asserted to BG Asserted,VCC = 5.0 VDC +/- 5%; GND = 0 V; TA = TL to TH; applies to all processors except the MC68EC000,Clks,1.5,3.5,1.5,3.5,1.5,3.5,1.5,3.5,1.5,3.5,1.5,3.5,
+read-write,162,10-11,36,7,BR Negated to BG Negated,VCC = 5.0 VDC +/- 5%; GND = 0 V; TA = TL to TH; applies to all processors except the MC68EC000,Clks,1.5,3.5,1.5,3.5,1.5,3.5,1.5,3.5,1.5,3.5,1.5,3.5,
+read-write,162,10-11,37,,BGACK Asserted to BG Negated,VCC = 5.0 VDC +/- 5%; GND = 0 V; TA = TL to TH; applies to all processors except the MC68EC000,Clks,1.5,3.5,1.5,3.5,1.5,3.5,1.5,3.5,1.5,3.5,1.5,3.5,
+read-write,162,10-11,37A,8,BGACK Asserted to BR Negated,VCC = 5.0 VDC +/- 5%; GND = 0 V; TA = TL to TH; applies to all processors except the MC68EC000,ns/Clks,20,1.5,20,1.5,20,1.5,10,1.5,10,1.5,10,1.5,"the minima are ns and the maxima Clks; 10.12 heads the unit column ""Clks/ns"", this table ""ns"""
+read-write,162,10-11,38,,"BG Asserted to Control, Address, Data Bus High Impedance (AS Negated)",VCC = 5.0 VDC +/- 5%; GND = 0 V; TA = TL to TH; applies to all processors except the MC68EC000,ns,,80,,70,,60,,50,,50,,42,
+read-write,162,10-11,39,,BG Width Negated,VCC = 5.0 VDC +/- 5%; GND = 0 V; TA = TL to TH; applies to all processors except the MC68EC000,clks,1.5,,1.5,,1.5,,1.5,,1.5,,1.5,,
+read-write,162,10-11,40,,Clock Low to VMA Asserted,VCC = 5.0 VDC +/- 5%; GND = 0 V; TA = TL to TH; applies to all processors except the MC68EC000,ns,,70,,70,,70,,50,,50,,40,
+read-write,162,10-11,41,12,Clock Low to E Transition,VCC = 5.0 VDC +/- 5%; GND = 0 V; TA = TL to TH; applies to all processors except the MC68EC000,ns,,55,,45,,35,,35,,35,,30,"the 8 MHz maximum carries footnote 12, ""50 ns for the MC68008"""
+read-write,162,10-11,42,,E Output Rise and Fall Time,VCC = 5.0 VDC +/- 5%; GND = 0 V; TA = TL to TH; applies to all processors except the MC68EC000,ns,,15,,15,,15,,15,,15,,12,
+read-write,162,10-11,43,,VMA Asserted to E High,VCC = 5.0 VDC +/- 5%; GND = 0 V; TA = TL to TH; applies to all processors except the MC68EC000,ns,200,,150,,90,,80,,80,,60,,
+read-write,162,10-11,44,,"AS, DS Negated to VPA Negated",VCC = 5.0 VDC +/- 5%; GND = 0 V; TA = TL to TH; applies to all processors except the MC68EC000,ns,0,120,0,90,0,70,0,50,0,50,0,42,
+read-write,162,10-11,45,,"E Low to Control, Address Bus Invalid (Address Hold Time)",VCC = 5.0 VDC +/- 5%; GND = 0 V; TA = TL to TH; applies to all processors except the MC68EC000,ns,30,,10,,10,,10,,10,,10,,
+read-write,162,10-11,46,,BGACK Width Low,VCC = 5.0 VDC +/- 5%; GND = 0 V; TA = TL to TH; applies to all processors except the MC68EC000,ns,1.5,,1.5,,1.5,,1.5,,1.5,,1.5,,"SOURCE ERROR: the unit prints as ns; 10.12 gives the same limits in Clks, which is what 1.5 must be"
+read-write,163,10-12,47,5,Asynchronous Input Setup Time,VCC = 5.0 VDC +/- 5%; GND = 0 V; TA = TL to TH; applies to all processors except the MC68EC000,ns,10,,10,,10,,10,,5,,5,,SOURCE INCONSISTENCY: 10.11 gives 10 ns at 16 MHz and 10.12 gives 5 ns at 16.67 MHz
+read-write,163,10-12,48,"2, 3",BERR Asserted to DTACK Asserted,VCC = 5.0 VDC +/- 5%; GND = 0 V; TA = TL to TH; applies to all processors except the MC68EC000,ns,20,,20,,20,,10,,10,,10,,
+read-write,163,10-12,48*,"2, 3, 5",DTACK Asserted to BERR Asserted (MC68010 Only),VCC = 5.0 VDC +/- 5%; GND = 0 V; TA = TL to TH; applies to all processors except the MC68EC000,ns,,80,,55,,35,,,,,,,SOURCE ERROR: printed as a second row numbered 48; 48* is this transcription's label for it
+read-write,163,10-12,49,9,"AS, DS Negated to E Low",VCC = 5.0 VDC +/- 5%; GND = 0 V; TA = TL to TH; applies to all processors except the MC68EC000,ns,-70,70,-55,55,-45,45,-35,35,-35,35,-30,30,
+read-write,163,10-12,50,,E Width High,VCC = 5.0 VDC +/- 5%; GND = 0 V; TA = TL to TH; applies to all processors except the MC68EC000,ns,450,,350,,280,,220,,220,,190,,
+read-write,163,10-12,51,,E Width Low,VCC = 5.0 VDC +/- 5%; GND = 0 V; TA = TL to TH; applies to all processors except the MC68EC000,ns,700,,550,,440,,340,,340,,290,,
+read-write,163,10-12,53,,Data-Out Hold from Clock High,VCC = 5.0 VDC +/- 5%; GND = 0 V; TA = TL to TH; applies to all processors except the MC68EC000,ns,0,,0,,0,,0,,0,,0,,
+read-write,163,10-12,54,,E Low to Data-Out Invalid,VCC = 5.0 VDC +/- 5%; GND = 0 V; TA = TL to TH; applies to all processors except the MC68EC000,ns,30,,20,,15,,10,,10,,5,,
+read-write,163,10-12,55,,R/W Asserted to Data Bus Impedance Change,VCC = 5.0 VDC +/- 5%; GND = 0 V; TA = TL to TH; applies to all processors except the MC68EC000,ns,30,,20,,10,,0,,0,,0,,
+read-write,163,10-12,56,4,HALT/RESET Pulse Width,VCC = 5.0 VDC +/- 5%; GND = 0 V; TA = TL to TH; applies to all processors except the MC68EC000,clks,10,,10,,10,,10,,10,,10,,"printed ""HALT (RESETPulse Width"" - a lost parenthesis and a lost space"
+read-write,163,10-12,57,,"BGACK Negated to AS, DS, R/W Driven",VCC = 5.0 VDC +/- 5%; GND = 0 V; TA = TL to TH; applies to all processors except the MC68EC000,clks,1.5,,1.5,,1.5,,1.5,,1.5,,1.5,,
+read-write,163,10-12,57A,,"BGACK Negated to FC, VMA Driven",VCC = 5.0 VDC +/- 5%; GND = 0 V; TA = TL to TH; applies to all processors except the MC68EC000,clks,1,,1,,1,,1,,1,,1,,
+read-write,163,10-12,58,7,"BR Negated to AS, DS, R/W Driven",VCC = 5.0 VDC +/- 5%; GND = 0 V; TA = TL to TH; applies to all processors except the MC68EC000,clks,1.5,,1.5,,1.5,,1.5,,1.5,,1.5,,
+read-write,163,10-12,58A,7,"BR Negated to FC, AS Driven",VCC = 5.0 VDC +/- 5%; GND = 0 V; TA = TL to TH; applies to all processors except the MC68EC000,clks,1,,1,,1,,1,,1,,1,,"SOURCE INCONSISTENCY: 10.12 gives the same specification as ""BR Negated to FC, VMA Driven"""
+m6800-peripheral,166,10-15,12,1,"Clock Low to AS, DS Negated",VCC = 5.0 Vdc +/- 5%; GND = 0 Vdc; TA = TL to TH; applies to all processors except the MC68EC000,ns,,62,,50,,40,,40,3,30,3,25,
+m6800-peripheral,166,10-15,18,1,Clock High to R/W High (Read),VCC = 5.0 Vdc +/- 5%; GND = 0 Vdc; TA = TL to TH; applies to all processors except the MC68EC000,ns,0,55,0,45,0,40,0,40,0,30,0,25,
+m6800-peripheral,166,10-15,20,1,Clock High to R/W Low (Write),VCC = 5.0 Vdc +/- 5%; GND = 0 Vdc; TA = TL to TH; applies to all processors except the MC68EC000,ns,0,55,0,45,0,40,0,40,0,30,0,25,
+m6800-peripheral,166,10-15,23,,Clock Low to Data-Out Valid (Write),VCC = 5.0 Vdc +/- 5%; GND = 0 Vdc; TA = TL to TH; applies to all processors except the MC68EC000,ns,,62,,50,,50,,50,,30,,25,the 16.67 MHz maximum reads 50 here and 550 in 10.10
+m6800-peripheral,166,10-15,27,,Data-In Valid to Clock Low (Setup Time on Read),VCC = 5.0 Vdc +/- 5%; GND = 0 Vdc; TA = TL to TH; applies to all processors except the MC68EC000,ns,10,,10,,10,,7,,5,,5,,
+m6800-peripheral,166,10-15,29,,"AS, DS Negated to Data-In Invalid (Hold Time on Read)",VCC = 5.0 Vdc +/- 5%; GND = 0 Vdc; TA = TL to TH; applies to all processors except the MC68EC000,ns,0,,0,,0,,0,,0,,0,,
+m6800-peripheral,166,10-15,40,,Clock Low to VMA Asserted,VCC = 5.0 Vdc +/- 5%; GND = 0 Vdc; TA = TL to TH; applies to all processors except the MC68EC000,ns,,70,,70,,70,,50,,50,,40,
+m6800-peripheral,166,10-15,41,,Clock Low to E Transition,VCC = 5.0 Vdc +/- 5%; GND = 0 Vdc; TA = TL to TH; applies to all processors except the MC68EC000,ns,,55,,45,,35,,35,,35,,30,
+m6800-peripheral,166,10-15,42,,E Output Rise and Fall Time,VCC = 5.0 Vdc +/- 5%; GND = 0 Vdc; TA = TL to TH; applies to all processors except the MC68EC000,ns,,15,,15,,15,,15,,15,,12,
+m6800-peripheral,166,10-15,43,,VMA Asserted to E High,VCC = 5.0 Vdc +/- 5%; GND = 0 Vdc; TA = TL to TH; applies to all processors except the MC68EC000,ns,200,,150,,90,,80,,80,,60,,
+m6800-peripheral,166,10-15,44,,"AS, DS Negated to VPA Negated",VCC = 5.0 Vdc +/- 5%; GND = 0 Vdc; TA = TL to TH; applies to all processors except the MC68EC000,ns,0,120,0,90,0,70,0,50,0,50,0,42,
+m6800-peripheral,166,10-15,45,,"E Low to Control, Address Bus Invalid (Address Hold Time)",VCC = 5.0 Vdc +/- 5%; GND = 0 Vdc; TA = TL to TH; applies to all processors except the MC68EC000,ns,30,,10,,10,,10,,10,,10,,
+m6800-peripheral,166,10-15,47,,Asynchronous Input Setup Time,VCC = 5.0 Vdc +/- 5%; GND = 0 Vdc; TA = TL to TH; applies to all processors except the MC68EC000,ns,10,,10,,10,,10,,10,,5,,"SOURCE INCONSISTENCY: 10.10 gives 5 ns at 16 MHz, 10.12 gives 5 ns from 16.67 MHz up"
+m6800-peripheral,166,10-15,49,2,"AS, DS Negated to E Low",VCC = 5.0 Vdc +/- 5%; GND = 0 Vdc; TA = TL to TH; applies to all processors except the MC68EC000,ns,-70,70,-55,55,-45,45,-35,35,-35,35,-30,30,
+m6800-peripheral,166,10-15,50,,E Width High,VCC = 5.0 Vdc +/- 5%; GND = 0 Vdc; TA = TL to TH; applies to all processors except the MC68EC000,ns,450,,350,,280,,220,,220,,190,,
+m6800-peripheral,166,10-15,51,,E Width Low,VCC = 5.0 Vdc +/- 5%; GND = 0 Vdc; TA = TL to TH; applies to all processors except the MC68EC000,ns,700,,550,,440,,340,,340,,290,,
+m6800-peripheral,166,10-15,54,,E Low to Data-Out Invalid,VCC = 5.0 Vdc +/- 5%; GND = 0 Vdc; TA = TL to TH; applies to all processors except the MC68EC000,ns,30,,20,,15,,10,,10,,5,,
+bus-arbitration,168,10-17,7,,"Clock High to Address, Data Bus High Impedance (Maximum)",VCC = 5.0 VDC +/- 5%; GND = 0 VDC; TA = TL to TH; applies to all processors except the MC68EC000,ns,,80,,70,,60,,50,,50,,42,
+bus-arbitration,168,10-17,16,,Clock High to Control Bus High Impedance,VCC = 5.0 VDC +/- 5%; GND = 0 VDC; TA = TL to TH; applies to all processors except the MC68EC000,ns,,80,,70,,60,,50,,50,,42,
+bus-arbitration,168,10-17,33,,Clock High to BG Asserted,VCC = 5.0 VDC +/- 5%; GND = 0 VDC; TA = TL to TH; applies to all processors except the MC68EC000,ns,,62,,50,,40,0,40,0,30,0,25,the 16.67 MHz minimum is 0 here and dashed in 10.10
+bus-arbitration,168,10-17,34,,Clock High to BG Negated,VCC = 5.0 VDC +/- 5%; GND = 0 VDC; TA = TL to TH; applies to all processors except the MC68EC000,ns,,62,,50,,40,0,40,0,30,0,25,the 16.67 MHz minimum is 0 here and dashed in 10.10
+bus-arbitration,168,10-17,35,,BR Asserted to BG Asserted,VCC = 5.0 VDC +/- 5%; GND = 0 VDC; TA = TL to TH; applies to all processors except the MC68EC000,Clks,1.5,3.5,1.5,3.5,1.5,3.5,1.5,3.5,1.5,3.5,1.5,3.5,
+bus-arbitration,168,10-17,36,1,BR Negated to BG Negated,VCC = 5.0 VDC +/- 5%; GND = 0 VDC; TA = TL to TH; applies to all processors except the MC68EC000,Clks,1.5,3.5,1.5,3.5,1.5,3.5,1.5,3.5,1.5,3.5,1.5,3.5,
+bus-arbitration,168,10-17,37,,BGACK Asserted to BG Negated,VCC = 5.0 VDC +/- 5%; GND = 0 VDC; TA = TL to TH; applies to all processors except the MC68EC000,Clks,1.5,3.5,1.5,3.5,1.5,3.5,1.5,3.5,1.5,3.5,1.5,3.5,
+bus-arbitration,168,10-17,37A,2,BGACK Asserted to BR Negated,VCC = 5.0 VDC +/- 5%; GND = 0 VDC; TA = TL to TH; applies to all processors except the MC68EC000,Clks/ns,20,1.5,20,1.5,20,1.5,10,1.5,10,1.5,10,1.5,"the minima are ns and the maxima Clks, so the printed unit reads Clks/ns"
+bus-arbitration,168,10-17,38,,"BG Asserted to Control, Address, Data Bus High Impedance (AS Negated)",VCC = 5.0 VDC +/- 5%; GND = 0 VDC; TA = TL to TH; applies to all processors except the MC68EC000,ns,,80,,70,,60,,50,,50,,42,the first three minimum cells are blank rather than dashed
+bus-arbitration,168,10-17,39,,BG Width Negated,VCC = 5.0 VDC +/- 5%; GND = 0 VDC; TA = TL to TH; applies to all processors except the MC68EC000,Clks,1.5,,1.5,,1.5,,1.5,,1.5,,1.5,,
+bus-arbitration,168,10-17,46,,BGACK Width Low,VCC = 5.0 VDC +/- 5%; GND = 0 VDC; TA = TL to TH; applies to all processors except the MC68EC000,Clks,1.5,,1.5,,1.5,,1.5,,1.5,,1.5,,10.10 gives the same limits with the unit printed as ns
+bus-arbitration,168,10-17,47,,Asynchronous Input Setup Time,VCC = 5.0 VDC +/- 5%; GND = 0 VDC; TA = TL to TH; applies to all processors except the MC68EC000,ns,10,,10,,10,,5,,5,,5,,SOURCE INCONSISTENCY: 10.10 gives 10 ns at 16.67 MHz and 10.11 gives 10 ns at 16 MHz
+bus-arbitration,168,10-17,57,,"BGACK Negated to AS, DS, R/W Driven",VCC = 5.0 VDC +/- 5%; GND = 0 VDC; TA = TL to TH; applies to all processors except the MC68EC000,Clks,1.5,,1.5,,1.5,,1.5,,1.5,,1.5,,
+bus-arbitration,168,10-17,57A,,"BGACK Negated to FC, VMA Driven",VCC = 5.0 VDC +/- 5%; GND = 0 VDC; TA = TL to TH; applies to all processors except the MC68EC000,Clks,1,,1,,1,,1,,1,,1,,
+bus-arbitration,168,10-17,58,1,"BR Negated to AS, DS, R/W Driven",VCC = 5.0 VDC +/- 5%; GND = 0 VDC; TA = TL to TH; applies to all processors except the MC68EC000,Clks,1.5,,1.5,,1.5,,1.5,,1.5,,1.5,,
+bus-arbitration,168,10-17,58A,1,"BR Negated to FC, VMA Driven",VCC = 5.0 VDC +/- 5%; GND = 0 VDC; TA = TL to TH; applies to all processors except the MC68EC000,Clks,1,,1,,1,,1,,1,,1,,"10.10 gives the same specification as ""BR Negated to FC, AS Driven"""
+mc68ec000-read-write,175,10-24,6,,Clock Low to Address Valid,VCC = 5.0 VDC +/- 5%; GND = 0 VDC; TA = TL to TH; MC68EC000 only,ns,,35,,35,,35,,30,,,,25,
+mc68ec000-read-write,175,10-24,6A,,Clock High to FC Valid,VCC = 5.0 VDC +/- 5%; GND = 0 VDC; TA = TL to TH; MC68EC000 only,ns,,35,,35,,35,,30,,,0,25,
+mc68ec000-read-write,175,10-24,7,,"Clock High to Address, Data Bus High Impedance (Maximum)",VCC = 5.0 VDC +/- 5%; GND = 0 VDC; TA = TL to TH; MC68EC000 only,ns,,55,,55,,55,,50,,,,42,
+mc68ec000-read-write,175,10-24,8,,"Clock High to Address, FC Invalid (Minimum)",VCC = 5.0 VDC +/- 5%; GND = 0 VDC; TA = TL to TH; MC68EC000 only,ns,0,,0,,0,,0,,,,0,,
+mc68ec000-read-write,175,10-24,9,1,"Clock High to AS, DS Asserted",VCC = 5.0 VDC +/- 5%; GND = 0 VDC; TA = TL to TH; MC68EC000 only,ns,3,35,3,35,3,35,3,30,,,3,25,
+mc68ec000-read-write,175,10-24,11,2,"Address Valid to AS, DS Asserted (Read)/AS Asserted (Write)",VCC = 5.0 VDC +/- 5%; GND = 0 VDC; TA = TL to TH; MC68EC000 only,ns,30,,20,,15,,15,,,,10,,
+mc68ec000-read-write,175,10-24,11A,2,"FC Valid to AS, DS Asserted (Read)/AS Asserted (Write)",VCC = 5.0 VDC +/- 5%; GND = 0 VDC; TA = TL to TH; MC68EC000 only,ns,45,,45,,45,,45,,,,40,,
+mc68ec000-read-write,175,10-24,12,1,"Clock Low to AS, DS Negated",VCC = 5.0 VDC +/- 5%; GND = 0 VDC; TA = TL to TH; MC68EC000 only,ns,3,35,3,35,3,35,3,30,,,3,25,
+mc68ec000-read-write,175,10-24,13,2,"AS, DS Negated to Address, FC Invalid",VCC = 5.0 VDC +/- 5%; GND = 0 VDC; TA = TL to TH; MC68EC000 only,ns,15,,15,,15,,15,,,,10,,
+mc68ec000-read-write,175,10-24,14,2,AS (and DS Read) Width Asserted,VCC = 5.0 VDC +/- 5%; GND = 0 VDC; TA = TL to TH; MC68EC000 only,ns,270,,195,,160,,120,,,,100,,
+mc68ec000-read-write,175,10-24,14A,2,DS Width Asserted (Write),VCC = 5.0 VDC +/- 5%; GND = 0 VDC; TA = TL to TH; MC68EC000 only,ns,140,,95,,80,,60,,,,50,,
+mc68ec000-read-write,175,10-24,15,2,"AS, DS Width Negated",VCC = 5.0 VDC +/- 5%; GND = 0 VDC; TA = TL to TH; MC68EC000 only,ns,150,,105,,65,,60,,,,50,,
+mc68ec000-read-write,175,10-24,16,,Clock High to Control Bus High Impedance,VCC = 5.0 VDC +/- 5%; GND = 0 VDC; TA = TL to TH; MC68EC000 only,ns,,55,,55,,55,,50,,,,42,
+mc68ec000-read-write,175,10-24,17,2,"AS, DS Negated to R/W Invalid",VCC = 5.0 VDC +/- 5%; GND = 0 VDC; TA = TL to TH; MC68EC000 only,ns,15,,15,,15,,15,,,,10,,
+mc68ec000-read-write,175,10-24,18,1,Clock High to R/W High (Read),VCC = 5.0 VDC +/- 5%; GND = 0 VDC; TA = TL to TH; MC68EC000 only,ns,0,35,0,35,0,35,0,30,,,0,25,
+mc68ec000-read-write,175,10-24,20,1,Clock High to R/W Low (Write),VCC = 5.0 VDC +/- 5%; GND = 0 VDC; TA = TL to TH; MC68EC000 only,ns,0,35,0,35,0,35,0,30,,,0,25,
+mc68ec000-read-write,175,10-24,20A,"2, 6",AS Asserted to R/W Low (Write),VCC = 5.0 VDC +/- 5%; GND = 0 VDC; TA = TL to TH; MC68EC000 only,ns,,10,,10,,10,,10,,,,10,"10.10 gives the same specification as ""AS Asserted to R/W Valid (Write)"""
+mc68ec000-read-write,175,10-24,21,2,Address Valid to R/W Low (Write),VCC = 5.0 VDC +/- 5%; GND = 0 VDC; TA = TL to TH; MC68EC000 only,ns,0,,0,,0,,0,,,,0,,
+mc68ec000-read-write,175,10-24,21A,2,FC Valid to R/W Low (Write),VCC = 5.0 VDC +/- 5%; GND = 0 VDC; TA = TL to TH; MC68EC000 only,ns,60,,50,,30,,30,,,,25,,
+mc68ec000-read-write,175,10-24,22,2,R/W Low to DS Asserted (Write),VCC = 5.0 VDC +/- 5%; GND = 0 VDC; TA = TL to TH; MC68EC000 only,ns,80,,50,,30,,30,,,,25,,
+mc68ec000-read-write,175,10-24,23,,Clock Low to Data-Out Valid (Write),VCC = 5.0 VDC +/- 5%; GND = 0 VDC; TA = TL to TH; MC68EC000 only,ns,,35,,35,,35,,30,,,,25,
+mc68ec000-read-write,175,10-24,25,2,"AS, DS Negated to Data-Out Invalid (Write)",VCC = 5.0 VDC +/- 5%; GND = 0 VDC; TA = TL to TH; MC68EC000 only,ns,40,,30,,20,,15,,,,10,,
+mc68ec000-read-write,175,10-24,26,2,Data-Out Valid to DS Asserted (Write),VCC = 5.0 VDC +/- 5%; GND = 0 VDC; TA = TL to TH; MC68EC000 only,ns,40,,30,,20,,15,,,,10,,
+mc68ec000-read-write,175,10-24,27,5,Data-In Valid to Clock Low (Setup Time on Read),VCC = 5.0 VDC +/- 5%; GND = 0 VDC; TA = TL to TH; MC68EC000 only,ns,5,,5,,5,,5,,,,5,,
+mc68ec000-read-write,175,10-24,28,2,"AS, DS Negated to DTACK Negated (Asynchronous Hold)",VCC = 5.0 VDC +/- 5%; GND = 0 VDC; TA = TL to TH; MC68EC000 only,ns,0,110,0,110,0,110,0,110,,,0,95,
+mc68ec000-read-write,175,10-24,28A,,Clock High to DTACK Negated,VCC = 5.0 VDC +/- 5%; GND = 0 VDC; TA = TL to TH; MC68EC000 only,ns,0,110,0,110,0,110,0,110,,,0,95,"10.10 numbers a different characteristic 28A, ""AS, DS Negated to Data-In High Impedance"""
+mc68ec000-read-write,176,10-25,29,,"AS, DS Negated to Data-In Invalid (Hold Time on Read)",VCC = 5.0 VDC +/- 5%; GND = 0 VDC; TA = TL to TH; MC68EC000 only,ns,0,,0,,0,,0,,,,0,,
+mc68ec000-read-write,176,10-25,29A,,"AS, DS Negated to Data-In High Impedance",VCC = 5.0 VDC +/- 5%; GND = 0 VDC; TA = TL to TH; MC68EC000 only,ns,,187,,150,,120,,90,,,,75,
+mc68ec000-read-write,176,10-25,30,,"AS, DS Negated to BERR Negated",VCC = 5.0 VDC +/- 5%; GND = 0 VDC; TA = TL to TH; MC68EC000 only,ns,0,,0,,0,,0,,,,0,,
+mc68ec000-read-write,176,10-25,31,"2, 5",DTACK Asserted to Data-In Valid (Setup Time),VCC = 5.0 VDC +/- 5%; GND = 0 VDC; TA = TL to TH; MC68EC000 only,ns,,90,,65,,50,,50,,,,42,
+mc68ec000-read-write,176,10-25,32,,HALT and RESET Input Transition Time,VCC = 5.0 VDC +/- 5%; GND = 0 VDC; TA = TL to TH; MC68EC000 only,ns,0,150,0,150,0,150,0,150,,,0,150,
+mc68ec000-read-write,176,10-25,33,,Clock High to BG Asserted,VCC = 5.0 VDC +/- 5%; GND = 0 VDC; TA = TL to TH; MC68EC000 only,ns,,35,,35,,35,0,30,,,0,25,
+mc68ec000-read-write,176,10-25,34,,Clock High to BG Negated,VCC = 5.0 VDC +/- 5%; GND = 0 VDC; TA = TL to TH; MC68EC000 only,ns,,35,,35,,35,0,30,,,0,25,
+mc68ec000-read-write,176,10-25,35,,BR Asserted to BG Asserted,VCC = 5.0 VDC +/- 5%; GND = 0 VDC; TA = TL to TH; MC68EC000 only,Clks,1.5,3.5,1.5,3.5,1.5,3.5,1.5,3.5,,,1.5,3.5,
+mc68ec000-read-write,176,10-25,36,7,BR Negated to BG Negated,VCC = 5.0 VDC +/- 5%; GND = 0 VDC; TA = TL to TH; MC68EC000 only,Clks,1.5,3.5,1.5,3.5,1.5,3.5,1.5,3.5,,,1.5,3.5,
+mc68ec000-read-write,176,10-25,38,,"BG Asserted to Control, Address, Data Bus High Impedance (AS Negated)",VCC = 5.0 VDC +/- 5%; GND = 0 VDC; TA = TL to TH; MC68EC000 only,ns,,55,,55,,55,,50,,,,42,
+mc68ec000-read-write,176,10-25,39,,BG Width Negated,VCC = 5.0 VDC +/- 5%; GND = 0 VDC; TA = TL to TH; MC68EC000 only,Clks,1.5,,1.5,,1.5,,1.5,,,,1.5,,the first four maximum cells are blank rather than dashed
+mc68ec000-read-write,176,10-25,44,,"AS, DS Negated to VPA Negated",VCC = 5.0 VDC +/- 5%; GND = 0 VDC; TA = TL to TH; MC68EC000 only,ns,0,55,0,55,0,55,0,50,,,0,42,VPA is an MC68000 signal; the MC68EC000 has AVEC in its place
+mc68ec000-read-write,176,10-25,47,5,Asynchronous Input Setup Time,VCC = 5.0 VDC +/- 5%; GND = 0 VDC; TA = TL to TH; MC68EC000 only,ns,5,,5,,5,,5,,,,5,,
+mc68ec000-read-write,176,10-25,48,"2, 3",BERR Asserted to DTACK Asserted,VCC = 5.0 VDC +/- 5%; GND = 0 VDC; TA = TL to TH; MC68EC000 only,ns,20,,20,,20,,10,,,,10,,
+mc68ec000-read-write,176,10-25,53,,Data-Out Hold from Clock High,VCC = 5.0 VDC +/- 5%; GND = 0 VDC; TA = TL to TH; MC68EC000 only,ns,0,,0,,0,,0,,,,0,,
+mc68ec000-read-write,176,10-25,55,,R/W Asserted to Data Bus Impedance Change,VCC = 5.0 VDC +/- 5%; GND = 0 VDC; TA = TL to TH; MC68EC000 only,ns,30,,20,,10,,0,,,,0,,
+mc68ec000-read-write,176,10-25,56,4,HALT/RESET Pulse Width,VCC = 5.0 VDC +/- 5%; GND = 0 VDC; TA = TL to TH; MC68EC000 only,Clks,10,,10,,10,,10,,,,10,,
+mc68ec000-read-write,176,10-25,58,7,"BR Negated to AS, DS, R/W Driven",VCC = 5.0 VDC +/- 5%; GND = 0 VDC; TA = TL to TH; MC68EC000 only,Clks,1.5,,1.5,,1.5,,1.5,,,,1.5,,
+mc68ec000-read-write,176,10-25,58A,7,"BR Negated to FC, VMA Driven",VCC = 5.0 VDC +/- 5%; GND = 0 VDC; TA = TL to TH; MC68EC000 only,Clks,1,,1,,1,,1,,,,1,,
+mc68ec000-bus-arbitration,179,10-28,7,,"Clock High to Address, Data Bus High Impedance (Maximum)",VCC = 5.0 VDC +/- 5%; GND = 0 VDC; TA = TL to TH; MC68EC000 only,ns,,55,,55,,55,,50,,,,42,
+mc68ec000-bus-arbitration,179,10-28,16,,Clock High to Control Bus High Impedance,VCC = 5.0 VDC +/- 5%; GND = 0 VDC; TA = TL to TH; MC68EC000 only,ns,,55,,55,,55,,50,,,,42,
+mc68ec000-bus-arbitration,179,10-28,33,,Clock High to BG Asserted,VCC = 5.0 VDC +/- 5%; GND = 0 VDC; TA = TL to TH; MC68EC000 only,ns,,35,,35,,35,0,30,,,0,25,
+mc68ec000-bus-arbitration,179,10-28,34,,Clock High to BG Negated,VCC = 5.0 VDC +/- 5%; GND = 0 VDC; TA = TL to TH; MC68EC000 only,ns,,35,,35,,35,0,30,,,0,25,
+mc68ec000-bus-arbitration,179,10-28,35,,BR Asserted to BG Asserted,VCC = 5.0 VDC +/- 5%; GND = 0 VDC; TA = TL to TH; MC68EC000 only,Clks,1.5,3.5,1.5,3.5,1.5,3.5,1.5,3.5,,,1.5,3.5,
+mc68ec000-bus-arbitration,179,10-28,36,7,BR Negated to BG Negated,VCC = 5.0 VDC +/- 5%; GND = 0 VDC; TA = TL to TH; MC68EC000 only,Clks,1.5,3.5,1.5,3.5,1.5,3.5,1.5,3.5,,,1.5,3.5,SOURCE ERROR: the marker is 7 but this table defines only notes 1 and 2
+mc68ec000-bus-arbitration,179,10-28,38,,"BG Asserted to Control, Address, Data Bus High Impedance (AS Negated)",VCC = 5.0 VDC +/- 5%; GND = 0 VDC; TA = TL to TH; MC68EC000 only,ns,,55,,55,,55,,50,,,,42,
+mc68ec000-bus-arbitration,179,10-28,39,,BG Width Negated,VCC = 5.0 VDC +/- 5%; GND = 0 VDC; TA = TL to TH; MC68EC000 only,Clks,1.5,,1.5,,1.5,,1.5,,,,1.5,,
+mc68ec000-bus-arbitration,179,10-28,47,,Asynchronous Input Setup Time,VCC = 5.0 VDC +/- 5%; GND = 0 VDC; TA = TL to TH; MC68EC000 only,ns,5,,5,,5,,5,,,,5,,
+mc68ec000-bus-arbitration,179,10-28,58,1,"BR Negated to AS, DS, R/W Driven",VCC = 5.0 VDC +/- 5%; GND = 0 VDC; TA = TL to TH; MC68EC000 only,Clks,1.5,,1.5,,1.5,,1.5,,,,1.5,,
+mc68ec000-bus-arbitration,179,10-28,58A,1,BR Negated to FC Driven,VCC = 5.0 VDC +/- 5%; GND = 0 VDC; TA = TL to TH; MC68EC000 only,Clks,1,,1,,1,,1,,,,1,,"10.14 gives the same specification as ""BR Negated to FC, VMA Driven"""

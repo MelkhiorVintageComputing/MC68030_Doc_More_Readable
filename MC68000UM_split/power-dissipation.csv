@@ -1,0 +1,17 @@
+table,pdf_page,printed_page,package,ta_range,theta_symbol,theta_c_per_w,pd_w_at_ta_min,tj_c_at_ta_min,pd_w_at_ta_max,tj_c_at_ta_max,note
+10-1,155,10-4,L/LC,0 to 70,ThetaJC,15,1.5,23,1.2,88,
+10-1,155,10-4,L/LC,-40 to 85,ThetaJC,15,1.7,-14,1.2,103,
+10-1,155,10-4,L/LC,0 to 85,ThetaJC,15,1.5,23,1.2,103,
+10-1,155,10-4,P,0 to 70,ThetaJC,15,1.5,23,1.2,88,
+10-1,155,10-4,R/RC,0 to 70,ThetaJC,15,1.5,23,1.2,88,
+10-1,155,10-4,R/RC,-40 to 85,ThetaJC,15,1.7,-14,1.2,103,
+10-1,155,10-4,R/RC,0 to 85,ThetaJC,15,1.5,23,1.2,103,
+10-1,155,10-4,FN,0 to 70,ThetaJC,25,1.5,38,1.2,101,
+10-2,155,10-4,L/LC,0 to 70,ThetaJA,30,1.5,23,1.2,88,
+10-2,155,10-4,L/LC,-40 to 85,ThetaJA,30,1.7,-14,1.2,103,
+10-2,155,10-4,L/LC,0 to 85,ThetaJA,30,1.5,23,1.2,103,
+10-2,155,10-4,P,0 to 70,ThetaJA,30,1.5,23,1.2,88,
+10-2,155,10-4,R/RC,0 to 70,ThetaJA,33,1.5,23,1.2,88,
+10-2,155,10-4,R/RC,-40 to 85,ThetaJA,33,1.7,-14,1.2,103,
+10-2,155,10-4,R/RC,0 to 85,ThetaJA,33,1.5,23,1.2,103,
+10-2,155,10-4,FN,0 to 70,ThetaJA,40,1.5,38,1.2,101,section 10.2 gives 45 for the FN package

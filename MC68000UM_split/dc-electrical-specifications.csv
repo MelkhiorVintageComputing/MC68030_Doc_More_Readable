@@ -1,0 +1,77 @@
+table,pdf_page,printed_page,characteristic,applies_to,symbol,min,max,unit,note
+maximum-ratings,152,10-1,Supply Voltage,,VCC,-0.3,7.0,V,
+maximum-ratings,152,10-1,Input Voltage,,Vin,-0.3,7.0,V,
+maximum-ratings,152,10-1,Maximum Operating Temperature Range,,TA,TL,TH,degC,the range is given as TL to TH and then broken out below
+maximum-ratings,152,10-1,Maximum Operating Temperature Range,standard,TA,0,70,degC,
+maximum-ratings,152,10-1,Maximum Operating Temperature Range,"Commerical Extended ""C"" Grade",TA,-40,85,degC,"the source spells it ""Commerical"""
+maximum-ratings,152,10-1,Maximum Operating Temperature Range,"Commerical Extended ""I"" Grade",TA,0,85,degC,"the source spells it ""Commerical"""
+maximum-ratings,152,10-1,Storage Temperature,,Tstg,-55,150,degC,
+thermal,152,10-1,Thermal Resistance,"Ceramic, Type L/LC",ThetaJA,,30,degC/W,
+thermal,152,10-1,Thermal Resistance,"Ceramic, Type R/RC",ThetaJA,,33,degC/W,
+thermal,152,10-1,Thermal Resistance,"Plastic, Type P",ThetaJA,,30,degC/W,
+thermal,152,10-1,Thermal Resistance,"Plastic, Type FN",ThetaJA,,45,degC/W,estimated; Table 10-2 gives 40 for the same package
+thermal,152,10-1,Thermal Resistance,"Ceramic, Type L/LC",ThetaJC,,15,degC/W,estimated
+thermal,152,10-1,Thermal Resistance,"Ceramic, Type R/RC",ThetaJC,,15,degC/W,
+thermal,152,10-1,Thermal Resistance,"Plastic, Type P",ThetaJC,,15,degC/W,estimated
+thermal,152,10-1,Thermal Resistance,"Plastic, Type FN",ThetaJC,,25,degC/W,estimated
+dc-mc68000-68008-68010,158,10-7,Input High Voltage,,VIH,2.0,VCC,V,
+dc-mc68000-68008-68010,158,10-7,Input Low Voltage,,VIL,GND-0.3,0.8,V,
+dc-mc68000-68008-68010,158,10-7,Input Leakage Current @ 5.25 V,"BERR, BGACK, BR, DTACK, CLK, IPL0-IPL2, VPA",IIN,,2.5,uA,
+dc-mc68000-68008-68010,158,10-7,Input Leakage Current @ 5.25 V,"MODE, HALT, RESET",IIN,,20,uA,
+dc-mc68000-68008-68010,158,10-7,Three-State (Off State) Input Current @ 2.4 V/0.4 V,"AS, A1-A23, D0-D15, FC0-FC2, LDS, R/W, UDS, VMA",ITSI,,20,uA,
+dc-mc68000-68008-68010,158,10-7,Output High Voltage (IOH = -400 uA),E,VOH,VCC-0.75,,V,footnote: with an external pullup resistor of 1.1 Ohm
+dc-mc68000-68008-68010,158,10-7,Output High Voltage (IOH = -400 uA),"AS, A1-A23, BG, D0-D15, FC0-FC2, LDS, R/W, UDS, VMA",VOH,2.4,2.4,V,SOURCE ERROR: 2.4 is printed in both the minimum and the maximum column; 10.7 gives this line as a minimum only
+dc-mc68000-68008-68010,158,10-7,Output Low Voltage (IOL = 1.6 mA),HALT,VOL,,0.5,V,
+dc-mc68000-68008-68010,158,10-7,Output Low Voltage (IOL = 3.2 mA),"A1-A23, BG, FC0-FC2",VOL,,0.5,V,
+dc-mc68000-68008-68010,158,10-7,Output Low Voltage (IOL = 5.0 mA),RESET,VOL,,0.5,V,
+dc-mc68000-68008-68010,158,10-7,Output Low Voltage (IOL = 5.3 mA),"E, AS, D0-D15, LDS, R/W, UDS, VMA",VOL,,0.5,V,
+dc-mc68000-68008-68010,158,10-7,Power Dissipation (see POWER CONSIDERATIONS),,PD,,,W,during normal operation instantaneous VCC current may be as high as 1.5 A
+dc-mc68000-68008-68010,158,10-7,"Capacitance (Vin = 0 V, TA = 25 degC, Frequency = 1 MHz)",,Cin,,20.0,pF,periodically sampled rather than 100% tested
+dc-mc68000-68008-68010,158,10-7,Load Capacitance,HALT,CL,,70,pF,
+dc-mc68000-68008-68010,158,10-7,Load Capacitance,All Others,CL,,130,pF,
+dc-common,159,10-8,Input High Voltage,,VIH,2.0,VCC,V,
+dc-common,159,10-8,Input Low Voltage,,VIL,GND-0.3,0.8,V,
+dc-common,159,10-8,Input Leakage Current @ 5.25 V,"BERR, BGACK, BR, DTACK, CLK, IPL0-IPL2, VPA",IIN,,2.5,uA,
+dc-common,159,10-8,Input Leakage Current @ 5.25 V,"MODE, HALT, RESET",IIN,,20,uA,
+dc-common,159,10-8,Three-State (Off State) Input Current @ 2.4 V/0.4 V,"AS, A0-A23, D0-D15, FC0-FC2, LDS, R/W, UDS, VMA",ITSI,,20,uA,
+dc-common,159,10-8,Output High Voltage,"E, AS, A0-A23, BG, D0-D15, FC0-FC2, LDS, R/W, UDS, VMA",VOH,VCC-0.75,,V,
+dc-common,159,10-8,Output Low Voltage (IOL = 1.6 mA),HALT,VOL,,0.5,V,
+dc-common,159,10-8,Output Low Voltage (IOL = 3.2 mA),"A0-A23, BG, FC0-FC2",VOL,,0.5,V,
+dc-common,159,10-8,Output Low Voltage (IOL = 5.0 mA),RESET,VOL,,0.5,V,
+dc-common,159,10-8,Output Low Voltage (IOL = 5.3 mA),"E, AS, D0-D15, LDS, R/W, UDS, VMA",VOL,,0.5,V,
+dc-common,159,10-8,Current Dissipation,f = 8 MHz,ID,,25,mA,with no loading
+dc-common,159,10-8,Current Dissipation,f = 10 MHz,ID,,30,mA,with no loading
+dc-common,159,10-8,Current Dissipation,f = 12.5 MHz,ID,,35,mA,with no loading
+dc-common,159,10-8,Current Dissipation,f = 16.67 MHz,ID,,50,mA,with no loading
+dc-common,159,10-8,Current Dissipation,f = 20 MHz,ID,,70,mA,with no loading
+dc-common,159,10-8,Power Dissipation,f = 8 MHz,PD,,0.13,W,
+dc-common,159,10-8,Power Dissipation,f = 10 MHz,PD,,0.16,W,
+dc-common,159,10-8,Power Dissipation,f = 12.5 MHz,PD,,0.19,W,
+dc-common,159,10-8,Power Dissipation,f = 16.67 MHz,PD,,0.26,W,
+dc-common,159,10-8,Power Dissipation,f = 20 MHz,PD,,0.38,W,
+dc-common,159,10-8,"Capacitance (Vin = 0 V, TA = 25 degC, Frequency = 1 MHz)",,Cin,,20.0,pF,periodically sampled rather than 100% tested
+dc-common,159,10-8,Load Capacitance,HALT,CL,,70,pF,
+dc-common,159,10-8,Load Capacitance,All Others,CL,,130,pF,
+dc-mc68ec000,174,10-23,Input High Voltage,,VIH,2.0,VCC,V,
+dc-mc68ec000,174,10-23,Input Low Voltage,,VIL,GND-0.3,0.8,V,
+dc-mc68ec000,174,10-23,Input Leakage Current @ 5.25 V,"BERR, BR, DTACK, CLK, IPL2-IPL0, AVEC",Iin,,2.5,uA,
+dc-mc68ec000,174,10-23,Input Leakage Current @ 5.25 V,"MODE, HALT, RESET",Iin,,20,uA,
+dc-mc68ec000,174,10-23,Three-State (Off State) Input Current @ 2.4 V/0.4 V,"AS, A23-A0, D15-D0, FC2-FC0, LDS, R/W, UDS",ITSI,,20,uA,
+dc-mc68ec000,174,10-23,Output High Voltage (IOH = -400 uA),"AS, A23-A0, BG, D15-D0, FC2-FC0, LDS, R/W, UDS",VOH,VCC-0.75,,V,
+dc-mc68ec000,174,10-23,Output Low Voltage (IOL = 1.6 mA),HALT,VOL,,0.5,V,
+dc-mc68ec000,174,10-23,Output Low Voltage (IOL = 3.2 mA),"A23-A0, BG, FC2-FC0",VOL,,0.5,V,
+dc-mc68ec000,174,10-23,Output Low Voltage (IOL = 5.0 mA),RESET,VOL,,0.5,V,
+dc-mc68ec000,174,10-23,Output Low Voltage (IOL = 5.3 mA),"AS, D15-D0, LDS, R/W, UDS",VOL,,0.5,V,
+dc-mc68ec000,174,10-23,Current Dissipation,f = 8 MHz,ID,,25,mA,with no loading
+dc-mc68ec000,174,10-23,Current Dissipation,f = 10 MHz,ID,,30,mA,with no loading
+dc-mc68ec000,174,10-23,Current Dissipation,f = 12.5 MHz,ID,,35,mA,with no loading
+dc-mc68ec000,174,10-23,Current Dissipation,f = 16.67 MHz,ID,,50,mA,with no loading
+dc-mc68ec000,174,10-23,Current Dissipation,f = 20 MHz,ID,,70,mA,with no loading
+dc-mc68ec000,174,10-23,Power Dissipation,f = 8 MHz,PD,,0.13,W,
+dc-mc68ec000,174,10-23,Power Dissipation,f = 10 MHz,PD,,0.16,W,
+dc-mc68ec000,174,10-23,Power Dissipation,f = 12.5 MHz,PD,,0.19,W,
+dc-mc68ec000,174,10-23,Power Dissipation,f = 16.67 MHz,PD,,0.26,W,
+dc-mc68ec000,174,10-23,Power Dissipation,f = 20 MHz,PD,,0.38,W,
+dc-mc68ec000,174,10-23,"Capacitance (Vin = 0 V, TA = 25 degC, Frequency = 1 MHz)",,Cin,,20.0,pF,periodically sampled rather than 100% tested
+dc-mc68ec000,174,10-23,Load Capacitance,HALT,CL,,70,pF,
+dc-mc68ec000,174,10-23,Load Capacitance,All Others,CL,,130,pF,

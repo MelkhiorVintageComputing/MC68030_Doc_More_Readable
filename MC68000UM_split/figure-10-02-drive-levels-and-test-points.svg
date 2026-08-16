@@ -1,0 +1,242 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 720" width="900" height="720"
+     font-family="'DejaVu Sans',Verdana,Arial,sans-serif" role="img"
+     aria-label="Drive levels and test points for the AC specifications: a clock, an output bus, an input bus, the reset input and the mode-select input, with the six measurement conventions A to F marked">
+  <title>Figure 10-2. Drive Levels and Test Points for AC Specifications — M68000</title>
+  <style>
+    .wave { stroke:#111; stroke-width:3.0; fill:none; stroke-linejoin:round; stroke-linecap:round; }
+    .cons { stroke:#111; stroke-width:0.9; fill:none; opacity:.55; }
+    .tick { stroke:#111; stroke-width:1.6; fill:none; }
+    .dim  { stroke:#111; stroke-width:1.4; fill:none; }
+    .lbl  { fill:#111; font-size:14px; font-weight:700; text-anchor:end; }
+    .vlt  { fill:#111; font-size:12px; }
+    .cap  { fill:#111; font-size:12px; text-anchor:middle; }
+    .num  { fill:#111; font-size:15px; font-weight:700; text-anchor:middle; }
+    .disc { stroke:#111; stroke-width:1.5; fill:#fff; }
+    .hatch{ stroke:#111; stroke-width:0.9; opacity:.40; }
+    .ah   { fill:#111; }
+    @media (prefers-color-scheme: dark) {
+      .wave,.cons,.tick,.dim,.hatch { stroke:#e8e8e8; }
+      .lbl,.vlt,.cap,.num { fill:#e8e8e8; }
+      .disc { stroke:#e8e8e8; fill:#161616; }
+      .ah { fill:#e8e8e8; }
+    }
+  </style>
+  <!-- Arrowheads are explicit polygons rather than marker elements: several
+       SVG rasterisers used by documentation tools ignore markers entirely.
+       The source shades its invalid windows solid; they are hatched here so
+       they read as texture rather than as ink in dark mode. -->
+  <g class="cons">
+    <line x1="240" y1="95"  x2="240" y2="330"/>
+    <line x1="300" y1="190" x2="300" y2="300"/>
+    <line x1="400" y1="190" x2="400" y2="330"/>
+    <line x1="580" y1="95"  x2="580" y2="490"/>
+    <line x1="460" y1="365" x2="460" y2="490"/>
+    <line x1="660" y1="365" x2="660" y2="490"/>
+    <line x1="340" y1="545" x2="340" y2="690"/>
+    <line x1="300" y1="600" x2="300" y2="690"/>
+    <line x1="560" y1="600" x2="560" y2="670"/>
+  </g>
+
+  <!-- BCLK -->
+  <text class="lbl" x="150" y="100">BCLK</text>
+  <path class="wave" d="M 170,130 L 220,130 L 260,60 L 380,60 L 420,130
+                        L 560,130 L 600,60 L 720,60 L 760,130 L 860,130"/>
+  <g class="tick"><line x1="233" y1="95" x2="247" y2="95"/>
+                  <line x1="573" y1="95" x2="587" y2="95"/></g>
+  <text class="vlt" x="188" y="90">1.5 V</text>
+  <text class="vlt" x="528" y="90">1.5 V</text>
+  <text class="cap" x="320" y="38">DRIVE TO 2.4 V</text>
+  <text class="cap" x="205" y="158">DRIVE TO 0.5 V</text>
+
+  <!-- OUTPUTS: two rails all the way across, crossings where the value
+       changes, and the changing window hatched -->
+  <text class="lbl" x="150" y="230">OUTPUTS (1)</text>
+  <g class="hatch">
+    <line x1="310" y1="247" x2="323" y2="260"/>
+    <line x1="310" y1="234" x2="336" y2="260"/>
+    <line x1="310" y1="221" x2="349" y2="260"/>
+    <line x1="310" y1="208" x2="362" y2="260"/>
+    <line x1="310" y1="195" x2="375" y2="260"/>
+    <line x1="318" y1="190" x2="388" y2="260"/>
+    <line x1="331" y1="190" x2="390" y2="249"/>
+    <line x1="344" y1="190" x2="390" y2="236"/>
+    <line x1="357" y1="190" x2="390" y2="223"/>
+    <line x1="370" y1="190" x2="390" y2="210"/>
+    <line x1="383" y1="190" x2="390" y2="197"/>
+  </g>
+  <path class="wave" d="M 170,190 L 860,190 M 170,260 L 860,260"/>
+  <path class="wave" d="M 290,190 L 310,260 M 290,260 L 310,190
+                        M 390,190 L 410,260 M 390,260 L 410,190"/>
+  <g class="tick"><line x1="283" y1="190" x2="297" y2="190"/>
+                  <line x1="283" y1="260" x2="297" y2="260"/>
+                  <line x1="403" y1="190" x2="417" y2="190"/>
+                  <line x1="403" y1="260" x2="417" y2="260"/></g>
+  <text class="vlt" x="424" y="184">2.0 V</text>
+  <text class="vlt" x="424" y="276">0.8 V</text>
+  <text class="cap" x="228" y="230">VALID OUTPUT n</text>
+  <text class="cap" x="600" y="230">VALID OUTPUT n + 1</text>
+
+  <!-- B : minimum output hold, clock 1.5 V to the output leaving valid -->
+  <line class="dim" x1="196" y1="300" x2="240" y2="300"/>
+  <path class="ah" d="M240,300 L231,295.5 L231,304.5 Z"/>
+  <line class="dim" x1="344" y1="300" x2="300" y2="300"/>
+  <path class="ah" d="M300,300 L309,295.5 L309,304.5 Z"/>
+  <circle class="disc" cx="359" cy="300" r="15"/>
+  <text class="num" x="359" y="305">B</text>
+
+  <!-- A : maximum output delay, clock 1.5 V to the next output valid -->
+  <line class="dim" x1="240" y1="330" x2="400" y2="330"/>
+  <path class="ah" d="M240,330 L249,325.5 L249,334.5 Z"/>
+  <path class="ah" d="M400,330 L391,325.5 L391,334.5 Z"/>
+  <circle class="disc" cx="320" cy="330" r="15"/>
+  <text class="num" x="320" y="335">A</text>
+
+  <!-- INPUTS -->
+  <text class="lbl" x="150" y="405">INPUTS (2)</text>
+  <g class="hatch">
+    <line x1="170" y1="422" x2="183" y2="435"/>
+    <line x1="170" y1="409" x2="196" y2="435"/>
+    <line x1="170" y1="396" x2="209" y2="435"/>
+    <line x1="170" y1="383" x2="222" y2="435"/>
+    <line x1="170" y1="370" x2="235" y2="435"/>
+    <line x1="178" y1="365" x2="248" y2="435"/>
+    <line x1="191" y1="365" x2="261" y2="435"/>
+    <line x1="204" y1="365" x2="274" y2="435"/>
+    <line x1="217" y1="365" x2="287" y2="435"/>
+    <line x1="230" y1="365" x2="300" y2="435"/>
+    <line x1="243" y1="365" x2="313" y2="435"/>
+    <line x1="256" y1="365" x2="326" y2="435"/>
+    <line x1="269" y1="365" x2="339" y2="435"/>
+    <line x1="282" y1="365" x2="352" y2="435"/>
+    <line x1="295" y1="365" x2="365" y2="435"/>
+    <line x1="308" y1="365" x2="378" y2="435"/>
+    <line x1="321" y1="365" x2="391" y2="435"/>
+    <line x1="334" y1="365" x2="404" y2="435"/>
+    <line x1="347" y1="365" x2="417" y2="435"/>
+    <line x1="360" y1="365" x2="430" y2="435"/>
+    <line x1="373" y1="365" x2="440" y2="432"/>
+    <line x1="386" y1="365" x2="440" y2="419"/>
+    <line x1="399" y1="365" x2="440" y2="406"/>
+    <line x1="412" y1="365" x2="440" y2="393"/>
+    <line x1="425" y1="365" x2="440" y2="380"/>
+    <line x1="438" y1="365" x2="440" y2="367"/>
+  </g>
+  <g class="hatch">
+    <line x1="660" y1="422" x2="673" y2="435"/>
+    <line x1="660" y1="409" x2="686" y2="435"/>
+    <line x1="660" y1="396" x2="699" y2="435"/>
+    <line x1="660" y1="383" x2="712" y2="435"/>
+    <line x1="660" y1="370" x2="725" y2="435"/>
+    <line x1="668" y1="365" x2="738" y2="435"/>
+    <line x1="681" y1="365" x2="751" y2="435"/>
+    <line x1="694" y1="365" x2="764" y2="435"/>
+    <line x1="707" y1="365" x2="777" y2="435"/>
+    <line x1="720" y1="365" x2="790" y2="435"/>
+    <line x1="733" y1="365" x2="803" y2="435"/>
+    <line x1="746" y1="365" x2="816" y2="435"/>
+    <line x1="759" y1="365" x2="829" y2="435"/>
+    <line x1="772" y1="365" x2="842" y2="435"/>
+    <line x1="785" y1="365" x2="855" y2="435"/>
+    <line x1="798" y1="365" x2="860" y2="427"/>
+    <line x1="811" y1="365" x2="860" y2="414"/>
+    <line x1="824" y1="365" x2="860" y2="401"/>
+    <line x1="837" y1="365" x2="860" y2="388"/>
+    <line x1="850" y1="365" x2="860" y2="375"/>
+  </g>
+  <path class="wave" d="M 170,365 L 860,365 M 170,435 L 860,435"/>
+  <path class="wave" d="M 440,365 L 460,435 M 440,435 L 460,365
+                        M 640,365 L 660,435 M 640,435 L 660,365"/>
+  <g class="tick"><line x1="453" y1="365" x2="467" y2="365"/>
+                  <line x1="453" y1="435" x2="467" y2="435"/>
+                  <line x1="653" y1="365" x2="667" y2="365"/>
+                  <line x1="653" y1="435" x2="667" y2="435"/></g>
+  <text class="vlt" x="474" y="358">2.0 V</text>
+  <text class="vlt" x="474" y="452">0.8 V</text>
+  <text class="cap" x="560" y="405">VALID INPUT</text>
+  <text class="cap" x="290" y="356">DRIVE TO 2.4 V</text>
+  <text class="cap" x="290" y="456">DRIVE TO 0.5 V</text>
+
+  <!-- C : minimum input setup, input valid to clock 1.5 V -->
+  <line class="dim" x1="460" y1="490" x2="580" y2="490"/>
+  <path class="ah" d="M460,490 L469,485.5 L469,494.5 Z"/>
+  <path class="ah" d="M580,490 L571,485.5 L571,494.5 Z"/>
+  <circle class="disc" cx="520" cy="490" r="15"/>
+  <text class="num" x="520" y="495">C</text>
+
+  <!-- D : minimum input hold, clock 1.5 V to input invalid -->
+  <line class="dim" x1="580" y1="490" x2="660" y2="490"/>
+  <path class="ah" d="M580,490 L589,485.5 L589,494.5 Z"/>
+  <path class="ah" d="M660,490 L651,485.5 L651,494.5 Z"/>
+  <circle class="disc" cx="620" cy="490" r="15"/>
+  <text class="num" x="620" y="495">D</text>
+
+  <!-- RSTI -->
+  <text class="lbl" x="150" y="550">RSTI (3)</text>
+  <path class="wave" d="M 170,580 L 310,580 L 360,510 L 860,510"/>
+  <g class="tick"><line x1="333" y1="545" x2="347" y2="545"/></g>
+  <text class="vlt" x="374" y="540">2.0 V</text>
+
+  <!-- MODE SELECT: the source leaves this row unlabelled; legend items E
+       and F name it -->
+  <text class="lbl" x="150" y="625">MODE</text>
+  <g class="hatch">
+    <line x1="170" y1="627" x2="183" y2="640"/>
+    <line x1="170" y1="614" x2="196" y2="640"/>
+    <line x1="170" y1="601" x2="209" y2="640"/>
+    <line x1="182" y1="600" x2="222" y2="640"/>
+    <line x1="195" y1="600" x2="235" y2="640"/>
+    <line x1="208" y1="600" x2="248" y2="640"/>
+    <line x1="221" y1="600" x2="261" y2="640"/>
+    <line x1="234" y1="600" x2="274" y2="640"/>
+    <line x1="247" y1="600" x2="280" y2="633"/>
+    <line x1="260" y1="600" x2="280" y2="620"/>
+    <line x1="273" y1="600" x2="280" y2="607"/>
+  </g>
+  <g class="hatch">
+    <line x1="560" y1="627" x2="573" y2="640"/>
+    <line x1="560" y1="614" x2="586" y2="640"/>
+    <line x1="560" y1="601" x2="599" y2="640"/>
+    <line x1="572" y1="600" x2="612" y2="640"/>
+    <line x1="585" y1="600" x2="625" y2="640"/>
+    <line x1="598" y1="600" x2="638" y2="640"/>
+    <line x1="611" y1="600" x2="651" y2="640"/>
+    <line x1="624" y1="600" x2="664" y2="640"/>
+    <line x1="637" y1="600" x2="677" y2="640"/>
+    <line x1="650" y1="600" x2="690" y2="640"/>
+    <line x1="663" y1="600" x2="703" y2="640"/>
+    <line x1="676" y1="600" x2="716" y2="640"/>
+    <line x1="689" y1="600" x2="729" y2="640"/>
+    <line x1="702" y1="600" x2="742" y2="640"/>
+    <line x1="715" y1="600" x2="755" y2="640"/>
+    <line x1="728" y1="600" x2="768" y2="640"/>
+    <line x1="741" y1="600" x2="781" y2="640"/>
+    <line x1="754" y1="600" x2="794" y2="640"/>
+    <line x1="767" y1="600" x2="807" y2="640"/>
+    <line x1="780" y1="600" x2="820" y2="640"/>
+    <line x1="793" y1="600" x2="833" y2="640"/>
+    <line x1="806" y1="600" x2="846" y2="640"/>
+    <line x1="819" y1="600" x2="859" y2="640"/>
+    <line x1="832" y1="600" x2="860" y2="628"/>
+    <line x1="845" y1="600" x2="860" y2="615"/>
+    <line x1="858" y1="600" x2="860" y2="602"/>
+  </g>
+  <path class="wave" d="M 170,600 L 860,600 M 170,640 L 860,640"/>
+  <path class="wave" d="M 280,600 L 300,640 M 280,640 L 300,600
+                        M 540,600 L 560,640 M 540,640 L 560,600"/>
+  <text class="cap" x="420" y="625">VALID MODE SELECT</text>
+
+  <!-- E : mode select setup to RESET negated -->
+  <line class="dim" x1="256" y1="690" x2="300" y2="690"/>
+  <path class="ah" d="M300,690 L291,685.5 L291,694.5 Z"/>
+  <line class="dim" x1="384" y1="690" x2="340" y2="690"/>
+  <path class="ah" d="M340,690 L349,685.5 L349,694.5 Z"/>
+  <circle class="disc" cx="399" cy="690" r="15"/>
+  <text class="num" x="399" y="695">E</text>
+
+  <!-- F : mode select hold from RESET negated -->
+  <line class="dim" x1="340" y1="670" x2="560" y2="670"/>
+  <path class="ah" d="M340,670 L349,665.5 L349,674.5 Z"/>
+  <path class="ah" d="M560,670 L551,665.5 L551,674.5 Z"/>
+  <circle class="disc" cx="450" cy="670" r="15"/>
+  <text class="num" x="450" y="675">F</text>
+</svg>
