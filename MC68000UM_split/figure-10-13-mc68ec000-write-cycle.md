@@ -43,18 +43,28 @@ The MC68EC000 write cycle, structurally identical to Figure 10-5. The source lab
 | 53 | Data-Out Hold from Clock High | ns | ≥ 0 | ≥ 0 | ≥ 0 | ≥ 0 | ≥ 0 |
 | 55 | R/W Asserted to Data Bus Impedance Change | ns | ≥ 30 | ≥ 20 | ≥ 10 | ≥ 0 | ≥ 0 |
 | 56<sup>4</sup> | HALT/RESET Pulse Width | Clks | ≥ 10 | ≥ 10 | ≥ 10 | ≥ 10 | ≥ 10 |
+
+- **1** For a loading capacitance of less than or equal to 50 pF, subtract 5 ns from the value given in the maximum columns.
+- **2** Actual value depends on clock period.
+- **3** If #47 is satisfied for both DTACK and BERR, #48 may be ignored. In the absence of DTACK, BERR is an asynchronous input using the asynchronous input setup time (#47).
+- **4** For power-up, the MC68EC000 must be held in the reset state for 520 clocks to allow stabilization of on-chip circuitry. After the system is powered up, #56 refers to the minimum pulse width required to reset the processor.
+- **5** If the asynchronous input setup time (#47) requirement is satisfied for DTACK, the DTACK-asserted to data setup time (#31) requirement can be ignored. The data must only satisfy the data-in to clock low setup time (#27) for the following clock cycle.
+- **6** When AS and R/W are equally loaded (+/-20 %), subtract 5 ns from the values given in these columns.
 <!-- END TABLE -->
 
 A range `a – b` is min–max; `≤ b` is a maximum with no minimum specified; `≥ a`
-is a minimum with no maximum; `—` is not specified at that grade. The
-superscript on a specification number is its footnote in the source table.
-Full descriptions, footnotes, test conditions and the source page of every row
-are in [`ac-electrical-specifications.csv`](ac-electrical-specifications.csv).
+is a minimum with no maximum; `—` is not specified at that grade. Superscripts
+are the source table's own footnotes; the ones below the table are that
+table's, and only the ones these rows actually reference are printed. Test
+conditions and the source page of every row are in
+[`ac-electrical-specifications.csv`](ac-electrical-specifications.csv), and
+every footnote of all seven tables — including the ones no figure references —
+is in [`ac-table-notes.csv`](ac-table-notes.csv).
 
 Specification 32 is the input transition time — the ramp on `HALT`/`RESET`
 itself. The engine draws every edge with the same short ramp, so there is no
-drawn ramp to measure, so the two 32 callouts are given a visible width
-centred on the transition instead.
+drawn ramp to measure; the two 32 callouts are given a visible width centred
+on the transition instead.
 
 ## About this redrawing
 

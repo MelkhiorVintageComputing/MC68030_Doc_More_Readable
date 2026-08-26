@@ -1,0 +1,23 @@
+signal_name,mnemonic,direction,active_state,hiz_on_halt,hiz_on_bus_relinquish,footnote,paragraph
+Address Bus,A0-A23,Output,High,Yes,Yes,,3.1
+Data Bus,D0-D15,Input/Output,High,Yes,Yes,,3.2
+Address Strobe,AS,Output,Low,No,Yes,,3.3
+Read/Write,R/W,Output,Read-High Write-Low,No,Yes,,3.3
+Data Strobe,DS,Output,Low,No,Yes,,3.3
+Upper and Lower Data Strobes,"UDS, LDS",Output,Low,No,Yes,,3.3
+Data Transfer Acknowledge,DTACK,Input,Low,No,No,,3.3
+Bus Request,BR,Input,Low,No,No,,3.4
+Bus Grant,BG,Output,Low,No,No,,3.4
+Bus Grant Acknowledge,BGACK,Input,Low,No,No,,3.4
+Interrupt Priority Level,"IPL0, IPL1, IPL2",Input,Low,No,No,,3.5
+Bus Error,BERR,Input,Low,No,No,,3.6
+Mode,MODE,Input,High,,,,3.6
+Reset,RESET,Input/Output,Low,No,No,*,3.6
+Halt,HALT,Input/Output,Low,No,No,*,3.6
+Enable,E,Output,High,No,No,,3.7
+Valid Memory Address,VMA,Output,Low,No,Yes,,3.7
+Valid Peripheral Address,VPA,Input,Low,No,No,,3.7
+Function Code Output,"FC0, FC1, FC2",Output,High,No,Yes,,3.8
+Clock,CLK,Input,High,No,No,,3.9
+Power Input,VCC,Input,,,,,3.10
+Ground,GND,Input,,,,,3.10

@@ -72,8 +72,8 @@ figure marks no numbered specification."""
 SPEC32 = """
 Specification 32 is the input transition time — the ramp on `HALT`/`RESET`
 itself. The engine draws every edge with the same short ramp, so there is no
-drawn ramp to measure, so the two 32 callouts are given a visible width
-centred on the transition instead.
+drawn ramp to measure; the two 32 callouts are given a visible width centred
+on the transition instead.
 """
 
 RW_NUMS = ("6|6A|7|8|9|11|11A|12|13|14|15|17|18|27|28|29|29A|30|31|32|47|48|56")
@@ -156,9 +156,8 @@ impossible corner in its clock table.
                "while that happens.",
          table="read-write", grades="m68000", nums=RW_NUMS,
          notes="""
-Specification 48 is drawn between `BERR` asserting and `DTACK` asserting; if
-specification 47 is met for both of them, note 3 of the table says 48 may be
-ignored.
+Specification 48 is drawn between `BERR` asserting and `DTACK` asserting — and,
+per its own footnote, may be ignored entirely when 47 is met for both.
 """ + SPEC32),
     dict(num=5, slug="figure-10-05-write-cycle", page=165, printed="10-14",
          sheet=14, ruler=True,
@@ -306,10 +305,13 @@ SPEC = """
 <!-- END TABLE -->
 
 A range `a – b` is min–max; `≤ b` is a maximum with no minimum specified; `≥ a`
-is a minimum with no maximum; `—` is not specified at that grade. The
-superscript on a specification number is its footnote in the source table.
-Full descriptions, footnotes, test conditions and the source page of every row
-are in [`ac-electrical-specifications.csv`](ac-electrical-specifications.csv).
+is a minimum with no maximum; `—` is not specified at that grade. Superscripts
+are the source table's own footnotes; the ones below the table are that
+table's, and only the ones these rows actually reference are printed. Test
+conditions and the source page of every row are in
+[`ac-electrical-specifications.csv`](ac-electrical-specifications.csv), and
+every footnote of all seven tables — including the ones no figure references —
+is in [`ac-table-notes.csv`](ac-table-notes.csv).
 """
 
 SCHEMATIC = ("The waveform is drawn with deliberately exaggerated ramps so "

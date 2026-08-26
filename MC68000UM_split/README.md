@@ -8,8 +8,8 @@ it to a particular section means scrolling.
 
 This directory holds the same 216 pages cut into 19 PDFs, one per section,
 each with a reconstructed outline; the Section 10 electrical specifications
-as CSV; and all thirteen of that section's figures redrawn as SVG with the
-relevant limits beside them.
+as CSV; all thirteen of that section's figures redrawn as SVG with the
+relevant limits beside them; and Table 3-4, the signal summary, as text.
 
 The source PDF is **not** in this repository. See the [root
 README](../README.md) for how to identify the right file.
@@ -84,6 +84,7 @@ python3 split-mc68000um.py       # needs pdftk and pdftotext on PATH
 | [`ac-electrical-specifications.csv`](ac-electrical-specifications.csv) | 158 | §10.8 – §10.15, all seven AC tables |
 | [`dc-electrical-specifications.csv`](dc-electrical-specifications.csv) | 76 | §10.1 maximum ratings, §10.2 thermal, §10.6, §10.7, §10.13 |
 | [`power-dissipation.csv`](power-dissipation.csv) | 16 | Tables 10-1 and 10-2 |
+| [`ac-table-notes.csv`](ac-table-notes.csv) | 38 | the footnotes printed under each AC table |
 
 1092 AC limits across 158 specification rows.
 
@@ -100,6 +101,15 @@ python3 split-mc68000um.py       # needs pdftk and pdftotext on PATH
 | `unit` | `ns`, `Clks`, `MHz` — as printed, including where that is wrong |
 | `f8_min` … `f20_max` | the six speed grades. `f16_67` is the **16.67 MHz 12F** column in the MC68000/MC68008/MC68010 tables and the plain 16.67 MHz column in the MC68EC000 ones; `f16` exists only in the former. An empty cell means the source gives no limit. |
 | `note` | anything that needs saying about that row |
+
+`ac-table-notes.csv` holds the footnotes: `table`, `marker`, `applies_to`
+(the speed grades a column footnote hangs off, empty for a row footnote) and
+`text`. The figure pages print the column footnotes always and a row
+footnote only when one of the rows they show references it — a figure page
+lists a handful of rows out of a table of sixty, and printing all twelve of
+that table's notes would bury the two that matter. A marker the source uses
+but never defines is printed as such rather than left as a dangling
+superscript.
 
 A few cells in the source are simply left blank where the rest of their row
 uses an em dash. Both mean "not specified"; the CSV records both as empty and
@@ -125,13 +135,16 @@ AC: 156 of 158 rows corroborated by the text layer, 2 known losses, 0 unexplaine
 dc-electrical-specifications.csv:  76 of 76 rows corroborated
 power-dissipation.csv:             16 of 16 rows corroborated
 grade ordering: 7 places where a faster grade has the looser limit
+footnotes: 1 markers used but not defined, 5 notes defined but referenced by no row
 ```
 
 The two rows the text layer cannot corroborate are named in the script with
 the reason, and both were re-read at 3× instead. Of the seven grade-ordering
 flags, six are the 16.67 MHz 12F column being a separately binned part rather
 than a faster screen of the 16 MHz one, and the seventh is specification 23's
-printing error.
+printing error. The footnote line is the source's own bookkeeping and is
+covered below: the dangling marker is §10.15's specification 36, and three
+of the five unreferenced notes are §10.12's, which marks the wrong ones.
 
 ## Where the source contradicts itself
 
@@ -176,6 +189,19 @@ wrong with it.
   the CSV — that label is this transcription's, not the manual's.
 * **§10.15 marks specification 36 with footnote 7**, but that table defines
   only notes 1 and 2. The marker was carried over from §10.14.
+* **§10.12's footnote markers point at the wrong notes.** Specifications 36,
+  58 and 58A are marked 1 and specification 37A is marked 2; but note 1 of
+  that table is about asynchronous input setup and note 2 about when `BR`
+  must fall. The notes that fit are 4 and 5 — which are, word for word,
+  §10.10's notes 7 and 8, the markers §10.10 puts on those same four
+  specifications.
+* **The 20 MHz column's footnote names different parts in different
+  tables.** §10.8 says *"This frequency applies only to MC68HC000 and
+  MC68EC000 parts"*; §10.10, §10.11 and §10.12 all say *"MC68HC000 and
+  MC68HC001"*.
+* **§10.12's note 1 says "the synchronous inputs `BGACK`, `IPL0-IPL2`, and
+  `VPA`".** Every other statement of that note in the manual — Figure 10-7,
+  Figure 10-12, §10.14's note 5 — calls them asynchronous, which they are.
 * **Specifications 25 and 28 look like they have their footnote markers
   interchanged.** 25 (a 40 ns minimum) carries marker 10, whose note reads
   "245 ns for the MC68008"; 28 (a 240 ns maximum) carries marker 11, whose
@@ -189,7 +215,13 @@ wrong with it.
   `CLK` and `RESET`. Its bottom row, the mode-select input, is unlabelled.
 * **§10.1 spells "Commerical"** — twice.
 * **§10.10's heading prints the supply tolerance as "±5+"**; §10.13 and
-  §10.14 print it as "± 5;PC". Both mean ±5 %.
+  §10.14 print it as "± 5;PC". Both mean ±5 %. The same ";pc" for "%" turns
+  up inside note 6 of §10.10 and §10.14, *"When AS and R/W are equally
+  loaded (±20;pc)"*. It is the only place a footnote's text is repaired
+  rather than transcribed, because "(±20;pc)" is both unreadable and
+  unambiguous.
+* **Two footnotes are misspelled**: "Specificaton" in §10.11's note 2 and
+  "lienar" in §10.12's note 3. Both are transcribed as printed.
 
 ### Outside Section 10
 
@@ -217,6 +249,28 @@ wrong with it.
 * **Figure 2-7's page in the list of illustrations is 2-3**; the caption is
   on 2-8. **Figure 11-10's entry is broken outright**: "Case - Suffix ……
   11-", with neither a case number nor a page.
+* **Paragraph 3.4 contradicts itself about `BGACK`.** Its opening says the
+  pin is missing from *"the 48-pin version of the MC68008 and MC68EC000"*;
+  its own `BGACK` description a page later names only the 48-pin MC68008.
+  The pin assignments and Section 10 both side with the opening.
+* **The MC68EC000's `AVEC` pin is missing from Section 3.** It replaces
+  `VPA` on that part, and it appears on Figure 3-3, in Section 5, in the
+  MC68EC000 AC-table notes and in three pin assignments — but there is no
+  row for it in Table 3-4 and no paragraph describing it in 3.7.
+
+## Table 3-4, Signal Summary
+
+[`table-3-4-signal-summary.md`](table-3-4-signal-summary.md) reconstructs the
+manual's one-page index of the bus — every signal, its direction, its active
+level, and whether it goes high impedance on `HALT` or on giving the bus
+away. The page is a scanned image whose text layer renders `UDS` as `UcJS`
+and `RESET` as `RESEi`, so the table is retyped from a 300 dpi rendering and
+kept as [`signal-summary.csv`](signal-summary.csv).
+
+The page adds one table the source does not have: which of the six
+processors actually has each pin, collected from paragraphs 3.1 to 3.7 and
+the pin assignments in Section 11, with the page or figure every cell came
+from. That is where the two Section 3 findings above come from.
 
 ## The redrawn figures
 
@@ -286,6 +340,7 @@ python3 check-spec-csv.py         # cross-check them against the text layer
 python3 make-figure-svg.py        # the eleven generated SVGs
 python3 make-figure-pages.py      # the thirteen markdown pages
 python3 make-figure-tables.py     # fill in their specification tables
+python3 make-signal-summary.py    # Table 3-4 as CSV and markdown
 ```
 
 `pdftk` and `pdftotext` (poppler-utils) need to be on `PATH`. The split

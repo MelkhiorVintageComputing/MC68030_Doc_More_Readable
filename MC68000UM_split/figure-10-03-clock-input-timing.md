@@ -11,19 +11,25 @@ The clock input, with the two thresholds every other figure in the section is re
 ## Specifications marked on this figure
 
 <!-- BEGIN TABLE from=ac-electrical-specifications.csv table=clock grades=m68000 nums=|1|2,_3|4,_5 -->
-| Num. | Characteristic | Unit | 8 MHz | 10 MHz | 12.5 MHz | 16.67 MHz 12F | 16 MHz | 20 MHz |
+| Num. | Characteristic | Unit | 8 MHz<sup>&ast;</sup> | 10 MHz<sup>&ast;</sup> | 12.5 MHz<sup>&ast;</sup> | 16.67 MHz 12F | 16 MHz | 20 MHz<sup>&ast;&ast;</sup> |
 |:-:|---|:-:|--:|--:|--:|--:|--:|--:|
 | — | Frequency of Operation | MHz | 4.0&nbsp;–&nbsp;8.0 | 4.0&nbsp;–&nbsp;10.0 | 4.0&nbsp;–&nbsp;12.5 | 8.0&nbsp;–&nbsp;16.7 | 8.0&nbsp;–&nbsp;16.7 | 8.0&nbsp;–&nbsp;20.0 |
 | 1 | Cycle Time | ns | 125&nbsp;–&nbsp;250 | 100&nbsp;–&nbsp;250 | 80&nbsp;–&nbsp;250 | 60&nbsp;–&nbsp;125 | 60&nbsp;–&nbsp;125 | 50&nbsp;–&nbsp;125 |
 | 2, 3 | Clock Pulse Width (Measured from 1.5 V to 1.5 V for 12F) | ns | 55&nbsp;–&nbsp;125 | 45&nbsp;–&nbsp;125 | 35&nbsp;–&nbsp;125 | 27&nbsp;–&nbsp;62.5 | 27&nbsp;–&nbsp;62.5 | 21&nbsp;–&nbsp;62.5 |
 | 4, 5 | Clock Rise and Fall Times | ns | ≤ 10 | ≤ 10 | ≤ 5 | ≤ 5 | ≤ 5 | ≤ 4 |
+
+- **&ast;** These specifications represent an improvement over previously published specifications for the 8-, 10-, and 12.5-MHz MC68000 and are valid only for product bearing date codes of 8827 and later.
+- **&ast;&ast;** This frequency applies only to MC68HC000 and MC68EC000 parts.
 <!-- END TABLE -->
 
 A range `a – b` is min–max; `≤ b` is a maximum with no minimum specified; `≥ a`
-is a minimum with no maximum; `—` is not specified at that grade. The
-superscript on a specification number is its footnote in the source table.
-Full descriptions, footnotes, test conditions and the source page of every row
-are in [`ac-electrical-specifications.csv`](ac-electrical-specifications.csv).
+is a minimum with no maximum; `—` is not specified at that grade. Superscripts
+are the source table's own footnotes; the ones below the table are that
+table's, and only the ones these rows actually reference are printed. Test
+conditions and the source page of every row are in
+[`ac-electrical-specifications.csv`](ac-electrical-specifications.csv), and
+every footnote of all seven tables — including the ones no figure references —
+is in [`ac-table-notes.csv`](ac-table-notes.csv).
 
 | | Measurement | Taken between |
 |:-:|---|---|
@@ -41,12 +47,14 @@ limit and nothing numerical turns on it.
 The MC68008 has its own clock table with its own, slower limits:
 
 <!-- BEGIN TABLE from=ac-electrical-specifications.csv table=clock-mc68008 grades=mc68008 -->
-| Num. | Characteristic | Unit | 8 MHz | 10 MHz |
+| Num. | Characteristic | Unit | 8 MHz<sup>&ast;</sup> | 10 MHz<sup>&ast;</sup> |
 |:-:|---|:-:|--:|--:|
 | — | Frequency of Operation | MHz | 2.0&nbsp;–&nbsp;8.0 | 2.0&nbsp;–&nbsp;10.0 |
 | 1 | Cycle Time | ns | 125&nbsp;–&nbsp;500 | 100&nbsp;–&nbsp;500 |
 | 2, 3 | Clock Pulse Width | ns | 55&nbsp;–&nbsp;250 | 45&nbsp;–&nbsp;250 |
 | 4, 5 | Clock Rise and Fall Times | ns | ≤ 10 | ≤ 10 |
+
+- **&ast;** These specifications represent an improvement over previously published specifications for the 8-, and 10-MHz MC68008 and are valid only for product bearing date codes of 8827 and later.
 <!-- END TABLE -->
 
 Sanity check on the numbers. A whole period must hold one high pulse and one

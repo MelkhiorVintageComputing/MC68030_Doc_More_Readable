@@ -22,13 +22,19 @@ The MC68EC000 arbitrates with two wires: it has no `BGACK` pin, so the bus comes
 | 47 | Asynchronous Input Setup Time | ns | ≥ 5 | ≥ 5 | ≥ 5 | ≥ 5 | ≥ 5 |
 | 58<sup>1</sup> | BR Negated to AS, DS, R/W Driven | Clks | ≥ 1.5 | ≥ 1.5 | ≥ 1.5 | ≥ 1.5 | ≥ 1.5 |
 | 58A<sup>1</sup> | BR Negated to FC Driven | Clks | ≥ 1 | ≥ 1 | ≥ 1 | ≥ 1 | ≥ 1 |
+
+- **1** The minimum value must be met to guarantee proper operation. If the maximum value is exceeded, BG may be reasserted.
+- **7** *not defined in this table — see README.md*
 <!-- END TABLE -->
 
 A range `a – b` is min–max; `≤ b` is a maximum with no minimum specified; `≥ a`
-is a minimum with no maximum; `—` is not specified at that grade. The
-superscript on a specification number is its footnote in the source table.
-Full descriptions, footnotes, test conditions and the source page of every row
-are in [`ac-electrical-specifications.csv`](ac-electrical-specifications.csv).
+is a minimum with no maximum; `—` is not specified at that grade. Superscripts
+are the source table's own footnotes; the ones below the table are that
+table's, and only the ones these rows actually reference are printed. Test
+conditions and the source page of every row are in
+[`ac-electrical-specifications.csv`](ac-electrical-specifications.csv), and
+every footnote of all seven tables — including the ones no figure references —
+is in [`ac-table-notes.csv`](ac-table-notes.csv).
 
 ## About this redrawing
 

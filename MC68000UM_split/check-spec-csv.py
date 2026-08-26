@@ -147,6 +147,36 @@ def check_monotonic():
           % flags)
 
 
+def check_notes():
+    """Every footnote marker a row uses should be defined under its table.
+
+    Two tables genuinely fail this and both are recorded in README.md, so
+    the check reports rather than fails: it is here to catch a transcription
+    slip, not to relitigate the source's own bookkeeping.
+    """
+    rows = list(csv.DictReader(open(os.path.join(HERE,
+                                                 'ac-electrical-specifications.csv'))))
+    notes = list(csv.DictReader(open(os.path.join(HERE, 'ac-table-notes.csv'))))
+    defined, used = {}, {}
+    for n in notes:
+        defined.setdefault(n['table'], set()).add(n['marker'])
+    for r in rows:
+        for m in r['footnotes'].split(','):
+            if m.strip():
+                used.setdefault(r['table'], set()).add(m.strip())
+    dangling = orphan = 0
+    for t in sorted(set(used) | set(defined)):
+        for m in sorted(used.get(t, set()) - defined.get(t, set())):
+            dangling += 1
+            print('   dangling marker  %-28s %s referenced but never defined'
+                  % (t, m))
+        for m in sorted(defined.get(t, set()) - used.get(t, set()) - {'*', '**'}):
+            orphan += 1
+            print('   unreferenced     %-28s note %s' % (t, m))
+    print('footnotes: %d markers used but not defined, %d notes defined but '
+          'referenced by no row' % (dangling, orphan))
+
+
 def main():
     pages = load_pages()
     bad = check_ac(pages)
@@ -155,6 +185,7 @@ def main():
                     ['theta_c_per_w', 'pd_w_at_ta_min', 'tj_c_at_ta_min',
                      'pd_w_at_ta_max', 'tj_c_at_ta_max'])
     check_monotonic()
+    check_notes()
     return 1 if bad else 0
 
 

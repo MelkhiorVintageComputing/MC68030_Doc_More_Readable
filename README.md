@@ -117,14 +117,22 @@ Also here:
 - **[`dc-electrical-specifications.csv`](MC68000UM_split/dc-electrical-specifications.csv)**
   and **[`power-dissipation.csv`](MC68000UM_split/power-dissipation.csv)** — the maximum
   ratings, the thermal characteristics, the three DC tables and Tables 10-1 and 10-2.
+- **[`ac-table-notes.csv`](MC68000UM_split/ac-table-notes.csv)** — the footnotes printed
+  under each of the seven AC tables, so a figure page can print the ones its own rows
+  reference.
 - **Thirteen redrawn timing diagrams** — Figures 10-2 to 10-14 as scalable SVG, each with
-  a markdown page carrying the diagram beside the specifications marked on it.
+  a markdown page carrying the diagram beside the specifications marked on it and that
+  table's relevant footnotes.
+- **[`table-3-4-signal-summary.md`](MC68000UM_split/table-3-4-signal-summary.md)** — the
+  manual's one-page index of the bus, retyped from the page image, plus a table the source
+  does not have: which of the six processors actually has each pin, with the page or
+  figure every cell came from.
 
 The same reading-and-checking method was used as for the other two, and this manual turns
 out to be the most self-contradictory of the set: **specification 47 is given three
 different values in three different tables**, specification 23's 16.67 MHz maximum is
 printed as 550 ns where another table gives 50, §10.10 has two rows both numbered 48, and
-a pull-up resistor is specified as 1.1 Ω rather than 1.1 kΩ. Twenty-three such findings
+a pull-up resistor is specified as 1.1 Ω rather than 1.1 kΩ. Twenty-nine such findings
 are listed with the evidence in that directory's README.
 
 ## Source documents

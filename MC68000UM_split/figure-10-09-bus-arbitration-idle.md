@@ -11,7 +11,7 @@ Arbitration arriving while the bus is idle: the strobes are already negated, so 
 ## Specifications marked on this figure
 
 <!-- BEGIN TABLE from=ac-electrical-specifications.csv table=bus-arbitration grades=m68000 nums=33|34|35|36|37|37A|38|46|47|57|57A -->
-| Num. | Characteristic | Unit | 8 MHz | 10 MHz | 12.5 MHz | 16.67 MHz 12F | 16 MHz | 20 MHz |
+| Num. | Characteristic | Unit | 8 MHz<sup>&ast;</sup> | 10 MHz<sup>&ast;</sup> | 12.5 MHz<sup>&ast;</sup> | 16.67 MHz 12F | 16 MHz | 20 MHz<sup>&ast;&ast;</sup> |
 |:-:|---|:-:|--:|--:|--:|--:|--:|--:|
 | 33 | Clock High to BG Asserted | ns | ≤ 62 | ≤ 50 | ≤ 40 | 0&nbsp;–&nbsp;40 | 0&nbsp;–&nbsp;30 | 0&nbsp;–&nbsp;25 |
 | 34 | Clock High to BG Negated | ns | ≤ 62 | ≤ 50 | ≤ 40 | 0&nbsp;–&nbsp;40 | 0&nbsp;–&nbsp;30 | 0&nbsp;–&nbsp;25 |
@@ -24,13 +24,21 @@ Arbitration arriving while the bus is idle: the strobes are already negated, so 
 | 47 | Asynchronous Input Setup Time | ns | ≥ 10 | ≥ 10 | ≥ 10 | ≥ 5 | ≥ 5 | ≥ 5 |
 | 57 | BGACK Negated to AS, DS, R/W Driven | Clks | ≥ 1.5 | ≥ 1.5 | ≥ 1.5 | ≥ 1.5 | ≥ 1.5 | ≥ 1.5 |
 | 57A | BGACK Negated to FC, VMA Driven | Clks | ≥ 1 | ≥ 1 | ≥ 1 | ≥ 1 | ≥ 1 | ≥ 1 |
+
+- **&ast;** These specifications represent an improvement over previously published specifications for the 8-, 10-, and 12.5-MHz MC68000 and are valid only for product bearing date codes of 8827 and later.
+- **&ast;&ast;** Applies only to the MC68HC000 and MC68HC001.
+- **1** Setup time for the synchronous inputs BGACK, IPL0-IPL2, and VPA guarantees their recognition at the next falling edge of the clock.
+- **2** BR need fall at this time only in order to insure being recognized at the end of the bus cycle.
 <!-- END TABLE -->
 
 A range `a – b` is min–max; `≤ b` is a maximum with no minimum specified; `≥ a`
-is a minimum with no maximum; `—` is not specified at that grade. The
-superscript on a specification number is its footnote in the source table.
-Full descriptions, footnotes, test conditions and the source page of every row
-are in [`ac-electrical-specifications.csv`](ac-electrical-specifications.csv).
+is a minimum with no maximum; `—` is not specified at that grade. Superscripts
+are the source table's own footnotes; the ones below the table are that
+table's, and only the ones these rows actually reference are printed. Test
+conditions and the source page of every row are in
+[`ac-electrical-specifications.csv`](ac-electrical-specifications.csv), and
+every footnote of all seven tables — including the ones no figure references —
+is in [`ac-table-notes.csv`](ac-table-notes.csv).
 
 ## About this redrawing
 

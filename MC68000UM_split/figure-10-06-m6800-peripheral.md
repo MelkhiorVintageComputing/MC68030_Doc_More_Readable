@@ -11,7 +11,7 @@ An M6800 peripheral cycle. `E` is the M6800 enable clock — six clock periods l
 ## Specifications marked on this figure
 
 <!-- BEGIN TABLE from=ac-electrical-specifications.csv table=m6800-peripheral grades=m68000 nums=12|18|20|23|27|29|40|41|42|43|44|45|47|49|50|51|54 -->
-| Num. | Characteristic | Unit | 8 MHz | 10 MHz | 12.5 MHz | 16.67 MHz 12F | 16 MHz | 20 MHz |
+| Num. | Characteristic | Unit | 8 MHz<sup>&ast;</sup> | 10 MHz<sup>&ast;</sup> | 12.5 MHz<sup>&ast;</sup> | 16.67 MHz 12F | 16 MHz | 20 MHz<sup>&ast;&ast;</sup> |
 |:-:|---|:-:|--:|--:|--:|--:|--:|--:|
 | 12<sup>1</sup> | Clock Low to AS, DS Negated | ns | ≤ 62 | ≤ 50 | ≤ 40 | ≤ 40 | 3&nbsp;–&nbsp;30 | 3&nbsp;–&nbsp;25 |
 | 18<sup>1</sup> | Clock High to R/W High (Read) | ns | 0&nbsp;–&nbsp;55 | 0&nbsp;–&nbsp;45 | 0&nbsp;–&nbsp;40 | 0&nbsp;–&nbsp;40 | 0&nbsp;–&nbsp;30 | 0&nbsp;–&nbsp;25 |
@@ -30,13 +30,21 @@ An M6800 peripheral cycle. `E` is the M6800 enable clock — six clock periods l
 | 50 | E Width High | ns | ≥ 450 | ≥ 350 | ≥ 280 | ≥ 220 | ≥ 220 | ≥ 190 |
 | 51 | E Width Low | ns | ≥ 700 | ≥ 550 | ≥ 440 | ≥ 340 | ≥ 340 | ≥ 290 |
 | 54 | E Low to Data-Out Invalid | ns | ≥ 30 | ≥ 20 | ≥ 15 | ≥ 10 | ≥ 10 | ≥ 5 |
+
+- **&ast;** These specifications represent an improvement over previously published specifications for the 8-, 10-, and 12.5-MHz MC68000 and are valid only for product bearing date codes of 8827 and later.
+- **&ast;&ast;** This frequency applies only to MC68HC000 and MC68HC001.
+- **1** For a loading capacitance of less than or equal to 50 pF, subtract 5 ns from the value given in the maximum columns.
+- **2** The falling edge of S6 triggers both the negation of the strobes (AS and DS) and the falling edge of E. Either of these events can occur first, depending upon the loading on each signal. Specificaton #49 indicates the absolute maximum skew that will occur between the rising edge of the strobes and the falling edge of the E clock.
 <!-- END TABLE -->
 
 A range `a – b` is min–max; `≤ b` is a maximum with no minimum specified; `≥ a`
-is a minimum with no maximum; `—` is not specified at that grade. The
-superscript on a specification number is its footnote in the source table.
-Full descriptions, footnotes, test conditions and the source page of every row
-are in [`ac-electrical-specifications.csv`](ac-electrical-specifications.csv).
+is a minimum with no maximum; `—` is not specified at that grade. Superscripts
+are the source table's own footnotes; the ones below the table are that
+table's, and only the ones these rows actually reference are printed. Test
+conditions and the source page of every row are in
+[`ac-electrical-specifications.csv`](ac-electrical-specifications.csv), and
+every footnote of all seven tables — including the ones no figure references —
+is in [`ac-table-notes.csv`](ac-table-notes.csv).
 
 The source's note: "This timing diagram is included for those who wish to
 design their own circuit to generate VMA. It shows the best case possible

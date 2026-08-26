@@ -430,6 +430,129 @@ EC_ARB = [
 ]
 
 
+# ---------------------------------------------------------------------------
+# The footnotes printed under each AC table.  `applies_to` names the speed
+# grades a column footnote hangs off; row footnotes leave it empty and are
+# referenced from the `footnotes` column of the rows above.
+#
+# These are transcribed as printed, including the source's own spelling.
+# Where the scan renders "%" as ";pc" the character is restored, because
+# "(+/-20;pc)" is unreadable and unambiguous; every other oddity is left in
+# place and flagged in README.md.
+NOTE_COLS = ['table', 'marker', 'applies_to', 'text']
+
+_IMPROVED = ('These specifications represent an improvement over previously '
+             'published specifications for the 8-, 10-, and 12.5-MHz MC68000 '
+             'and are valid only for product bearing date codes of 8827 and '
+             'later.')
+_LOADING = ('For a loading capacitance of less than or equal to 50 pF, '
+            'subtract 5 ns from the value given in the maximum columns.')
+_IGNORE48 = ('If #47 is satisfied for both DTACK and BERR, #48 may be ignored. '
+             'In the absence of DTACK, BERR is an asynchronous input using the '
+             'asynchronous input setup time (#47).')
+_IGNORE31 = ('If the asynchronous input setup time (#47) requirement is '
+             'satisfied for DTACK, the DTACK asserted to data setup time (#31) '
+             'requirement can be ignored. The data must only satisfy the '
+             'data-in to clock low setup time (#27) for the following clock '
+             'cycle.')
+_EQUAL = ('When AS and R/W are equally loaded (+/-20 %), subtract 5 ns from '
+          'the values given in these columns.')
+_NEGATE_BG = ('The processor will negate BG and begin driving the bus again if '
+              'external arbitration logic negates BR before asserting BGACK.')
+_MINMAX = ('The minimum value must be met to guarantee proper operation. If '
+           'the maximum value is exceeded, BG may be reasserted.')
+_DS_MEANS = 'DS is used in this specification to indicate UDS and LDS.'
+_S6 = ('The falling edge of S6 triggers both the negation of the strobes (AS '
+       'and DS) and the falling edge of E. Either of these events can occur '
+       'first, depending upon the loading on each signal. Specification #49 '
+       'indicates the absolute maximum skew that will occur between the rising '
+       'edge of the strobes and the falling edge of E.')
+_MEASURED = ('Timing measurements are referenced to and from a low voltage of '
+             '0.8 volt and a high voltage of 2.0 volts, unless otherwise '
+             'noted. The voltage swing through this range should start outside '
+             'and pass through the range such that the rise or fall will be '
+             'lienar between 0.8 volt and 2.0 volts.')
+
+NOTES = [
+    # 10.8  clock timing
+    ('clock', '*',  'f8|f10|f12_5', _IMPROVED),
+    ('clock', '**', 'f20',
+     'This frequency applies only to MC68HC000 and MC68EC000 parts.'),
+
+    # 10.9  MC68008 clock timing
+    ('clock-mc68008', '*', 'f8|f10',
+     'These specifications represent an improvement over previously published '
+     'specifications for the 8-, and 10-MHz MC68008 and are valid only for '
+     'product bearing date codes of 8827 and later.'),
+
+    # 10.10  read and write cycles
+    ('read-write', '*',  'f8|f10|f12_5', _IMPROVED),
+    ('read-write', '**', 'f20',
+     'This frequency applies only to MC68HC000 and MC68HC001.'),
+    ('read-write', '1',  '', _LOADING),
+    ('read-write', '2',  '', 'Actual value depends on clock period.'),
+    ('read-write', '3',  '', _IGNORE48),
+    ('read-write', '4',  '',
+     'For power-up, the MC68000 must be held in the reset state for 100 ms to '
+     'allow stabilization of on-chip circuitry. After the system is powered '
+     'up, #56 refers to the minimum pulse width required to reset the '
+     'processor.'),
+    ('read-write', '5',  '', _IGNORE31),
+    ('read-write', '6',  '', _EQUAL),
+    ('read-write', '7',  '', _NEGATE_BG),
+    ('read-write', '8',  '', _MINMAX),
+    ('read-write', '9',  '', _S6),
+    ('read-write', '10', '', '245 ns for the MC68008.'),
+    ('read-write', '11', '', '50 ns for the MC68008'),
+    ('read-write', '12', '', '50 ns for the MC68008.'),
+
+    # 10.11  MC68000 to M6800 peripheral
+    ('m6800-peripheral', '*',  'f8|f10|f12_5', _IMPROVED),
+    ('m6800-peripheral', '**', 'f20',
+     'This frequency applies only to MC68HC000 and MC68HC001.'),
+    ('m6800-peripheral', '1', '', _LOADING),
+    ('m6800-peripheral', '2', '',
+     'The falling edge of S6 triggers both the negation of the strobes (AS and '
+     'DS) and the falling edge of E. Either of these events can occur first, '
+     'depending upon the loading on each signal. Specificaton #49 indicates '
+     'the absolute maximum skew that will occur between the rising edge of the '
+     'strobes and the falling edge of the E clock.'),
+
+    # 10.12  bus arbitration
+    ('bus-arbitration', '*',  'f8|f10|f12_5', _IMPROVED),
+    ('bus-arbitration', '**', 'f20',
+     'Applies only to the MC68HC000 and MC68HC001.'),
+    ('bus-arbitration', '1', '',
+     'Setup time for the synchronous inputs BGACK, IPL0-IPL2, and VPA '
+     'guarantees their recognition at the next falling edge of the clock.'),
+    ('bus-arbitration', '2', '',
+     'BR need fall at this time only in order to insure being recognized at '
+     'the end of the bus cycle.'),
+    ('bus-arbitration', '3', '', _MEASURED),
+    ('bus-arbitration', '4', '', _NEGATE_BG),
+    ('bus-arbitration', '5', '', _MINMAX),
+
+    # 10.14  MC68EC000 read and write cycles
+    ('mc68ec000-read-write', '1', '', _LOADING),
+    ('mc68ec000-read-write', '2', '', 'Actual value depends on clock period.'),
+    ('mc68ec000-read-write', '3', '', _IGNORE48),
+    ('mc68ec000-read-write', '4', '',
+     'For power-up, the MC68EC000 must be held in the reset state for 520 '
+     'clocks to allow stabilization of on-chip circuitry. After the system is '
+     'powered up, #56 refers to the minimum pulse width required to reset the '
+     'processor.'),
+    ('mc68ec000-read-write', '5', '', _IGNORE31.replace('DTACK asserted',
+                                                        'DTACK-asserted')),
+    ('mc68ec000-read-write', '6', '', _EQUAL),
+    ('mc68ec000-read-write', '7', '', _MINMAX),
+    ('mc68ec000-read-write', '8', '', _DS_MEANS),
+
+    # 10.15  MC68EC000 bus arbitration
+    ('mc68ec000-bus-arbitration', '1', '', _MINMAX),
+    ('mc68ec000-bus-arbitration', '2', '', _DS_MEANS),
+]
+
+
 def ac_row(table, page, printed, num, foot, char, cond, unit, pairs, grades, note):
     r = {'table': table, 'pdf_page': page, 'printed_page': printed, 'num': num,
          'footnotes': foot, 'characteristic': char, 'condition': cond,
@@ -638,6 +761,7 @@ def main():
     write('ac-electrical-specifications.csv', AC_COLS, ac, dicts=True)
     write('dc-electrical-specifications.csv', DC_COLS, DC)
     write('power-dissipation.csv', PD_COLS, PD)
+    write('ac-table-notes.csv', NOTE_COLS, NOTES)
     n = sum(1 for r in ac for g in GRADES6 for s in ('min', 'max')
             if r['%s_%s' % (g, s)])
     print('%d AC limits transcribed across %d specification rows' % (n, len(ac)))

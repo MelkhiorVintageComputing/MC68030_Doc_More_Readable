@@ -1,0 +1,39 @@
+table,marker,applies_to,text
+clock,*,f8|f10|f12_5,"These specifications represent an improvement over previously published specifications for the 8-, 10-, and 12.5-MHz MC68000 and are valid only for product bearing date codes of 8827 and later."
+clock,**,f20,This frequency applies only to MC68HC000 and MC68EC000 parts.
+clock-mc68008,*,f8|f10,"These specifications represent an improvement over previously published specifications for the 8-, and 10-MHz MC68008 and are valid only for product bearing date codes of 8827 and later."
+read-write,*,f8|f10|f12_5,"These specifications represent an improvement over previously published specifications for the 8-, 10-, and 12.5-MHz MC68000 and are valid only for product bearing date codes of 8827 and later."
+read-write,**,f20,This frequency applies only to MC68HC000 and MC68HC001.
+read-write,1,,"For a loading capacitance of less than or equal to 50 pF, subtract 5 ns from the value given in the maximum columns."
+read-write,2,,Actual value depends on clock period.
+read-write,3,,"If #47 is satisfied for both DTACK and BERR, #48 may be ignored. In the absence of DTACK, BERR is an asynchronous input using the asynchronous input setup time (#47)."
+read-write,4,,"For power-up, the MC68000 must be held in the reset state for 100 ms to allow stabilization of on-chip circuitry. After the system is powered up, #56 refers to the minimum pulse width required to reset the processor."
+read-write,5,,"If the asynchronous input setup time (#47) requirement is satisfied for DTACK, the DTACK asserted to data setup time (#31) requirement can be ignored. The data must only satisfy the data-in to clock low setup time (#27) for the following clock cycle."
+read-write,6,,"When AS and R/W are equally loaded (+/-20 %), subtract 5 ns from the values given in these columns."
+read-write,7,,The processor will negate BG and begin driving the bus again if external arbitration logic negates BR before asserting BGACK.
+read-write,8,,"The minimum value must be met to guarantee proper operation. If the maximum value is exceeded, BG may be reasserted."
+read-write,9,,"The falling edge of S6 triggers both the negation of the strobes (AS and DS) and the falling edge of E. Either of these events can occur first, depending upon the loading on each signal. Specification #49 indicates the absolute maximum skew that will occur between the rising edge of the strobes and the falling edge of E."
+read-write,10,,245 ns for the MC68008.
+read-write,11,,50 ns for the MC68008
+read-write,12,,50 ns for the MC68008.
+m6800-peripheral,*,f8|f10|f12_5,"These specifications represent an improvement over previously published specifications for the 8-, 10-, and 12.5-MHz MC68000 and are valid only for product bearing date codes of 8827 and later."
+m6800-peripheral,**,f20,This frequency applies only to MC68HC000 and MC68HC001.
+m6800-peripheral,1,,"For a loading capacitance of less than or equal to 50 pF, subtract 5 ns from the value given in the maximum columns."
+m6800-peripheral,2,,"The falling edge of S6 triggers both the negation of the strobes (AS and DS) and the falling edge of E. Either of these events can occur first, depending upon the loading on each signal. Specificaton #49 indicates the absolute maximum skew that will occur between the rising edge of the strobes and the falling edge of the E clock."
+bus-arbitration,*,f8|f10|f12_5,"These specifications represent an improvement over previously published specifications for the 8-, 10-, and 12.5-MHz MC68000 and are valid only for product bearing date codes of 8827 and later."
+bus-arbitration,**,f20,Applies only to the MC68HC000 and MC68HC001.
+bus-arbitration,1,,"Setup time for the synchronous inputs BGACK, IPL0-IPL2, and VPA guarantees their recognition at the next falling edge of the clock."
+bus-arbitration,2,,BR need fall at this time only in order to insure being recognized at the end of the bus cycle.
+bus-arbitration,3,,"Timing measurements are referenced to and from a low voltage of 0.8 volt and a high voltage of 2.0 volts, unless otherwise noted. The voltage swing through this range should start outside and pass through the range such that the rise or fall will be lienar between 0.8 volt and 2.0 volts."
+bus-arbitration,4,,The processor will negate BG and begin driving the bus again if external arbitration logic negates BR before asserting BGACK.
+bus-arbitration,5,,"The minimum value must be met to guarantee proper operation. If the maximum value is exceeded, BG may be reasserted."
+mc68ec000-read-write,1,,"For a loading capacitance of less than or equal to 50 pF, subtract 5 ns from the value given in the maximum columns."
+mc68ec000-read-write,2,,Actual value depends on clock period.
+mc68ec000-read-write,3,,"If #47 is satisfied for both DTACK and BERR, #48 may be ignored. In the absence of DTACK, BERR is an asynchronous input using the asynchronous input setup time (#47)."
+mc68ec000-read-write,4,,"For power-up, the MC68EC000 must be held in the reset state for 520 clocks to allow stabilization of on-chip circuitry. After the system is powered up, #56 refers to the minimum pulse width required to reset the processor."
+mc68ec000-read-write,5,,"If the asynchronous input setup time (#47) requirement is satisfied for DTACK, the DTACK-asserted to data setup time (#31) requirement can be ignored. The data must only satisfy the data-in to clock low setup time (#27) for the following clock cycle."
+mc68ec000-read-write,6,,"When AS and R/W are equally loaded (+/-20 %), subtract 5 ns from the values given in these columns."
+mc68ec000-read-write,7,,"The minimum value must be met to guarantee proper operation. If the maximum value is exceeded, BG may be reasserted."
+mc68ec000-read-write,8,,DS is used in this specification to indicate UDS and LDS.
+mc68ec000-bus-arbitration,1,,"The minimum value must be met to guarantee proper operation. If the maximum value is exceeded, BG may be reasserted."
+mc68ec000-bus-arbitration,2,,DS is used in this specification to indicate UDS and LDS.

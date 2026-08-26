@@ -18,6 +18,12 @@ where the attributes select rows and columns:
             the separately binned 16.67 MHz 12F part), `mc68ec000` (five,
             no 12F and no plain 16 MHz) or `mc68008` (two).  Default m68000.
 
+The table's own footnotes follow it, read from ac-table-notes.csv: the
+column footnotes always, and a row footnote only when one of the rows
+actually printed references it.  A figure page shows a handful of rows out
+of a table of sixty, so printing all twelve of that table's notes would bury
+the two that matter.
+
 Run with no arguments to update every figure-*.md in this directory.
 """
 import csv, glob, os, re, sys
@@ -37,6 +43,23 @@ BLOCK = re.compile(
     r".*?"
     r"(?P<close><!--\s*END TABLE\s*-->)",
     re.S)
+
+
+def notes_for(csvname, table):
+    """(column notes, row notes) for one table, each marker -> text."""
+    path = os.path.join(HERE, "ac-table-notes.csv")
+    if not os.path.exists(path):
+        return {}, {}
+    col, row = {}, {}
+    for n in csv.DictReader(open(path)):
+        if n["table"] != table:
+            continue
+        (col if n["applies_to"] else row)[n["marker"]] = n
+    return col, row
+
+
+def sup(marker):
+    return "<sup>%s</sup>" % marker.replace("*", "&ast;")
 
 
 def cell(lo, hi):
@@ -68,16 +91,39 @@ def render(attrs):
                                 ", ".join(missing)))
         rows = [idx[n] for n in want]
 
-    out = ["| Num. | Characteristic | Unit | " +
-           " | ".join(g for g, _ in grades) + " |",
+    colnotes, rownotes = notes_for(a["from"], a.get("table", ""))
+    colmark = {}
+    for m, n in colnotes.items():
+        for g in n["applies_to"].split("|"):
+            colmark[g] = m
+
+    head = ["%s%s" % (g, sup(colmark[k]) if k in colmark else "")
+            for g, k in grades]
+    out = ["| Num. | Characteristic | Unit | " + " | ".join(head) + " |",
            "|:-:|---|:-:|" + "--:|" * len(grades)]
+    used = []
     for r in rows:
         vals = [cell(r["%s_min" % k], r["%s_max" % k]) for _, k in grades]
         num = r["num"] or "—"
         if r["footnotes"]:
-            num += "<sup>%s</sup>" % r["footnotes"].replace(" ", "")
+            num += sup(r["footnotes"].replace(" ", ""))
+            used += [m for m in r["footnotes"].split(",")]
         out.append("| %s | %s | %s | %s |"
                    % (num, r["characteristic"], r["unit"], " | ".join(vals)))
+
+    # column footnotes first (* before **), then the row footnotes the
+    # printed rows actually reference, in numerical order
+    foot = [(m, colnotes[m]["text"]) for m in sorted(colnotes, key=len)]
+    marks = {m.strip() for m in used}
+    foot += [(m, rownotes[m]["text"]) for m in sorted(marks & set(rownotes), key=int)]
+    # a marker the source uses but never defines is worth saying out loud
+    # rather than leaving as a dangling superscript
+    foot += [(m, "*not defined in this table — see README.md*")
+             for m in sorted(marks - set(rownotes), key=int)]
+    if foot:
+        out.append("")
+        for m, t in foot:
+            out.append("- **%s** %s" % (m.replace("*", "&ast;"), t))
     return "\n".join(out) + "\n"
 
 
