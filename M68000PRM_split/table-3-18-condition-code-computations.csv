@@ -1,0 +1,31 @@
+row,operations,qualifier,x,n,z,v,c,special_definition
+1,ABCD,,*,U,?,U,?,C = Decimal Carry; Z = Z Λ Rm Λ …Λ R0
+2,"ADD, ADDI, ADDQ",,*,*,*,?,?,V = Sm Λ Dm Λ Rm V Sm Λ Dm Λ Rm; C = Sm Λ Dm V Rm Λ Dm V Sm Λ Rm
+3,ADDX,,*,*,?,?,?,V = Sm Λ Dm Λ Rm V Sm Λ Dm Λ Rm; C = Sm Λ Dm V Rm Λ Dm V Sm Λ Rm; Z = Z Λ Rm Λ …Λ R0
+4,"AND, ANDI, EOR, EORI, MOVEQ, MOVE, OR, ORI, CLR, EXT, EXTB, NOT, TAS, TST",,—,*,*,0,0,
+5,CHK,,—,*,U,U,U,
+6,"CHK2, CMP2",,—,U,?,U,?,Z = (R = LB) V (R = UB); C = (LB ≤ UB) Λ (IR < LB) V (R > UB)) V (UB < LB) Λ (R > UB) Λ (R < LB)
+7,"SUB, SUBI, SUBQ",,*,*,*,?,?,V = Sm Λ Dm Λ Rm V Sm Λ Dm Λ Rm; C = Sm Λ Dm V Rm Λ Dm V Sm Λ Rm
+8,SUBX,,*,*,?,?,?,V = Sm Λ Dm Λ Rm V Sm Λ Dm Λ Rm; C = Sm Λ Dm V Rm Λ Dm V Sm Λ Rm; Z = Z Λ Rm Λ …Λ R0
+9,"CAS, CAS2, CMP, CMPA, CMPI, CMPM",,—,*,*,?,?,V = Sm Λ Dm Λ Rm V Sm Λ Dm Λ Rm; C = Sm Λ Dm V Rm Λ Dm V Sm Λ Rm
+10,"DIVS, DUVU",,—,*,*,?,0,V = Division Overflow
+11,"MULS, MULU",,—,*,*,?,0,V = Multiplication Overflow
+12,"SBCD, NBCD",,*,U,?,U,?,C = Decimal Borrow; Z = Z Λ Rm Λ …Λ R0
+13,NEG,,*,*,*,?,?,V = Dm Λ Rm; C = Dm V Rm
+14,NEGX,,*,*,?,?,?,V = Dm Λ Rm; C = Dm V Rm; Z = Z Λ Rm Λ …Λ R0
+15,"BTST, BCHG, BSET, BCLR",,—,—,?,—,—,Z = Dn
+16,"BFTST, BFCHG, BFSET, BFCLR",,—,?,?,0,0,N = Dm; Z = Dn Λ Dm–1 Λ …Λ D0
+17,"BFEXTS, BFEXTU, BFFFO",,—,?,?,0,0,N = Sm; Z = Sm Λ Sm–1 Λ…Λ S0
+18,BFINS,,—,?,?,0,0,N = Dm; Z = Dm Λ Dm–1 Λ…Λ D0
+19,ASL,,*,*,*,?,?,V = Dm Λ Dm–1 V…V Dm– r V Dm Λ (DM –1 V …+ Dm – r); C = Dm– r+1
+20,ASL,r = 0,—,*,*,0,0,
+21,"LSL, ROXL",,*,*,*,0,?,C = Dm – r + 1
+22,LSR,r = 0,—,*,*,0,0,
+23,ROXL,r = 0,—,*,*,0,?,X=C
+24,ROL,,—,*,*,0,?,C = Dm – r + 1
+25,ROL,r = 0,—,*,*,0,0,
+26,"ASR, LSR, ROXR",,*,*,*,0,?,C = Dr – 1
+27,"ASR, LSR",r = 0,—,*,*,0,0,
+28,ROXR,r = 0,—,*,*,0,?,X=C
+29,ROR,,—,*,*,0,?,C = Dr – 1
+30,ROR,r = 0,—,*,*,0,0,

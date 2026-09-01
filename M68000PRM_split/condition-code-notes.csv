@@ -1,0 +1,68 @@
+note,glyph,sentence,uses,cells
+1,*,Set the same as the carry bit.,9,ABCD:X;ADD:X;ADDI:X;ADDQ:X;ADDX:X;NBCD:X;NEG:X;NEGX:X;SBCD:X
+2,*,Cleared if the result is nonzero; unchanged otherwise.,6,ABCD:Z;ADDX:Z;NBCD:Z;NEGX:Z;SBCD:Z;SUBX:Z
+3,*,Set if a decimal carry was generated; cleared otherwise.,1,ABCD:C
+4,*,Set if the result is negative; cleared otherwise.,22,"ADD:N;ADDI:N;ADDQ:N;ADDX:N;CAS, CAS2:N;CMP:N;CMPA:N;CMPI:N;CMPM:N;EXT, EXTB:N;LSL, LSR:N;MOVE:N;MOVEQ:N;MULS:N;MULU:N;NEG:N;NEGX:N;NOT:N;SUB:N;SUBI:N;SUBQ:N;SUBX:N"
+5,*,Set if the result is zero; cleared otherwise.,28,"ADD:Z;ADDI:Z;ADDQ:Z;AND:Z;ANDI:Z;ASL, ASR:Z;CAS, CAS2:Z;CMP:Z;CMPA:Z;CMPI:Z;CMPM:Z;EOR:Z;EORI:Z;EXT, EXTB:Z;LSL, LSR:Z;MOVE:Z;MOVEQ:Z;MULS:Z;MULU:Z;NEG:Z;NOT:Z;OR:Z;ORI:Z;ROL, ROR:Z;ROXL, ROXR:Z;SUB:Z;SUBI:Z;SUBQ:Z"
+6,*,Set if an overflow is generated; cleared otherwise.,6,"ADD:V;ADDI:V;CAS, CAS2:V;CMPA:V;CMPM:V;SUB:V"
+7,*,Set if a carry is generated; cleared otherwise.,3,ADD:C;ADDI:C;ADDX:C
+8,*,Set if an overflow occurs; cleared otherwise.,9,ADDQ:V;ADDX:V;CMP:V;CMPI:V;NEG:V;NEGX:V;SUBI:V;SUBQ:V;SUBX:V
+9,*,Set if a carry occurs; cleared otherwise.,1,ADDQ:C
+10,*,Set if the most significant bit of the result is set; cleared otherwise.,9,"AND:N;ANDI:N;ASL, ASR:N;EOR:N;EORI:N;OR:N;ORI:N;ROL, ROR:N;ROXL, ROXR:N"
+11,*,Cleared if bit 4 of immediate operand is zero; unchanged otherwise.,2,ANDI to CCR:X;ANDI to SR:X
+12,*,Cleared if bit 3 of immediate operand is zero; unchanged otherwise.,2,ANDI to CCR:N;ANDI to SR:N
+13,*,Cleared if bit 2 of immediate operand is zero; unchanged otherwise.,2,ANDI to CCR:Z;ANDI to SR:Z
+14,*,Cleared if bit 1 of immediate operand is zero; unchanged otherwise.,2,ANDI to CCR:V;ANDI to SR:V
+15,*,Cleared if bit 0 of immediate operand is zero; unchanged otherwise.,2,ANDI to CCR:C;ANDI to SR:C
+16,*,Set according to the last bit shifted out of the operand; unaffected for a shift count of zero.,2,"ASL, ASR:X;LSL, LSR:X"
+17,*,Set if the most significant bit is changed at any time during the shift operation; cleared otherwise.,1,"ASL, ASR:V"
+18,*,Set according to the last bit shifted out of the operand; cleared for a shift count of zero.,2,"ASL, ASR:C;LSL, LSR:C"
+19,*,Set if the bit tested is zero; cleared otherwise.,4,BCHG:Z;BCLR:Z;BSET:Z;BTST:Z
+20,*,Set if the most significant bit of the field is set; cleared otherwise.,7,BFCHG:N;BFCLR:N;BFEXTS:N;BFFFO:N;BFINS:N;BFSET:N;BFTST:N
+21,*,Set if all bits of the field are zero; cleared otherwise.,8,BFCHG:Z;BFCLR:Z;BFEXTS:Z;BFEXTU:Z;BFFFO:Z;BFINS:Z;BFSET:Z;BFTST:Z
+22,*,Set if the most significant bit of the source field is set; cleared otherwise.,1,BFEXTU:N
+23,*,Set if a borrow is generated; cleared otherwise.,4,"CAS, CAS2:C;CMPA:C;CMPM:C;SUB:C"
+24,*,Set if Dn < 0; cleared if Dn > effective address operand; undefined otherwise.,1,CHK:N
+25,*,Set if Rn is equal to either bound; cleared otherwise.,2,CHK2:Z;CMP2:Z
+26,*,Set if Rn is out of bounds; cleared otherwise.,2,CHK2:C;CMP2:C
+27,*,Set if a borrow occurs; cleared otherwise.,6,CMP:C;CMPI:C;NEGX:C;SUBI:C;SUBQ:C;SUBX:C
+28,*,May be modified by coprocessor; unchanged otherwise.,5,cpGEN:X;cpGEN:N;cpGEN:Z;cpGEN:V;cpGEN:C
+29,*,Set if the quotient is negative; cleared otherwise; undefined if overflow or divide by zero occurs.,2,"DIVS, DIVSL:N;DIVU, DIVUL:N"
+30,*,Set if the quotient is zero; cleared otherwise; undefined if overflow or divide by zero occurs.,2,"DIVS, DIVSL:Z;DIVU, DIVUL:Z"
+31,*,Set if division overflow occurs; undefined if divide by zero occurs; cleared otherwise.,1,"DIVS, DIVSL:V"
+32,*,Set if division overflow occurs; cleared otherwise; undefined if divide by zero occurs.,1,"DIVU, DIVUL:V"
+33,*,Changed if bit 4 of immediate operand is one; unchanged otherwise.,2,EORI to CCR:X;EORI to SR:X
+34,*,Changed if bit 3 of immediate operand is one; unchanged otherwise.,2,EORI to CCR:N;EORI to SR:N
+35,*,Changed if bit 2 of immediate operand is one; unchanged otherwise.,2,EORI to CCR:Z;EORI to SR:Z
+36,*,Changed if bit 1 of immediate operand is one; unchanged otherwise.,2,EORI to CCR:V;EORI to SR:V
+37,*,Changed if bit 0 of immediate operand is one; unchanged otherwise.,2,EORI to CCR:C;EORI to SR:C
+38,*,Set to the value of bit 4 of the source operand.,1,MOVE to CCR:X
+39,*,Set to the value of bit 3 of the source operand.,1,MOVE to CCR:N
+40,*,Set to the value of bit 2 of the source operand.,1,MOVE to CCR:Z
+41,*,Set to the value of bit 1 of the source operand.,1,MOVE to CCR:V
+42,*,Set to the value of bit 0 of the source operand.,1,MOVE to CCR:C
+43,*,Set if overflow; cleared otherwise.,2,MULS:V;MULU:V
+44,*,Set if a decimal borrow occurs; cleared otherwise.,1,NBCD:C
+45,*,Cleared if the result is zero; set otherwise.,1,NEG:C
+46,*,Set if bit 4 of immediate operand is one; unchanged otherwise.,2,ORI to CCR:X;ORI to SR:X
+47,*,Set if bit 3 of immediate operand is one; unchanged otherwise.,2,ORI to CCR:N;ORI to SR:N
+48,*,Set if bit 2 of immediate operand is one; unchanged otherwise.,2,ORI to CCR:Z;ORI to SR:Z
+49,*,Set if bit 1 of immediate operand is one; unchanged otherwise.,2,ORI to CCR:V;ORI to SR:V
+50,*,Set if bit 0 of immediate operand is one; unchanged otherwise.,2,ORI to CCR:C;ORI to SR:C
+51,*,Set according to the last bit rotated out of the operand; cleared when the rotate count is zero.,1,"ROL, ROR:C"
+52,*,Set to the value of the last bit rotated out of the operand; unaffected when the rotate count is zero.,1,"ROXL, ROXR:X"
+53,*,"Set according to the last bit rotated out of the operand; when the rotate count is zero, set to the value of the extend bit.",1,"ROXL, ROXR:C"
+54,*,Set according to the content of the word on the stack.,5,RTM:X;RTM:N;RTM:Z;RTM:V;RTM:C
+55,*,Set to the condition codes from the stack.,5,RTR:X;RTR:N;RTR:Z;RTR:V;RTR:C
+56,*,Set if a borrow (decimal) is generated; cleared otherwise.,1,SBCD:C
+57,*,Set to the value of the carry bit.,4,SUB:X;SUBI:X;SUBQ:X;SUBX:X
+58,*,Set if the most significant bit of the 32-bit result is set; cleared otherwise.,1,SWAP:N
+59,*,Set if the 32-bit result is zero; cleared otherwise.,1,SWAP:Z
+60,*,Set if the most significant bit of the operand is currently set; cleared otherwise.,1,TAS:N
+61,*,Set if the operand was zero; cleared otherwise.,1,TAS:Z
+62,*,Set if the operand is negative; cleared otherwise.,1,TST:N
+63,*,Set if the operand is zero; cleared otherwise.,1,TST:Z
+64,*,Set according to the source operand.,5,MOVE to SR:X;MOVE to SR:N;MOVE to SR:Z;MOVE to SR:V;MOVE to SR:C
+65,,The manual prints no Condition Codes section for this description.,10,PLOAD:X;PLOAD:N;PLOAD:Z;PLOAD:V;PLOAD:C;PTEST:X;PTEST:N;PTEST:Z;PTEST:V;PTEST:C
+66,*,Set according to the condition code bits in the status register value restored from the stack.,5,RTE:X;RTE:N;RTE:Z;RTE:V;RTE:C
+67,*,Set according to the immediate operand.,5,STOP:X;STOP:N;STOP:Z;STOP:V;STOP:C

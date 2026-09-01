@@ -2,8 +2,8 @@
 
 Five Motorola manuals, each broken into one PDF per section so the parts can be opened
 and navigated on their own, with a markdown index describing every part. Four of them
-carry further extracted material: a per-processor instruction matrix for the
-programmer's reference manual, and machine-readable electrical specifications plus
+carry further extracted material: a per-processor instruction matrix and a condition-code
+reference for the programmer's reference manual, and machine-readable electrical specifications plus
 redrawn timing diagrams for the MC68030 data sheet, the MC68881/MC68882 manual and the
 M68000 user's manual.
 
@@ -16,7 +16,7 @@ everything here was derived from.
 | Directory | Manual | Parts | Also contains |
 |---|---|--:|---|
 | [`MC68030UM_split/`](MC68030UM_split/) | MC68030 Enhanced 32-Bit Microprocessor User's Manual | 19 | — |
-| [`M68000PRM_split/`](M68000PRM_split/) | M68000 Family Programmer's Reference Manual | 15 | instruction-support matrix |
+| [`M68000PRM_split/`](M68000PRM_split/) | M68000 Family Programmer's Reference Manual | 15 | instruction-support matrix, condition-code reference |
 | [`MC68030EC_split/`](MC68030EC_split/) | MC68030 Electrical Specifications | 8 | specification CSVs, redrawn timing figures |
 | [`MC68881UM_split/`](MC68881UM_split/) | MC68881/MC68882 Floating-Point Coprocessor User's Manual | 23 | specification CSVs, redrawn timing figures |
 | [`MC68000UM_split/`](MC68000UM_split/) | M68000 8-/16-/32-Bit Microprocessors User's Manual | 19 | specification CSVs, redrawn timing figures |
@@ -48,6 +48,17 @@ Also here:
   per-processor tables and the `(family)` annotation on every instruction description.
   That check turned up **8 discrepancies in the manual**, listed with the evidence —
   including two support marks Table A-1 simply drops.
+
+- **[`CONDITION-CODES.md`](M68000PRM_split/CONDITION-CODES.md)** — what each of the 122 MC680xx
+  instructions does to the condition-code bits X, N, Z, V and C, gathered from the
+  `Condition Codes:` block of every instruction description. The manual's own notation is kept —
+  `U` undefined, `0` always cleared, `—` not affected — but its `*`, meaning "see the explanation
+  below the table", is replaced by a note number, so the 193 asterisk cells reduce to 60 distinct
+  explanations, each printed once. Cross-checked against Section 3's Table 3-18, which states the
+  same facts in a different notation, and against a second extraction of the same pages; that
+  turned up **18 defects in the manual**, including one cell where the two sources genuinely
+  disagree, an instruction with no condition-code section at all, and a table row labelled
+  `DIVS, DUVU`.
 
 The source PDF is owner-password encrypted; the split parts are not.
 
