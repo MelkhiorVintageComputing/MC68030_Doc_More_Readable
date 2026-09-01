@@ -1,0 +1,197 @@
+mnemonic,description,MC68000,MC68008,MC68010,MC68020,MC68030,MC68040,MC68881/2,MC68851,notes
+ABCD,Add Decimal with Extend,X,X,X,X,X,X,,,
+ADD,Add,X,X,X,X,X,X,,,
+ADDA,Address,X,X,X,X,X,X,,,
+ADDI,Add Immediate,X,X,X,X,X,X,,,
+ADDQ,Add Quick,X,X,X,X,X,X,,,
+ADDX,Add with Extend,X,X,X,X,X,X,,,
+AND,Logical AND,X,X,X,X,X,X,,,
+ANDI,Logical AND Immediate,X,X,X,X,X,X,,,
+ANDI to CCR,AND Immediate to Condition Code Register,X,X,X,X,X,X,,,
+ANDI to SR,AND Immediate to Status Register,X,X,X,X,X,X,,,privileged
+ASL,Arithmetic Shift Left and Right,X,X,X,X,X,X,,,
+ASR,Arithmetic Shift Left and Right,X,X,X,X,X,X,,,
+Bcc,Branch Conditionally,X,X,X,X,X,X,,,
+BCHG,Test Bit and Change,X,X,X,X,X,X,,,
+BCLR,Test Bit and Clear,X,X,X,X,X,X,,,
+BFCHG,Test Bit Field and Change,,,,X,X,X,,,
+BFCLR,Test Bit Field and Clear,,,,X,X,X,,,
+BFEXTS,Signed Bit Field Extract,,,,X,X,X,,,
+BFEXTU,Unsigned Bit Field Extract,,,,X,X,X,,,
+BFFFO,Bit Field Find First One,,,,X,X,X,,,
+BFINS,Bit Field Insert,,,,X,X,X,,,
+BFSET,Test Bit Field and Set,,,,X,X,X,,,
+BFTST,Test Bit Field,,,,X,X,X,,,
+BKPT,Breakpoint,,,X,X,X,X,,,
+BRA,Branch,X,X,X,X,X,X,,,
+BSET,Test Bit and Set,X,X,X,X,X,X,,,
+BSR,Branch to Subroutine,X,X,X,X,X,X,,,
+BTST,Test Bit,X,X,X,X,X,X,,,
+CALLM,CALL Module,,,,X,,,,,
+CAS,Compare and Swap Operands,,,,X,X,X,,,
+CAS2,Compare and Swap Dual Operands,,,,X,X,X,,,
+CHK,Check Register Against Bound,X,X,X,X,X,X,,,
+CHK2,Check Register Against Upper and Lower Bounds,,,,X,X,X,,,
+CINV,Invalidate Cache Entries,,,,,,X,,,privileged
+CLR,Clear,X,X,X,X,X,X,,,
+CMP,Compare,X,X,X,X,X,X,,,
+CMPA,Compare Address,X,X,X,X,X,X,,,
+CMPI,Compare Immediate,X,X,X,X,X,X,,,
+CMPM,Compare Memory to Memory,X,X,X,X,X,X,,,
+CMP2,Compare Register Against Upper and Lower Bounds,,,,X,X,X,,,
+cpBcc,Branch on Coprocessor Condition,,,,X,X,,,,
+cpDBcc,Test Coprocessor Condition Decrement and Branch,,,,X,X,,,,
+cpGEN,Coprocessor General Function,,,,X,X,,,,
+cpRESTORE,Coprocessor Restore Function,,,,X,X,,,,privileged
+cpSAVE,Coprocessor Save Function,,,,X,X,,,,privileged
+cpScc,Set on Coprocessor Condition,,,,X,X,,,,
+cpTRAPcc,Trap on Coprocessor Condition,,,,X,X,,,,
+CPUSH,Push then Invalidate Cache Entries,,,,,,X,,,privileged
+DBcc,"Test Condition, Decrement and Branch",X,X,X,X,X,X,,,
+DIVS,Signed Divide,X,X,X,X,X,X,,,
+DIVSL,Signed Divide,,,,X,X,X,,,
+DIVU,Unsigned Divide,X,X,X,X,X,X,,,
+DIVUL,Unsigned Divide,,,,X,X,X,,,
+EOR,Logical Exclusive-OR,X,X,X,X,X,X,,,
+EORI,Logical Exclusive-OR Immediate,X,X,X,X,X,X,,,
+EORI to CCR,Exclusive-OR Immediate to Condition Code Register,X,X,X,X,X,X,,,
+EORI to SR,Exclusive-OR Immediate to Status Register,X,X,X,X,X,X,,,privileged
+EXG,Exchange Registers,X,X,X,X,X,X,,,
+EXT,Sign Extend,X,X,X,X,X,X,,,
+EXTB,Sign Extend,,,,X,X,X,,,
+FABS,Floating-Point Absolute Value,,,,,,X,X,,not on EC/LC040
+FSABS,Floating-Point Absolute Value (Single/Double Precision),,,,,,X,,,not on EC/LC040
+FDABS,Floating-Point Absolute Value (Single/Double Precision),,,,,,X,,,not on EC/LC040
+FACOS,Floating-Point Arc Cosine,,,,,,S,X,,not on EC/LC040; 68040: software (FPSP)
+FADD,Floating-Point Add,,,,,,X,X,,not on EC/LC040
+FSADD,Floating-Point Add (Single/Double Precision),,,,,,X,,,not on EC/LC040
+FDADD,Floating-Point Add (Single/Double Precision),,,,,,X,,,not on EC/LC040
+FASIN,Floating-Point Arc Sine,,,,,,S,X,,not on EC/LC040; 68040: software (FPSP)
+FATAN,Floating-Point Arc Tangent,,,,,,S,X,,not on EC/LC040; 68040: software (FPSP)
+FATANH,Floating-Point Hyperbolic Arc Tangent,,,,,,S,X,,not on EC/LC040; 68040: software (FPSP)
+FBcc,Floating-Point Branch,,,,,,X,X,,not on EC/LC040
+FCMP,Floating-Point Compare,,,,,,X,X,,not on EC/LC040
+FCOS,Floating-Point Cosine,,,,,,S,X,,not on EC/LC040; 68040: software (FPSP)
+FCOSH,Floating-Point Hyperbolic Cosine,,,,,,S,X,,not on EC/LC040; 68040: software (FPSP)
+FDBcc,Floating-Point Decrement and Branch,,,,,,X,X,,not on EC/LC040
+FDIV,Floating-Point Divide,,,,,,X,X,,not on EC/LC040
+FSDIV,Floating-Point Divide (Single/Double Precision),,,,,,X,,,not on EC/LC040
+FDDIV,Floating-Point Divide (Single/Double Precision),,,,,,X,,,not on EC/LC040
+FETOX,Floating-Point ex,,,,,,S,X,,not on EC/LC040; 68040: software (FPSP)
+FETOXM1,Floating-Point ex - 1,,,,,,S,X,,not on EC/LC040; 68040: software (FPSP)
+FGETEXP,Floating-Point Get Exponent,,,,,,S,X,,not on EC/LC040; 68040: software (FPSP)
+FGETMAN,Floating-Point Get Mantissa,,,,,,S,X,,not on EC/LC040; 68040: software (FPSP)
+FINT,Floating-Point Integer Part,,,,,,S,X,,not on EC/LC040; 68040: software (FPSP)
+FINTRZ,"Floating-Point Integer Part, Round-to-Zero",,,,,,S,X,,not on EC/LC040; 68040: software (FPSP)
+FLOG10,Floating-Point Log10,,,,,,S,X,,not on EC/LC040; 68040: software (FPSP)
+FLOG2,Floating-Point Log2,,,,,,S,X,,not on EC/LC040; 68040: software (FPSP)
+FLOGN,Floating-Point Loge,,,,,,S,X,,not on EC/LC040; 68040: software (FPSP)
+FLOGNP1,Floating-Point Loge (x + 1),,,,,,S,X,,not on EC/LC040; 68040: software (FPSP)
+FMOD,Floating-Point Modulo Remainder,,,,,,S,X,,not on EC/LC040; 68040: software (FPSP)
+FMOVE,Move Floating-Point Register,,,,,,X,X,,not on EC/LC040
+FSMOVE,Move Floating-Point Register (Single/Double Precision),,,,,,X,,,not on EC/LC040
+FDMOVE,Move Floating-Point Register (Single/Double Precision),,,,,,X,,,not on EC/LC040
+FMOVECR,Move Constant ROM,,,,,,S,X,,not on EC/LC040; 68040: software (FPSP)
+FMOVEM,Move Multiple Floating-Point Registers,,,,,,X,X,,not on EC/LC040
+FMUL,Floating-Point Multiply,,,,,,X,X,,not on EC/LC040
+FSMUL,Floating-Point Multiply (Single/Double Precision),,,,,,X,,,not on EC/LC040
+FDMUL,Floating-Point Multiply (Single/Double Precision),,,,,,X,,,not on EC/LC040
+FNEG,Floating-Point Negate,,,,,,X,X,,not on EC/LC040
+FSNEG,Floating-Point Negate (Single/Double Precision),,,,,,X,,,not on EC/LC040
+FDNEG,Floating-Point Negate (Single/Double Precision),,,,,,X,,,not on EC/LC040
+FNOP,Floating-Point No Operation,,,,,,X,X,,not on EC/LC040
+FREM,IEEE Remainder,,,,,,S,X,,not on EC/LC040; 68040: software (FPSP)
+FRESTORE,Restore Floating-Point Internal State,,,,,,X,X,,privileged; not on EC/LC040
+FSAVE,Save Floating-Point Internal State,,,,,,X,X,,not on EC/LC040
+FSCALE,Floating-Point Scale Exponent,,,,,,S,X,,not on EC/LC040; 68040: software (FPSP)
+FScc,Floating-Point Set According to Condition,,,,,,X,X,,not on EC/LC040
+FSGLDIV,Single-Precision Divide,,,,,,S,X,,not on EC/LC040; 68040: software (FPSP)
+FSGLMUL,Single-Precision Multiply,,,,,,S,X,,not on EC/LC040; 68040: software (FPSP)
+FSIN,Sine,,,,,,S,X,,not on EC/LC040; 68040: software (FPSP)
+FSINCOS,Simultaneous Sine and Cosine,,,,,,S,X,,not on EC/LC040; 68040: software (FPSP)
+FSINH,Hyperbolic Sine,,,,,,S,X,,not on EC/LC040; 68040: software (FPSP)
+FSQRT,Floating-Point Square Root,,,,,,X,X,,not on EC/LC040
+FSSQRT,Floating-Point Square Root (Single/Double Precision),,,,,,X,,,not on EC/LC040
+FDSQRT,Floating-Point Square Root (Single/Double Precision),,,,,,X,,,not on EC/LC040
+FSUB,Floating-Point Subtract,,,,,,X,X,,not on EC/LC040
+FSSUB,Floating-Point Subtract (Single/Double Precision),,,,,,X,,,not on EC/LC040
+FDSUB,Floating-Point Subtract (Single/Double Precision),,,,,,X,,,not on EC/LC040
+FTAN,Tangent,,,,,,S,X,,not on EC/LC040; 68040: software (FPSP)
+FTANH,Hyperbolic Tangent,,,,,,S,X,,not on EC/LC040; 68040: software (FPSP)
+FTENTOX,Floating-Point 10x,,,,,,S,X,,not on EC/LC040; 68040: software (FPSP)
+FTRAPcc,Floating-Point Trap On Condition,,,,,,X,X,,not on EC/LC040
+FTST,Floating-Point Test,,,,,,X,X,,not on EC/LC040
+FTWOTOX,Floating-Point 2x,,,,,,S,X,,not on EC/LC040; 68040: software (FPSP)
+ILLEGAL,Take Illegal Instruction Trap,X,X,X,X,X,X,,,
+JMP,Jump,X,X,X,X,X,X,,,
+JSR,Jump to Subroutine,X,X,X,X,X,X,,,
+LEA,Load Effective Address,X,X,X,X,X,X,,,
+LINK,Link and Allocate,X,X,X,X,X,X,,,
+LSL,Logical Shift Left and Right,X,X,X,X,X,X,,,
+LSR,Logical Shift Left and Right,X,X,X,X,X,X,,,
+MOVE,Move,X,X,X,X,X,X,,,
+MOVEA,Move Address,X,X,X,X,X,X,,,
+MOVE from CCR,Move from Condition Code Register,,,X,X,X,X,,,
+MOVE to CCR,Move to Condition Code Register,X,X,X,X,X,X,,,
+MOVE from SR,Move from Status Register,X,X,X,X,X,X,,,privileged; not privileged on 68000/68008
+MOVE to SR,Move to Status Register,X,X,X,X,X,X,,,privileged
+MOVE USP,Move User Stack Pointer,X,X,X,X,X,X,,,privileged
+MOVE16,16-Byte Block Move,,,,,,X,,,
+MOVEC,Move Control Register,,,X,X,X,X,,,privileged
+MOVEM,Move Multiple Registers,X,X,X,X,X,X,,,
+MOVEP,Move Peripheral,X,X,X,X,X,X,,,
+MOVEQ,Move Quick,X,X,X,X,X,X,,,
+MOVES,Move Alternate Address Space,,,X,X,X,X,,,privileged
+MULS,Signed Multiply,X,X,X,X,X,X,,,
+MULU,Unsigned Multiply,X,X,X,X,X,X,,,
+NBCD,Negate Decimal with Extend,X,X,X,X,X,X,,,
+NEG,Negate,X,X,X,X,X,X,,,
+NEGX,Negate with Extend,X,X,X,X,X,X,,,
+NOP,No Operation,X,X,X,X,X,X,,,
+NOT,Logical Complement,X,X,X,X,X,X,,,
+OR,Logical Inclusive-OR,X,X,X,X,X,X,,,
+ORI,Logical Inclusive-OR Immediate,X,X,X,X,X,X,,,
+ORI to CCR,Inclusive-OR Immediate to Condition Code Register,X,X,X,X,X,X,,,
+ORI to SR,Inclusive-OR Immediate to Status Register,X,X,X,X,X,X,,,privileged
+PACK,Pack BCD,,,,X,X,X,,,
+PBcc,Branch on PMMU Condition,,,,,,,,X,privileged
+PDBcc,"Test, Decrement, and Branch on PMMU Condition",,,,,,,,X,privileged
+PEA,Push Effective Address,X,X,X,X,X,X,,,
+PFLUSH,Flush Entry(ies) in the ATCs,,,,,X,X,,X,privileged; not on EC030
+PFLUSHA,Flush Entry(ies) in the ATCs,,,,,X,X,,X,privileged; not on EC030
+PFLUSHR,Flush Entry(ies) in the ATCs and RPT Entries,,,,,,,,X,privileged
+PFLUSHS,Flush Entry(ies) in the ATCs,,,,,,,,X,privileged
+PLOAD,Load an Entry into the ATC,,,,,X,,,X,privileged; not on EC030
+PMOVE,Move PMMU Register,,,,,X,,,X,privileged
+PRESTORE,PMMU Restore Function,,,,,,,,X,privileged
+PSAVE,PMMU Save Function,,,,,,,,X,privileged
+PScc,Set on PMMU Condition,,,,,,,,X,privileged
+PTEST,Test a Logical Address,,,,,X,X,,X,privileged
+PTRAPcc,Trap on PMMU Condition,,,,,,,,X,privileged
+PVALID,Validate a Pointer,,,,,,,,X,
+RESET,Reset External Devices,X,X,X,X,X,X,,,privileged
+ROL,Rotate Left and Right,X,X,X,X,X,X,,,
+ROR,Rotate Left and Right,X,X,X,X,X,X,,,
+ROXL,Rotate with Extend Left and Right,X,X,X,X,X,X,,,
+ROXR,Rotate with Extend Left and Right,X,X,X,X,X,X,,,
+RTD,Return and Deallocate,,,X,X,X,X,,,
+RTE,Return from Exception,X,X,X,X,X,X,,,privileged
+RTM,Return from Module,,,,X,,,,,
+RTR,Return and Restore,X,X,X,X,X,X,,,
+RTS,Return from Subroutine,X,X,X,X,X,X,,,
+SBCD,Subtract Decimal with Extend,X,X,X,X,X,X,,,
+Scc,Set Conditionally,X,X,X,X,X,X,,,
+STOP,Stop,X,X,X,X,X,X,,,privileged
+SUB,Subtract,X,X,X,X,X,X,,,
+SUBA,Subtract Address,X,X,X,X,X,X,,,
+SUBI,Subtract Immediate,X,X,X,X,X,X,,,
+SUBQ,Subtract Quick,X,X,X,X,X,X,,,
+SUBX,Subtract with Extend,X,X,X,X,X,X,,,
+SWAP,Swap Register Words,X,X,X,X,X,X,,,
+TAS,Test Operand and Set,X,X,X,X,X,X,,,
+TRAP,Trap,X,X,X,X,X,X,,,
+TRAPcc,Trap Conditionally,,,,X,X,X,,,
+TRAPV,Trap on Overflow,X,X,X,X,X,X,,,
+TST,Test Operand,X,X,X,X,X,X,,,
+UNLK,Unlink,X,X,X,X,X,X,,,
+UNPK,Unpack BCD,,,,X,X,X,,,

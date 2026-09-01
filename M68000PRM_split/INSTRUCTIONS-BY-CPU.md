@@ -21,9 +21,31 @@ independent statements of the same fact elsewhere in the manual:
 | 2 | The per-processor instruction lists — Tables A-3 (MC68000/08), A-4 (MC68010), A-6 (MC68020), A-8 (MC68030), A-10 (MC68040), A-12 (MC68881/2), A-13 (MC68851) | PDF pp. 608–627 |
 | 3 | The processor annotation printed in the header of each instruction description, e.g. `(M68000 Family)`, `(MC68020, MC68030, MC68040)`, `(MC6888X, M68040FPSP)` | Sections 4, 5 and 6 — PDF pp. 105–540 |
 
-All three agree for **188 of the 196** instructions. The eight exceptions are listed under
-[Documentation discrepancies](#documentation-discrepancies) below, and are the only places where
-this document departs from, or annotates, Table A-1.
+The corroboration is broad: the seven per-processor tables between them confirm 729 of Table A-1's
+marks, and the instruction descriptions confirm 629 processor claims. Seven instructions are where
+the three sources genuinely disagree — `BKPT`, `cpTRAPcc`, `DIVSL`, `DIVUL`, `EXTB`, `FLOGNP1` and
+`PFLUSHA`. Those, with three misprints found along the way, are the ten entries under
+[Documentation discrepancies](#documentation-discrepancies) below, and the only places where this
+document departs from, or annotates, Table A-1.
+
+[`check-instructions-by-cpu.py`](check-instructions-by-cpu.py) runs the comparison:
+
+```
+   misspelling   A-6        cpTRACPcc  Table A-6 transposes the P and the C of cpTRAPcc
+per-processor tables: 729 instructions corroborated across 7 tables, 0 listed but unmarked, 0 marked but unlisted
+   known defect  BKPT       MC68000    the Section 4 description is headed (MC68EC000, ...), but Table A-1 leaves the 68000 column blank and Table A-3 does not list BKPT; the tables are followed here
+   known defect  DIVSL      MC68000    DIVS and DIVSL share a description headed (M68000 Family); the long form is MC68020 and later
+   known defect  DIVSL      MC68008    as DIVSL/MC68000
+   known defect  DIVSL      MC68010    as DIVSL/MC68000
+   known defect  DIVUL      MC68000    DIVU and DIVUL share a description headed (M68000 Family); the long form is MC68020 and later
+   known defect  DIVUL      MC68008    as DIVUL/MC68000
+   known defect  DIVUL      MC68010    as DIVUL/MC68000
+   known defect  EXTB       MC68000    EXT and EXTB share a description headed (M68000 Family); EXTB is MC68020 and later, which the description says only in its Assembler Syntax line
+   known defect  EXTB       MC68008    as EXTB/MC68000
+   known defect  EXTB       MC68010    as EXTB/MC68000
+description headers: 165 descriptions read, 629 processor claims corroborated, 0 unexplained
+csv integrity: 196 instructions, 0 duplicate mnemonics, 0 with no support
+```
 
 ## Reading the tables
 
@@ -63,29 +85,29 @@ provided by the software FPSP rather than in hardware.
 
 ### MC68000 — 84 instructions
 
-> `ABCD`, `ADD`, `ADDA`, `ADDI`, `ADDQ`, `ADDX`, `AND`, `ANDI`, `ANDI to CCR`, `ANDI to SR`, `ASL`, `ASR`, `Bcc`, `BCHG`, `BCLR`, `BRA`, `BSET`, `BSR`, `BTST`, `CHK`, `CLR`, `CMP`, `CMPA`, `CMPI`, `CMPM`, `DBcc`, `DIVS`, `DIVU`, `EOR`, `EORI`, `EORI to CCR`, `EORI to SR`, `EXG`, `EXT`, `ILLEGAL`, `JMP`, `JSR`, `LEA`, `LINK`, `LSL`, `LSR`, `MOVE`, `MOVE from SR`, `MOVE to CCR`, `MOVE to SR`, `MOVE USP`, `MOVEA`, `MOVEM`, `MOVEP`, `MOVEQ`, `MULS`, `MULU`, `NBCD`, `NEG`, `NEGX`, `NOP`, `NOT`, `OR`, `ORI`, `ORI to CCR`, `ORI to SR`, `PEA`, `RESET`, `ROL`, `ROR`, `ROXL`, `ROXR`, `RTE`, `RTR`, `RTS`, `SBCD`, `Scc`, `STOP`, `SUB`, `SUBA`, `SUBI`, `SUBQ`, `SUBX`, `SWAP`, `TAS`, `TRAP`, `TRAPV`, `TST`, `UNLK`
+> `ABCD`, `ADD`, `ADDA`, `ADDI`, `ADDQ`, `ADDX`, `AND`, `ANDI`, `ANDI to CCR`, `ANDI to SR`, `ASL`, `ASR`, `Bcc`, `BCHG`, `BCLR`, `BRA`, `BSET`, `BSR`, `BTST`, `CHK`, `CLR`, `CMP`, `CMPA`, `CMPI`, `CMPM`, `DBcc`, `DIVS`, `DIVU`, `EOR`, `EORI`, `EORI to CCR`, `EORI to SR`, `EXG`, `EXT`, `ILLEGAL`, `JMP`, `JSR`, `LEA`, `LINK`, `LSL`, `LSR`, `MOVE`, `MOVEA`, `MOVE to CCR`, `MOVE from SR`, `MOVE to SR`, `MOVE USP`, `MOVEM`, `MOVEP`, `MOVEQ`, `MULS`, `MULU`, `NBCD`, `NEG`, `NEGX`, `NOP`, `NOT`, `OR`, `ORI`, `ORI to CCR`, `ORI to SR`, `PEA`, `RESET`, `ROL`, `ROR`, `ROXL`, `ROXR`, `RTE`, `RTR`, `RTS`, `SBCD`, `Scc`, `STOP`, `SUB`, `SUBA`, `SUBI`, `SUBQ`, `SUBX`, `SWAP`, `TAS`, `TRAP`, `TRAPV`, `TST`, `UNLK`
 
 ### MC68008 — 84 instructions
 
-> `ABCD`, `ADD`, `ADDA`, `ADDI`, `ADDQ`, `ADDX`, `AND`, `ANDI`, `ANDI to CCR`, `ANDI to SR`, `ASL`, `ASR`, `Bcc`, `BCHG`, `BCLR`, `BRA`, `BSET`, `BSR`, `BTST`, `CHK`, `CLR`, `CMP`, `CMPA`, `CMPI`, `CMPM`, `DBcc`, `DIVS`, `DIVU`, `EOR`, `EORI`, `EORI to CCR`, `EORI to SR`, `EXG`, `EXT`, `ILLEGAL`, `JMP`, `JSR`, `LEA`, `LINK`, `LSL`, `LSR`, `MOVE`, `MOVE from SR`, `MOVE to CCR`, `MOVE to SR`, `MOVE USP`, `MOVEA`, `MOVEM`, `MOVEP`, `MOVEQ`, `MULS`, `MULU`, `NBCD`, `NEG`, `NEGX`, `NOP`, `NOT`, `OR`, `ORI`, `ORI to CCR`, `ORI to SR`, `PEA`, `RESET`, `ROL`, `ROR`, `ROXL`, `ROXR`, `RTE`, `RTR`, `RTS`, `SBCD`, `Scc`, `STOP`, `SUB`, `SUBA`, `SUBI`, `SUBQ`, `SUBX`, `SWAP`, `TAS`, `TRAP`, `TRAPV`, `TST`, `UNLK`
+> `ABCD`, `ADD`, `ADDA`, `ADDI`, `ADDQ`, `ADDX`, `AND`, `ANDI`, `ANDI to CCR`, `ANDI to SR`, `ASL`, `ASR`, `Bcc`, `BCHG`, `BCLR`, `BRA`, `BSET`, `BSR`, `BTST`, `CHK`, `CLR`, `CMP`, `CMPA`, `CMPI`, `CMPM`, `DBcc`, `DIVS`, `DIVU`, `EOR`, `EORI`, `EORI to CCR`, `EORI to SR`, `EXG`, `EXT`, `ILLEGAL`, `JMP`, `JSR`, `LEA`, `LINK`, `LSL`, `LSR`, `MOVE`, `MOVEA`, `MOVE to CCR`, `MOVE from SR`, `MOVE to SR`, `MOVE USP`, `MOVEM`, `MOVEP`, `MOVEQ`, `MULS`, `MULU`, `NBCD`, `NEG`, `NEGX`, `NOP`, `NOT`, `OR`, `ORI`, `ORI to CCR`, `ORI to SR`, `PEA`, `RESET`, `ROL`, `ROR`, `ROXL`, `ROXR`, `RTE`, `RTR`, `RTS`, `SBCD`, `Scc`, `STOP`, `SUB`, `SUBA`, `SUBI`, `SUBQ`, `SUBX`, `SWAP`, `TAS`, `TRAP`, `TRAPV`, `TST`, `UNLK`
 
 ### MC68010 — 89 instructions
 
-> `ABCD`, `ADD`, `ADDA`, `ADDI`, `ADDQ`, `ADDX`, `AND`, `ANDI`, `ANDI to CCR`, `ANDI to SR`, `ASL`, `ASR`, `Bcc`, `BCHG`, `BCLR`, `BKPT`, `BRA`, `BSET`, `BSR`, `BTST`, `CHK`, `CLR`, `CMP`, `CMPA`, `CMPI`, `CMPM`, `DBcc`, `DIVS`, `DIVU`, `EOR`, `EORI`, `EORI to CCR`, `EORI to SR`, `EXG`, `EXT`, `ILLEGAL`, `JMP`, `JSR`, `LEA`, `LINK`, `LSL`, `LSR`, `MOVE`, `MOVE from CCR`, `MOVE from SR`, `MOVE to CCR`, `MOVE to SR`, `MOVE USP`, `MOVEA`, `MOVEC`, `MOVEM`, `MOVEP`, `MOVEQ`, `MOVES`, `MULS`, `MULU`, `NBCD`, `NEG`, `NEGX`, `NOP`, `NOT`, `OR`, `ORI`, `ORI to CCR`, `ORI to SR`, `PEA`, `RESET`, `ROL`, `ROR`, `ROXL`, `ROXR`, `RTD`, `RTE`, `RTR`, `RTS`, `SBCD`, `Scc`, `STOP`, `SUB`, `SUBA`, `SUBI`, `SUBQ`, `SUBX`, `SWAP`, `TAS`, `TRAP`, `TRAPV`, `TST`, `UNLK`
+> `ABCD`, `ADD`, `ADDA`, `ADDI`, `ADDQ`, `ADDX`, `AND`, `ANDI`, `ANDI to CCR`, `ANDI to SR`, `ASL`, `ASR`, `Bcc`, `BCHG`, `BCLR`, `BKPT`, `BRA`, `BSET`, `BSR`, `BTST`, `CHK`, `CLR`, `CMP`, `CMPA`, `CMPI`, `CMPM`, `DBcc`, `DIVS`, `DIVU`, `EOR`, `EORI`, `EORI to CCR`, `EORI to SR`, `EXG`, `EXT`, `ILLEGAL`, `JMP`, `JSR`, `LEA`, `LINK`, `LSL`, `LSR`, `MOVE`, `MOVEA`, `MOVE from CCR`, `MOVE to CCR`, `MOVE from SR`, `MOVE to SR`, `MOVE USP`, `MOVEC`, `MOVEM`, `MOVEP`, `MOVEQ`, `MOVES`, `MULS`, `MULU`, `NBCD`, `NEG`, `NEGX`, `NOP`, `NOT`, `OR`, `ORI`, `ORI to CCR`, `ORI to SR`, `PEA`, `RESET`, `ROL`, `ROR`, `ROXL`, `ROXR`, `RTD`, `RTE`, `RTR`, `RTS`, `SBCD`, `Scc`, `STOP`, `SUB`, `SUBA`, `SUBI`, `SUBQ`, `SUBX`, `SWAP`, `TAS`, `TRAP`, `TRAPV`, `TST`, `UNLK`
 
 ### MC68020 — 116 instructions
 
-> `ABCD`, `ADD`, `ADDA`, `ADDI`, `ADDQ`, `ADDX`, `AND`, `ANDI`, `ANDI to CCR`, `ANDI to SR`, `ASL`, `ASR`, `Bcc`, `BCHG`, `BCLR`, `BFCHG`, `BFCLR`, `BFEXTS`, `BFEXTU`, `BFFFO`, `BFINS`, `BFSET`, `BFTST`, `BKPT`, `BRA`, `BSET`, `BSR`, `BTST`, `CALLM`, `CAS`, `CAS2`, `CHK`, `CHK2`, `CLR`, `CMP`, `CMP2`, `CMPA`, `CMPI`, `CMPM`, `cpBcc`, `cpDBcc`, `cpGEN`, `cpRESTORE`, `cpSAVE`, `cpScc`, `cpTRAPcc`, `DBcc`, `DIVS`, `DIVSL`, `DIVU`, `DIVUL`, `EOR`, `EORI`, `EORI to CCR`, `EORI to SR`, `EXG`, `EXT`, `EXTB`, `ILLEGAL`, `JMP`, `JSR`, `LEA`, `LINK`, `LSL`, `LSR`, `MOVE`, `MOVE from CCR`, `MOVE from SR`, `MOVE to CCR`, `MOVE to SR`, `MOVE USP`, `MOVEA`, `MOVEC`, `MOVEM`, `MOVEP`, `MOVEQ`, `MOVES`, `MULS`, `MULU`, `NBCD`, `NEG`, `NEGX`, `NOP`, `NOT`, `OR`, `ORI`, `ORI to CCR`, `ORI to SR`, `PACK`, `PEA`, `RESET`, `ROL`, `ROR`, `ROXL`, `ROXR`, `RTD`, `RTE`, `RTM`, `RTR`, `RTS`, `SBCD`, `Scc`, `STOP`, `SUB`, `SUBA`, `SUBI`, `SUBQ`, `SUBX`, `SWAP`, `TAS`, `TRAP`, `TRAPcc`, `TRAPV`, `TST`, `UNLK`, `UNPK`
+> `ABCD`, `ADD`, `ADDA`, `ADDI`, `ADDQ`, `ADDX`, `AND`, `ANDI`, `ANDI to CCR`, `ANDI to SR`, `ASL`, `ASR`, `Bcc`, `BCHG`, `BCLR`, `BFCHG`, `BFCLR`, `BFEXTS`, `BFEXTU`, `BFFFO`, `BFINS`, `BFSET`, `BFTST`, `BKPT`, `BRA`, `BSET`, `BSR`, `BTST`, `CALLM`, `CAS`, `CAS2`, `CHK`, `CHK2`, `CLR`, `CMP`, `CMPA`, `CMPI`, `CMPM`, `CMP2`, `cpBcc`, `cpDBcc`, `cpGEN`, `cpRESTORE`, `cpSAVE`, `cpScc`, `cpTRAPcc`, `DBcc`, `DIVS`, `DIVSL`, `DIVU`, `DIVUL`, `EOR`, `EORI`, `EORI to CCR`, `EORI to SR`, `EXG`, `EXT`, `EXTB`, `ILLEGAL`, `JMP`, `JSR`, `LEA`, `LINK`, `LSL`, `LSR`, `MOVE`, `MOVEA`, `MOVE from CCR`, `MOVE to CCR`, `MOVE from SR`, `MOVE to SR`, `MOVE USP`, `MOVEC`, `MOVEM`, `MOVEP`, `MOVEQ`, `MOVES`, `MULS`, `MULU`, `NBCD`, `NEG`, `NEGX`, `NOP`, `NOT`, `OR`, `ORI`, `ORI to CCR`, `ORI to SR`, `PACK`, `PEA`, `RESET`, `ROL`, `ROR`, `ROXL`, `ROXR`, `RTD`, `RTE`, `RTM`, `RTR`, `RTS`, `SBCD`, `Scc`, `STOP`, `SUB`, `SUBA`, `SUBI`, `SUBQ`, `SUBX`, `SWAP`, `TAS`, `TRAP`, `TRAPcc`, `TRAPV`, `TST`, `UNLK`, `UNPK`
 
 ### MC68030 — 119 instructions
 
-> `ABCD`, `ADD`, `ADDA`, `ADDI`, `ADDQ`, `ADDX`, `AND`, `ANDI`, `ANDI to CCR`, `ANDI to SR`, `ASL`, `ASR`, `Bcc`, `BCHG`, `BCLR`, `BFCHG`, `BFCLR`, `BFEXTS`, `BFEXTU`, `BFFFO`, `BFINS`, `BFSET`, `BFTST`, `BKPT`, `BRA`, `BSET`, `BSR`, `BTST`, `CAS`, `CAS2`, `CHK`, `CHK2`, `CLR`, `CMP`, `CMP2`, `CMPA`, `CMPI`, `CMPM`, `cpBcc`, `cpDBcc`, `cpGEN`, `cpRESTORE`, `cpSAVE`, `cpScc`, `cpTRAPcc`, `DBcc`, `DIVS`, `DIVSL`, `DIVU`, `DIVUL`, `EOR`, `EORI`, `EORI to CCR`, `EORI to SR`, `EXG`, `EXT`, `EXTB`, `ILLEGAL`, `JMP`, `JSR`, `LEA`, `LINK`, `LSL`, `LSR`, `MOVE`, `MOVE from CCR`, `MOVE from SR`, `MOVE to CCR`, `MOVE to SR`, `MOVE USP`, `MOVEA`, `MOVEC`, `MOVEM`, `MOVEP`, `MOVEQ`, `MOVES`, `MULS`, `MULU`, `NBCD`, `NEG`, `NEGX`, `NOP`, `NOT`, `OR`, `ORI`, `ORI to CCR`, `ORI to SR`, `PACK`, `PEA`, `PFLUSH`, `PFLUSHA`, `PLOAD`, `PMOVE`, `PTEST`, `RESET`, `ROL`, `ROR`, `ROXL`, `ROXR`, `RTD`, `RTE`, `RTR`, `RTS`, `SBCD`, `Scc`, `STOP`, `SUB`, `SUBA`, `SUBI`, `SUBQ`, `SUBX`, `SWAP`, `TAS`, `TRAP`, `TRAPcc`, `TRAPV`, `TST`, `UNLK`, `UNPK`
+> `ABCD`, `ADD`, `ADDA`, `ADDI`, `ADDQ`, `ADDX`, `AND`, `ANDI`, `ANDI to CCR`, `ANDI to SR`, `ASL`, `ASR`, `Bcc`, `BCHG`, `BCLR`, `BFCHG`, `BFCLR`, `BFEXTS`, `BFEXTU`, `BFFFO`, `BFINS`, `BFSET`, `BFTST`, `BKPT`, `BRA`, `BSET`, `BSR`, `BTST`, `CAS`, `CAS2`, `CHK`, `CHK2`, `CLR`, `CMP`, `CMPA`, `CMPI`, `CMPM`, `CMP2`, `cpBcc`, `cpDBcc`, `cpGEN`, `cpRESTORE`, `cpSAVE`, `cpScc`, `cpTRAPcc`, `DBcc`, `DIVS`, `DIVSL`, `DIVU`, `DIVUL`, `EOR`, `EORI`, `EORI to CCR`, `EORI to SR`, `EXG`, `EXT`, `EXTB`, `ILLEGAL`, `JMP`, `JSR`, `LEA`, `LINK`, `LSL`, `LSR`, `MOVE`, `MOVEA`, `MOVE from CCR`, `MOVE to CCR`, `MOVE from SR`, `MOVE to SR`, `MOVE USP`, `MOVEC`, `MOVEM`, `MOVEP`, `MOVEQ`, `MOVES`, `MULS`, `MULU`, `NBCD`, `NEG`, `NEGX`, `NOP`, `NOT`, `OR`, `ORI`, `ORI to CCR`, `ORI to SR`, `PACK`, `PEA`, `PFLUSH`, `PFLUSHA`, `PLOAD`, `PMOVE`, `PTEST`, `RESET`, `ROL`, `ROR`, `ROXL`, `ROXR`, `RTD`, `RTE`, `RTR`, `RTS`, `SBCD`, `Scc`, `STOP`, `SUB`, `SUBA`, `SUBI`, `SUBQ`, `SUBX`, `SWAP`, `TAS`, `TRAP`, `TRAPcc`, `TRAPV`, `TST`, `UNLK`, `UNPK`
 
 ### MC68040 — 176 instructions
 
 Hardware (147):
 
-> `ABCD`, `ADD`, `ADDA`, `ADDI`, `ADDQ`, `ADDX`, `AND`, `ANDI`, `ANDI to CCR`, `ANDI to SR`, `ASL`, `ASR`, `Bcc`, `BCHG`, `BCLR`, `BFCHG`, `BFCLR`, `BFEXTS`, `BFEXTU`, `BFFFO`, `BFINS`, `BFSET`, `BFTST`, `BKPT`, `BRA`, `BSET`, `BSR`, `BTST`, `CAS`, `CAS2`, `CHK`, `CHK2`, `CINV`, `CLR`, `CMP`, `CMP2`, `CMPA`, `CMPI`, `CMPM`, `CPUSH`, `DBcc`, `DIVS`, `DIVSL`, `DIVU`, `DIVUL`, `EOR`, `EORI`, `EORI to CCR`, `EORI to SR`, `EXG`, `EXT`, `EXTB`, `FABS`, `FADD`, `FBcc`, `FCMP`, `FDABS`, `FDADD`, `FDBcc`, `FDDIV`, `FDIV`, `FDMOVE`, `FDMUL`, `FDNEG`, `FDSQRT`, `FDSUB`, `FMOVE`, `FMOVEM`, `FMUL`, `FNEG`, `FNOP`, `FRESTORE`, `FSABS`, `FSADD`, `FSAVE`, `FScc`, `FSDIV`, `FSMOVE`, `FSMUL`, `FSNEG`, `FSQRT`, `FSSQRT`, `FSSUB`, `FSUB`, `FTRAPcc`, `FTST`, `ILLEGAL`, `JMP`, `JSR`, `LEA`, `LINK`, `LSL`, `LSR`, `MOVE`, `MOVE from CCR`, `MOVE from SR`, `MOVE to CCR`, `MOVE to SR`, `MOVE USP`, `MOVE16`, `MOVEA`, `MOVEC`, `MOVEM`, `MOVEP`, `MOVEQ`, `MOVES`, `MULS`, `MULU`, `NBCD`, `NEG`, `NEGX`, `NOP`, `NOT`, `OR`, `ORI`, `ORI to CCR`, `ORI to SR`, `PACK`, `PEA`, `PFLUSH`, `PFLUSHA`, `PTEST`, `RESET`, `ROL`, `ROR`, `ROXL`, `ROXR`, `RTD`, `RTE`, `RTR`, `RTS`, `SBCD`, `Scc`, `STOP`, `SUB`, `SUBA`, `SUBI`, `SUBQ`, `SUBX`, `SWAP`, `TAS`, `TRAP`, `TRAPcc`, `TRAPV`, `TST`, `UNLK`, `UNPK`
+> `ABCD`, `ADD`, `ADDA`, `ADDI`, `ADDQ`, `ADDX`, `AND`, `ANDI`, `ANDI to CCR`, `ANDI to SR`, `ASL`, `ASR`, `Bcc`, `BCHG`, `BCLR`, `BFCHG`, `BFCLR`, `BFEXTS`, `BFEXTU`, `BFFFO`, `BFINS`, `BFSET`, `BFTST`, `BKPT`, `BRA`, `BSET`, `BSR`, `BTST`, `CAS`, `CAS2`, `CHK`, `CHK2`, `CINV`, `CLR`, `CMP`, `CMPA`, `CMPI`, `CMPM`, `CMP2`, `CPUSH`, `DBcc`, `DIVS`, `DIVSL`, `DIVU`, `DIVUL`, `EOR`, `EORI`, `EORI to CCR`, `EORI to SR`, `EXG`, `EXT`, `EXTB`, `FABS`, `FSABS`, `FDABS`, `FADD`, `FSADD`, `FDADD`, `FBcc`, `FCMP`, `FDBcc`, `FDIV`, `FSDIV`, `FDDIV`, `FMOVE`, `FSMOVE`, `FDMOVE`, `FMOVEM`, `FMUL`, `FSMUL`, `FDMUL`, `FNEG`, `FSNEG`, `FDNEG`, `FNOP`, `FRESTORE`, `FSAVE`, `FScc`, `FSQRT`, `FSSQRT`, `FDSQRT`, `FSUB`, `FSSUB`, `FDSUB`, `FTRAPcc`, `FTST`, `ILLEGAL`, `JMP`, `JSR`, `LEA`, `LINK`, `LSL`, `LSR`, `MOVE`, `MOVEA`, `MOVE from CCR`, `MOVE to CCR`, `MOVE from SR`, `MOVE to SR`, `MOVE USP`, `MOVE16`, `MOVEC`, `MOVEM`, `MOVEP`, `MOVEQ`, `MOVES`, `MULS`, `MULU`, `NBCD`, `NEG`, `NEGX`, `NOP`, `NOT`, `OR`, `ORI`, `ORI to CCR`, `ORI to SR`, `PACK`, `PEA`, `PFLUSH`, `PFLUSHA`, `PTEST`, `RESET`, `ROL`, `ROR`, `ROXL`, `ROXR`, `RTD`, `RTE`, `RTR`, `RTS`, `SBCD`, `Scc`, `STOP`, `SUB`, `SUBA`, `SUBI`, `SUBQ`, `SUBX`, `SWAP`, `TAS`, `TRAP`, `TRAPcc`, `TRAPV`, `TST`, `UNLK`, `UNPK`
 
 Software, via M68040FPSP (29):
 
@@ -101,7 +123,7 @@ Software, via M68040FPSP (29):
 
 ## Documentation discrepancies
 
-Eight places where the manual contradicts itself or is imprecise. Each was verified by reading the
+Ten places where the manual contradicts itself or is imprecise. Each was verified by reading the
 relevant page directly; page numbers are **PDF pages of `M68000PRM.pdf`**, with the split file in
 brackets.
 
@@ -139,18 +161,25 @@ Appendix A states that references to the MC68000 include the MC68EC000, so the t
 right. This document follows the tables (no MC68000/MC68008 support), but the conflict is
 unresolved in the manual and the MC68EC000 is a later part than the tables' vintage.
 
-### 5. `DIVSL` and `DIVUL` inherit an over-broad header — *imprecision*
+### 5. `DIVSL`, `DIVUL` and `EXTB` inherit an over-broad header — *imprecision*
 
-`DIVS` and `DIVSL` share one description (pp. 196–199), as do `DIVU` and `DIVUL` (pp. 200–203), and
-every page of both entries is headed `(M68000 Family)`. The long forms `DIVSL`/`DIVUL` are in fact
-MC68020-and-later, as Table A-1 and Tables A-3/A-4 both state; only the body text makes the
-distinction. Contrast `EXT, EXTB` (p. 210), which handles the same situation correctly by carrying
-a second header for the MC68020-and-later form.
+`DIVS` and `DIVSL` share one description (pp. 196–199), as do `DIVU` and `DIVUL` (pp. 200–203) and
+`EXT` and `EXTB` (p. 210). Every one of those pages is headed `(M68000 Family)`. But the long forms
+`DIVSL`, `DIVUL` and `EXTB` are all MC68020-and-later, as Table A-1 and Tables A-3/A-4 state.
 
-### 6. Malformed header on `EXT, EXTB` — *typo*
+Only `EXT, EXTB` says so anywhere on the page, and it says it in the Assembler Syntax block rather
+than in the header:
 
-That second header on p. 210 reads `(MC68020, MC68030 MC68040, CPU32)` — the comma between
-`MC68030` and `MC68040` is missing.
+> `EXTB.L Dn` extend byte to long word (MC68020, MC68030 MC68040, CPU32)
+
+`DIVS`/`DIVSL` and `DIVU`/`DIVUL` leave the restriction to the body prose. In all three cases the
+header, read alone, claims MC68000 support the instruction does not have.
+
+### 6. Malformed processor list on `EXTB` — *typo*
+
+That Assembler Syntax annotation reads `(MC68020, MC68030 MC68040, CPU32)` — the comma between
+`MC68030` and `MC68040` is missing. It is the only processor list in the manual that runs two part
+numbers together.
 
 ### 7. Malformed header on `PTRAPcc` — *typo*
 
@@ -163,6 +192,25 @@ Table A-2 (p. 605) lists `FSFABS, FDFABS — Floating-Point Absolute Value (Sing
 Precision)`. The instructions are `FSABS`/`FDABS`: that is the spelling in Table A-1 (p. 600), in
 Table A-10 (MC68040), and in the Section 5 `FABS` description. The stray `F` is unique to
 Table A-2.
+
+### 9. `FSAVE` carries a footnote marker Table A-1 never defines — *typo*
+
+Table A-1 (p. 603) prints the row as `FSAVE*`. The table's own NOTES list runs 1 to 5 and has no
+asterisk in it, so the marker points at nothing.
+
+It should be footnote 1, *Privileged (Supervisor) Instruction*. `FSAVE` is privileged — it is
+documented in Section 6, Supervisor (Privileged) Instructions (p. 468) — and `FRESTORE`, its twin
+on the line above, does carry footnote 1. The consequence is visible in the table below: `FSAVE`
+is the one privileged instruction in the manual whose Notes cell does not say so, because the
+marker it was given cannot be resolved.
+
+### 10. Table A-2 gives `ADDA` the description `Address` — *typo*
+
+Table A-2 (p. 604) lists `ADDA — Address`. It is *Add Address*, which is what Table A-3 (p. 608),
+Table A-4, Table A-6, Table A-8 and Table A-10 all print, and what the Section 4 description
+(p. 111) is titled. The verb has simply dropped out.
+
+Descriptions in the table below come from Table A-2 verbatim, so this one reads `Address`.
 
 ### Not discrepancies
 
@@ -223,10 +271,10 @@ omissions noted above filled in and marked ⚠.
 | `CINV` | Invalidate Cache Entries |  |  |  |  |  | X |  |  | privileged |
 | `CLR` | Clear | X | X | X | X | X | X |  |  |  |
 | `CMP` | Compare | X | X | X | X | X | X |  |  |  |
-| `CMP2` | Compare Register Against Upper and Lower Bounds |  |  |  | X | X | X |  |  |  |
 | `CMPA` | Compare Address | X | X | X | X | X | X |  |  |  |
 | `CMPI` | Compare Immediate | X | X | X | X | X | X |  |  |  |
 | `CMPM` | Compare Memory to Memory | X | X | X | X | X | X |  |  |  |
+| `CMP2` | Compare Register Against Upper and Lower Bounds |  |  |  | X | X | X |  |  |  |
 | `cpBcc` | Branch on Coprocessor Condition |  |  |  | X | X |  |  |  |  |
 | `cpDBcc` | Test Coprocessor Condition Decrement and Branch |  |  |  | X | X |  |  |  |  |
 | `cpGEN` | Coprocessor General Function |  |  |  | X | X |  |  |  |  |
@@ -248,8 +296,12 @@ omissions noted above filled in and marked ⚠.
 | `EXT` | Sign Extend | X | X | X | X | X | X |  |  |  |
 | `EXTB` | Sign Extend |  |  |  | X | X | X |  |  |  |
 | `FABS` | Floating-Point Absolute Value |  |  |  |  |  | X | X |  | not on EC/LC040 |
+| `FSABS` | Floating-Point Absolute Value (Single/Double Precision) |  |  |  |  |  | X |  |  | not on EC/LC040 |
+| `FDABS` | Floating-Point Absolute Value (Single/Double Precision) |  |  |  |  |  | X |  |  | not on EC/LC040 |
 | `FACOS` | Floating-Point Arc Cosine |  |  |  |  |  | S | X |  | not on EC/LC040; 68040: software (FPSP) |
 | `FADD` | Floating-Point Add |  |  |  |  |  | X | X |  | not on EC/LC040 |
+| `FSADD` | Floating-Point Add (Single/Double Precision) |  |  |  |  |  | X |  |  | not on EC/LC040 |
+| `FDADD` | Floating-Point Add (Single/Double Precision) |  |  |  |  |  | X |  |  | not on EC/LC040 |
 | `FASIN` | Floating-Point Arc Sine |  |  |  |  |  | S | X |  | not on EC/LC040; 68040: software (FPSP) |
 | `FATAN` | Floating-Point Arc Tangent |  |  |  |  |  | S | X |  | not on EC/LC040; 68040: software (FPSP) |
 | `FATANH` | Floating-Point Hyperbolic Arc Tangent |  |  |  |  |  | S | X |  | not on EC/LC040; 68040: software (FPSP) |
@@ -257,16 +309,10 @@ omissions noted above filled in and marked ⚠.
 | `FCMP` | Floating-Point Compare |  |  |  |  |  | X | X |  | not on EC/LC040 |
 | `FCOS` | Floating-Point Cosine |  |  |  |  |  | S | X |  | not on EC/LC040; 68040: software (FPSP) |
 | `FCOSH` | Floating-Point Hyperbolic Cosine |  |  |  |  |  | S | X |  | not on EC/LC040; 68040: software (FPSP) |
-| `FDABS` | Floating-Point Absolute Value (Single/Double Precision) |  |  |  |  |  | X |  |  | not on EC/LC040 |
-| `FDADD` | Floating-Point Add (Single/Double Precision) |  |  |  |  |  | X |  |  | not on EC/LC040 |
 | `FDBcc` | Floating-Point Decrement and Branch |  |  |  |  |  | X | X |  | not on EC/LC040 |
-| `FDDIV` | Floating-Point Divide (Single/Double Precision) |  |  |  |  |  | X |  |  | not on EC/LC040 |
 | `FDIV` | Floating-Point Divide |  |  |  |  |  | X | X |  | not on EC/LC040 |
-| `FDMOVE` | Move Floating-Point Register (Single/Double Precision) |  |  |  |  |  | X |  |  | not on EC/LC040 |
-| `FDMUL` | Floating-Point Multiply (Single/Double Precision) |  |  |  |  |  | X |  |  | not on EC/LC040 |
-| `FDNEG` | Floating-Point Negate (Single/Double Precision) |  |  |  |  |  | X |  |  | not on EC/LC040 |
-| `FDSQRT` | Floating-Point Square Root (Single/Double Precision) |  |  |  |  |  | X |  |  | not on EC/LC040 |
-| `FDSUB` | Floating-Point Subtract (Single/Double Precision) |  |  |  |  |  | X |  |  | not on EC/LC040 |
+| `FSDIV` | Floating-Point Divide (Single/Double Precision) |  |  |  |  |  | X |  |  | not on EC/LC040 |
+| `FDDIV` | Floating-Point Divide (Single/Double Precision) |  |  |  |  |  | X |  |  | not on EC/LC040 |
 | `FETOX` | Floating-Point ex |  |  |  |  |  | S | X |  | not on EC/LC040; 68040: software (FPSP) |
 | `FETOXM1` | Floating-Point ex - 1 |  |  |  |  |  | S | X |  | not on EC/LC040; 68040: software (FPSP) |
 | `FGETEXP` | Floating-Point Get Exponent |  |  |  |  |  | S | X |  | not on EC/LC040; 68040: software (FPSP) |
@@ -279,31 +325,33 @@ omissions noted above filled in and marked ⚠.
 | `FLOGNP1` | Floating-Point Loge (x + 1) |  |  |  |  |  | S | **X**⚠ |  | not on EC/LC040; 68040: software (FPSP) |
 | `FMOD` | Floating-Point Modulo Remainder |  |  |  |  |  | S | X |  | not on EC/LC040; 68040: software (FPSP) |
 | `FMOVE` | Move Floating-Point Register |  |  |  |  |  | X | X |  | not on EC/LC040 |
+| `FSMOVE` | Move Floating-Point Register (Single/Double Precision) |  |  |  |  |  | X |  |  | not on EC/LC040 |
+| `FDMOVE` | Move Floating-Point Register (Single/Double Precision) |  |  |  |  |  | X |  |  | not on EC/LC040 |
 | `FMOVECR` | Move Constant ROM |  |  |  |  |  | S | X |  | not on EC/LC040; 68040: software (FPSP) |
 | `FMOVEM` | Move Multiple Floating-Point Registers |  |  |  |  |  | X | X |  | not on EC/LC040 |
 | `FMUL` | Floating-Point Multiply |  |  |  |  |  | X | X |  | not on EC/LC040 |
+| `FSMUL` | Floating-Point Multiply (Single/Double Precision) |  |  |  |  |  | X |  |  | not on EC/LC040 |
+| `FDMUL` | Floating-Point Multiply (Single/Double Precision) |  |  |  |  |  | X |  |  | not on EC/LC040 |
 | `FNEG` | Floating-Point Negate |  |  |  |  |  | X | X |  | not on EC/LC040 |
+| `FSNEG` | Floating-Point Negate (Single/Double Precision) |  |  |  |  |  | X |  |  | not on EC/LC040 |
+| `FDNEG` | Floating-Point Negate (Single/Double Precision) |  |  |  |  |  | X |  |  | not on EC/LC040 |
 | `FNOP` | Floating-Point No Operation |  |  |  |  |  | X | X |  | not on EC/LC040 |
 | `FREM` | IEEE Remainder |  |  |  |  |  | S | X |  | not on EC/LC040; 68040: software (FPSP) |
 | `FRESTORE` | Restore Floating-Point Internal State |  |  |  |  |  | X | X |  | privileged; not on EC/LC040 |
-| `FSABS` | Floating-Point Absolute Value (Single/Double Precision) |  |  |  |  |  | X |  |  | not on EC/LC040 |
-| `FSADD` | Floating-Point Add (Single/Double Precision) |  |  |  |  |  | X |  |  | not on EC/LC040 |
 | `FSAVE` | Save Floating-Point Internal State |  |  |  |  |  | X | X |  | not on EC/LC040 |
 | `FSCALE` | Floating-Point Scale Exponent |  |  |  |  |  | S | X |  | not on EC/LC040; 68040: software (FPSP) |
 | `FScc` | Floating-Point Set According to Condition |  |  |  |  |  | X | X |  | not on EC/LC040 |
-| `FSDIV` | Floating-Point Divide (Single/Double Precision) |  |  |  |  |  | X |  |  | not on EC/LC040 |
 | `FSGLDIV` | Single-Precision Divide |  |  |  |  |  | S | X |  | not on EC/LC040; 68040: software (FPSP) |
 | `FSGLMUL` | Single-Precision Multiply |  |  |  |  |  | S | X |  | not on EC/LC040; 68040: software (FPSP) |
 | `FSIN` | Sine |  |  |  |  |  | S | X |  | not on EC/LC040; 68040: software (FPSP) |
 | `FSINCOS` | Simultaneous Sine and Cosine |  |  |  |  |  | S | X |  | not on EC/LC040; 68040: software (FPSP) |
 | `FSINH` | Hyperbolic Sine |  |  |  |  |  | S | X |  | not on EC/LC040; 68040: software (FPSP) |
-| `FSMOVE` | Move Floating-Point Register (Single/Double Precision) |  |  |  |  |  | X |  |  | not on EC/LC040 |
-| `FSMUL` | Floating-Point Multiply (Single/Double Precision) |  |  |  |  |  | X |  |  | not on EC/LC040 |
-| `FSNEG` | Floating-Point Negate (Single/Double Precision) |  |  |  |  |  | X |  |  | not on EC/LC040 |
 | `FSQRT` | Floating-Point Square Root |  |  |  |  |  | X | X |  | not on EC/LC040 |
 | `FSSQRT` | Floating-Point Square Root (Single/Double Precision) |  |  |  |  |  | X |  |  | not on EC/LC040 |
-| `FSSUB` | Floating-Point Subtract (Single/Double Precision) |  |  |  |  |  | X |  |  | not on EC/LC040 |
+| `FDSQRT` | Floating-Point Square Root (Single/Double Precision) |  |  |  |  |  | X |  |  | not on EC/LC040 |
 | `FSUB` | Floating-Point Subtract |  |  |  |  |  | X | X |  | not on EC/LC040 |
+| `FSSUB` | Floating-Point Subtract (Single/Double Precision) |  |  |  |  |  | X |  |  | not on EC/LC040 |
+| `FDSUB` | Floating-Point Subtract (Single/Double Precision) |  |  |  |  |  | X |  |  | not on EC/LC040 |
 | `FTAN` | Tangent |  |  |  |  |  | S | X |  | not on EC/LC040; 68040: software (FPSP) |
 | `FTANH` | Hyperbolic Tangent |  |  |  |  |  | S | X |  | not on EC/LC040; 68040: software (FPSP) |
 | `FTENTOX` | Floating-Point 10x |  |  |  |  |  | S | X |  | not on EC/LC040; 68040: software (FPSP) |
@@ -318,13 +366,13 @@ omissions noted above filled in and marked ⚠.
 | `LSL` | Logical Shift Left and Right | X | X | X | X | X | X |  |  |  |
 | `LSR` | Logical Shift Left and Right | X | X | X | X | X | X |  |  |  |
 | `MOVE` | Move | X | X | X | X | X | X |  |  |  |
+| `MOVEA` | Move Address | X | X | X | X | X | X |  |  |  |
 | `MOVE from CCR` | Move from Condition Code Register |  |  | X | X | X | X |  |  |  |
-| `MOVE from SR` | Move from Status Register | X | X | X | X | X | X |  |  | privileged; not privileged on 68000/68008 |
 | `MOVE to CCR` | Move to Condition Code Register | X | X | X | X | X | X |  |  |  |
+| `MOVE from SR` | Move from Status Register | X | X | X | X | X | X |  |  | privileged; not privileged on 68000/68008 |
 | `MOVE to SR` | Move to Status Register | X | X | X | X | X | X |  |  | privileged |
 | `MOVE USP` | Move User Stack Pointer | X | X | X | X | X | X |  |  | privileged |
 | `MOVE16` | 16-Byte Block Move |  |  |  |  |  | X |  |  |  |
-| `MOVEA` | Move Address | X | X | X | X | X | X |  |  |  |
 | `MOVEC` | Move Control Register |  |  | X | X | X | X |  |  | privileged |
 | `MOVEM` | Move Multiple Registers | X | X | X | X | X | X |  |  |  |
 | `MOVEP` | Move Peripheral | X | X | X | X | X | X |  |  |  |
@@ -389,17 +437,27 @@ omissions noted above filled in and marked ⚠.
 Everything above was extracted mechanically from the PDF's text layer and then reconciled; nothing
 was transcribed by hand, and no support claim rests on a single table.
 
-- Table A-1 was read with `pdftotext -layout`, with the column boundaries recalibrated from the
-  header row of **each** page (the column widths shift between pages). Cells were then assigned to
-  the nearest column centre. Three different row layouts had to be handled: the normal one, rows
-  where the mnemonic wraps across three lines (`FSMOVE,` / marks / `FDMOVE`), and rows where the
-  superscript footnote and marks are emitted on the line *above* the mnemonic (`PLOAD`,
-  `PRESTORE`, `PSAVE`).
-- Footnote markers fused to mnemonics (`MOVES1`, `STOP1`, `FETOXM11,2`, `PFLUSH*`) were stripped by
-  taking the longest prefix that is a mnemonic known to Table A-2 — so genuine trailing digits in
-  `CMP2`, `CHK2`, `MOVE16`, `FLOG2`, `FLOG10`, `FETOXM1` and `FLOGNP1` survive intact.
+- **Table A-1 is not read from the text layer at all.** Its column widths shift from page to page,
+  its footnote markers are superscripts that the extraction drops onto whichever line it likes, and
+  a mnemonic too wide for its column is broken across two or three lines with the marks stranded on
+  the line between — so `PLOAD`, `PRESTORE` and `PSAVE` have their marks emitted *above* the
+  mnemonic, and `ROXL,` / marks / `ROXR` spreads one row over three lines. Instead
+  `pdftotext -bbox` gives every word's bounding box; words are clustered into lines by their
+  **bottom** edge, and columns assigned by centre against the header row of that same page.
+- Clustering on the bottom edge rather than the top is the whole trick. A superscript's top is
+  5.3 pt above its line's, which is further than the gap to the line above, so any rule keyed on
+  the top strands it; its bottom is only 3.1 pt off. Once the markers land on their own rows, all
+  four row layouts come out identically and no special case is needed for any of them.
+- A word is a footnote marker rather than a mnemonic or a mark if its box is under 7 pt tall: body
+  text in these tables is set at about 8.3 pt and superscripts at about 6 pt. That is what keeps
+  the genuine trailing digits of `CMP2`, `CHK2`, `MOVE16`, `FLOG2`, `FLOG10`, `FETOXM1` and
+  `FLOGNP1` intact while stripping the fused markers from `MOVES`, `STOP` and `FSAVE`.
 - Grouped entries were expanded to their individual mnemonics, so `ASL, ASR` and `CAS, CAS2`
   contribute one row each to the matrix.
+- A cell can be marked in three ways. Most carry an `X`. Where a footnote applies the `X` may be
+  dropped and the marker left standing alone — `FMOVECR`'s MC68040 cell is a bare `2,3` and
+  `MOVE from SR`'s MC68000 and MC68008 cells are a bare `4` — and those still mean supported. A
+  cell whose footnotes include 3 is marked `S` here rather than `X`.
 
 Two caveats worth stating:
 
@@ -411,9 +469,16 @@ Two caveats worth stating:
   covers the MC68EC000, MC68020 the MC68EC020, and MC68030 the MC68EC030, except where a footnote
   says otherwise (*not on EC030* appears on the MMU instructions, which the MC68EC030 lacks).
 
-The 8 discrepancies above are those where the three sources genuinely disagree. During extraction a
+The 10 discrepancies above are those where the three sources genuinely disagree. During extraction a
 further set of apparent conflicts turned out to be artefacts of the text layer rather than errors
 in the manual — descriptions wrapping onto the preceding line in Table A-10, and the `cpTRAPcc`
 description page (p. 193) whose header collapses onto a single line, `cpTRAPcc Trap on Coprocessor
 Condition cpTRAPcc`, unlike every other instruction page. Those were resolved by reading the pages
 concerned and are not reported as documentation defects.
+
+## Regenerating
+
+```sh
+python3 make-instructions-by-cpu.py    # rewrites the CSV and this document
+python3 check-instructions-by-cpu.py   # re-reads the PDFs and checks them
+```

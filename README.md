@@ -46,8 +46,9 @@ Also here:
   68040, 68881/2, 68851; CPU32 excluded), as per-CPU lists and a full cross-reference
   matrix. Built from Appendix A's Table A-1 and cross-checked against both the
   per-processor tables and the `(family)` annotation on every instruction description.
-  That check turned up **8 discrepancies in the manual**, listed with the evidence —
-  including two support marks Table A-1 simply drops.
+  That check turned up **10 discrepancies in the manual**, listed with the evidence —
+  including two support marks Table A-1 simply drops, and a footnote marker it uses but
+  never defines.
 
 - **[`CONDITION-CODES.md`](M68000PRM_split/CONDITION-CODES.md)** — what each of the 122 MC680xx
   instructions does to the condition-code bits X, N, Z, V and C, gathered from the

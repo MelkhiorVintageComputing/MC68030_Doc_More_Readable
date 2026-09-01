@@ -835,7 +835,7 @@ def main():
     check = os.path.join(HERE, 'check-condition-codes.py')
     if os.path.exists(check):
         output = subprocess.run(['python3', check], capture_output=True,
-                                text=True).stdout.strip()
+                                text=True).stdout.rstrip()
     else:
         output = '(check-condition-codes.py has not been written yet)'
     write_markdown(kept, notes, uses, output)
