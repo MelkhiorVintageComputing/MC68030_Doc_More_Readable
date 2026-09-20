@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 440" width="760" height="440"
+     font-family="'DejaVu Sans',Verdana,Arial,sans-serif" role="img"
+     aria-label="MC68020 clock input timing diagram: trapezoidal clock waveform with cycle time and the two pulse widths marked at the 1.5 V crossing, and rise and fall times marked between the 0.8 V and 2.0 V thresholds">
+  <title>Figure 10-2. Clock Input Timing Diagram — MC68020/MC68EC020</title>
+  <style>
+    .wave { stroke:#111; stroke-width:3.2; fill:none; stroke-linejoin:round; stroke-linecap:round; }
+    .cons { stroke:#111; stroke-width:0.9; fill:none; opacity:.55; }
+    .tick { stroke:#111; stroke-width:1.6; fill:none; }
+    .dim  { stroke:#111; stroke-width:1.4; fill:none; }
+    .lbl  { fill:#111; font-size:14px; }
+    .num  { fill:#111; font-size:15px; font-weight:700; text-anchor:middle; }
+    .disc { stroke:#111; stroke-width:1.5; fill:#fff; }
+    .ah   { fill:#111; }
+    @media (prefers-color-scheme: dark) {
+      .wave,.cons,.tick,.dim { stroke:#e8e8e8; }
+      .lbl,.num { fill:#e8e8e8; }
+      .disc { stroke:#e8e8e8; fill:#161616; }
+      .ah { fill:#e8e8e8; }
+    }
+  </style>
+  <!-- Arrowheads are explicit polygons rather than marker elements: several
+       SVG rasterisers used by documentation tools ignore markers entirely.
+       Unlike the M68000 figure, this manual measures both pulse widths at a
+       single 1.5 V crossing rather than between the 0.8 V and 2.0 V lines;
+       the rise and fall times are still measured between those two. -->
+
+  <!-- construction lines (drawn first, so the waveform sits on top) -->
+  <g class="cons">
+    <line x1="115" y1="230" x2="115" y2="104"/>
+    <line x1="285" y1="230" x2="285" y2="52"/>
+    <line x1="465" y1="230" x2="465" y2="104"/>
+    <line x1="635" y1="230" x2="635" y2="52"/>
+    <line x1="452.5" y1="266" x2="452.5" y2="372"/>
+    <line x1="477.5" y1="200" x2="477.5" y2="372"/>
+    <line x1="622.5" y1="200" x2="622.5" y2="404"/>
+    <line x1="647.5" y1="266" x2="647.5" y2="404"/>
+    <line x1="60" y1="230" x2="740" y2="230" stroke-dasharray="5 5"/>
+  </g>
+
+  <!-- threshold reference ticks on every measured crossing -->
+  <g class="tick">
+    <line x1="108" y1="230" x2="122" y2="230"/>
+    <line x1="278" y1="230" x2="292" y2="230"/>
+    <line x1="458" y1="230" x2="472" y2="230"/>
+    <line x1="628" y1="230" x2="642" y2="230"/>
+    <line x1="445.5" y1="266" x2="459.5" y2="266"/>
+    <line x1="470.5" y1="200" x2="484.5" y2="200"/>
+    <line x1="615.5" y1="200" x2="629.5" y2="200"/>
+    <line x1="640.5" y1="266" x2="654.5" y2="266"/>
+    <line x1="60"  y1="200" x2="76"  y2="200"/>
+    <line x1="60"  y1="266" x2="76"  y2="266"/>
+  </g>
+
+  <!-- clock waveform: low, rise, high, fall, low, rise, high, fall, low -->
+  <path class="wave" d="M 20,290 L 90,290 L 140,170 L 260,170 L 310,290
+                        L 440,290 L 490,170 L 610,170 L 660,290 L 740,290"/>
+
+  <!-- voltage level labels -->
+  <text class="lbl" x="55" y="205" text-anchor="end">2.0 V</text>
+  <text class="lbl" x="55" y="235" text-anchor="end">1.5 V</text>
+  <text class="lbl" x="55" y="271" text-anchor="end">0.8 V</text>
+  <text class="lbl" x="20" y="330" font-size="13" font-weight="700">CLK</text>
+
+  <!-- 1 : cycle time, 1.5 V falling edge to 1.5 V falling edge -->
+  <line class="dim" x1="285" y1="60" x2="635" y2="60"/>
+  <path class="ah" d="M285,60 L294,55.5 L294,64.5 Z"/>
+  <path class="ah" d="M635,60 L626,55.5 L626,64.5 Z"/>
+  <circle class="disc" cx="460" cy="60" r="15"/>
+  <text class="num" x="460" y="65">1</text>
+
+  <!-- 2 : clock high pulse width, 1.5 V to 1.5 V -->
+  <line class="dim" x1="115" y1="112" x2="285" y2="112"/>
+  <path class="ah" d="M115,112 L124,107.5 L124,116.5 Z"/>
+  <path class="ah" d="M285,112 L276,107.5 L276,116.5 Z"/>
+  <circle class="disc" cx="200" cy="112" r="15"/>
+  <text class="num" x="200" y="117">2</text>
+
+  <!-- 3 : clock low pulse width, 1.5 V to 1.5 V -->
+  <line class="dim" x1="285" y1="112" x2="465" y2="112"/>
+  <path class="ah" d="M285,112 L294,107.5 L294,116.5 Z"/>
+  <path class="ah" d="M465,112 L456,107.5 L456,116.5 Z"/>
+  <circle class="disc" cx="375" cy="112" r="15"/>
+  <text class="num" x="375" y="117">3</text>
+
+  <!-- 4 : rise time, 0.8 V to 2.0 V (arrows approach from outside) -->
+  <line class="dim" x1="390" y1="372" x2="452.5" y2="372"/>
+  <path class="ah" d="M452.5,372 L443.5,367.5 L443.5,376.5 Z"/>
+  <line class="dim" x1="540" y1="372" x2="477.5" y2="372"/>
+  <path class="ah" d="M477.5,372 L486.5,367.5 L486.5,376.5 Z"/>
+  <circle class="disc" cx="555" cy="372" r="15"/>
+  <text class="num" x="555" y="377">4</text>
+
+  <!-- 5 : fall time, 2.0 V to 0.8 V -->
+  <line class="dim" x1="560" y1="404" x2="622.5" y2="404"/>
+  <path class="ah" d="M622.5,404 L613.5,399.5 L613.5,408.5 Z"/>
+  <line class="dim" x1="710" y1="404" x2="647.5" y2="404"/>
+  <path class="ah" d="M647.5,404 L656.5,399.5 L656.5,408.5 Z"/>
+  <circle class="disc" cx="725" cy="404" r="15"/>
+  <text class="num" x="725" y="409">5</text>
+</svg>

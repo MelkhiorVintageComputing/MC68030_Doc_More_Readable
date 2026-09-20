@@ -1,0 +1,15 @@
+table,marker,applies_to,text
+clock,*,f25,"These specifications represent an improvement over previously published specifications for the 25-MHz MC68020 and are valid only for products bearing date codes of 8827 and later. 1 2 3 2.0 V 0.8 V 4 5 NOTE:Timing measurements are referenced to and from a low voltage of .08 V and a high voltage of 2.0 V, unless othervise noted. The voltage swing through this r a should start outside and pass through the range such that the rise or fall w between 0.8 V and 2.0 V. FIGURE 10-2 MC68020UM Figure 10-2. Clock Input Timing Diagram"
+read-write,*,,This specification does not apply to the MC68EC020.
+read-write,**,f25,These specifications represent an improvement over previously published specifications for the 25-MHz MC68020 and are valid only for product bearing date codes of 8827 and later.
+read-write,1,,This number can be reduced to 5 ns if strobes have equal loads.
+read-write,2,,"If the asynchronous setup time (#47A) requirements are satisfied, the DSACK≈ low to data setup time (#31) and DSACK≈ low to BERR low setup time (#48) can be ignored. The data must only satisfy the data-in clock low setup time (#27) for the following clock cycle, and BERR must only satisfy the late BERR low to clock low setup time (#27A) for the following clock cycle."
+read-write,3,,This parameter specifies the maximum allowable skew between DSACK0 to DSACK1 asserted or DSACK1 to DSACK0 asserted; specification #47A must be met by DSACK0 or DSACK1.
+read-write,4,,"This specification applies to the first (DSACK0 or DSACK1) DSACK≈ signal asserted. In the absence of DSACK≈, BERR is an asynchronous input using the asynchronous input setup time (#47A)."
+read-write,5,,DBEN may stay asserted on consecutive write cycles.
+read-write,6,,"The minimum values must be met to guarantee proper operation. If this maximum value is exceeded, BG may be reasserted."
+read-write,7,,This specification indicates the minimum high time for ECS and OCS in the event of an internal cache hit followed immediately by a cache miss or operand cycle.
+read-write,8,,"This specification guarantees operation with the MC68881/MC68882, which specifies a minimum time for DS negated to AS asserted (specification #13A in MC68881UM/AD, MC68881/MC68882 Floating-Point Coprocessor User's Manual). Without this specification, incorrect interpretation of specifications #9A and #15 would indicate that the MC68020/EC020 does not meet the MC68881/MC68882 requirements."
+read-write,9,,This specification allows a system designer to guarantee data hold times on the output side of data buffers that have output enable signals generated with DBEN.
+read-write,10,,These specifications allow system designers to guarantee that an alternate bus master has stopped driving the bus when the MC68020/EC020 regains control of the bus after an arbitration sequence.
+read-write,11,,"This specification allows system designers to qualify the CS signal of an MC68881/MC68882 with AS (allowing 7 ns for a gate delay) and still meet the CS to DS setup time requirement (specification 8B of MC68881UM/AD, MC68881/MC68882 Floating-Point Coprocessor User's Manual)."

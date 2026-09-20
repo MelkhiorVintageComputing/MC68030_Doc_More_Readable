@@ -1,0 +1,166 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1532 890" width="1532" height="890" font-family="'DejaVu Sans',Verdana,Arial,sans-serif" role="img" aria-label="Figure 10-5. Bus Arbitration Timing Diagram - MC68020/MC68EC020">
+  <title>Figure 10-5. Bus Arbitration Timing Diagram - MC68020/MC68EC020</title>
+  <style>
+    .w    { stroke:#111; stroke-width:2.4; fill:none; stroke-linejoin:round; stroke-linecap:round; }
+    .grid { stroke:#111; stroke-width:0.8; opacity:.30; }
+    .tick { stroke:#111; stroke-width:0.9; opacity:.75; }
+    .dim  { stroke:#111; stroke-width:1.2; }
+    .lbl  { fill:#111; font-size:12.5px; font-weight:700; text-anchor:end; }
+    .st   { fill:#111; font-size:12px; font-weight:700; text-anchor:middle; }
+    .num  { fill:#111; font-size:11.5px; font-weight:700; text-anchor:middle; }
+    .disc { stroke:#111; stroke-width:1.3; fill:#fff; }
+    .ah   { fill:#111; }
+    .ovl  { stroke:#111; stroke-width:1.1; fill:none; }
+    .alt  { stroke:#111; stroke-width:1.6; fill:none; stroke-dasharray:7 5; }
+    @media (prefers-color-scheme: dark) {
+      .w,.grid,.tick,.dim,.ovl,.alt { stroke:#e8e8e8; }
+      .lbl,.st,.num { fill:#e8e8e8; }
+      .disc { stroke:#e8e8e8; fill:#161616; }
+      .ah { fill:#e8e8e8; }
+    }
+  </style>
+  <text class="st" x="292.4" y="30">S0</text>
+  <text class="st" x="388.4" y="30">S1</text>
+  <text class="st" x="484.4" y="30">S2</text>
+  <text class="st" x="580.4" y="30">S3</text>
+  <text class="st" x="676.4" y="30">S4</text>
+  <text class="st" x="772.4" y="30">S5</text>
+  <line class="grid" x1="244.4" y1="36" x2="244.4" y2="874.0"/>
+  <line class="grid" x1="340.4" y1="36" x2="340.4" y2="874.0"/>
+  <line class="grid" x1="436.4" y1="36" x2="436.4" y2="874.0"/>
+  <line class="grid" x1="532.4" y1="36" x2="532.4" y2="874.0"/>
+  <line class="grid" x1="628.4" y1="36" x2="628.4" y2="874.0"/>
+  <line class="grid" x1="724.4" y1="36" x2="724.4" y2="874.0"/>
+  <line class="grid" x1="820.4" y1="36" x2="820.4" y2="874.0"/>
+  <line class="grid" x1="916.4" y1="36" x2="916.4" y2="874.0"/>
+  <line class="grid" x1="1012.4" y1="36" x2="1012.4" y2="874.0"/>
+  <line class="grid" x1="1108.4" y1="36" x2="1108.4" y2="874.0"/>
+  <line class="grid" x1="1204.4" y1="36" x2="1204.4" y2="874.0"/>
+  <line class="grid" x1="1300.4" y1="36" x2="1300.4" y2="874.0"/>
+  <line class="grid" x1="1396.4" y1="36" x2="1396.4" y2="874.0"/>
+  <text class="lbl" x="144.0" y="61.5">CLK</text>
+  <text class="lbl" x="144.0" y="114.5">A31-A0,</text>
+  <text class="lbl" x="144.0" y="127.5">FC2-FC0,</text>
+  <text class="lbl" x="144.0" y="140.5">SIZ1-SIZ0</text>
+  <text class="lbl" x="144.0" y="193.5">D31-D0</text>
+  <text class="lbl" x="144.0" y="259.5">ECS, OCS</text>
+  <text class="lbl" x="144.0" y="325.5">AS, DS</text>
+  <text class="lbl" x="144.0" y="416.5">R/W</text>
+  <text class="lbl" x="144.0" y="482.5">DBEN</text>
+  <text class="lbl" x="144.0" y="548.5">DSACK0, DSACK1</text>
+  <text class="lbl" x="144.0" y="614.5">BR</text>
+  <text class="lbl" x="144.0" y="705.5">BG</text>
+  <text class="lbl" x="144.0" y="796.5">BGACK</text>
+  <path class="w" d="M 158.0,70.0 L 239.9,70.0 L 248.9,44.0 L 335.9,44.0 L 344.9,70.0 L 431.9,70.0 L 440.9,44.0 L 527.9,44.0 L 536.9,70.0 L 623.9,70.0 L 632.9,44.0 L 719.9,44.0 L 728.9,70.0 L 815.9,70.0 L 824.9,44.0 L 911.9,44.0 L 920.9,70.0 L 1007.9,70.0 L 1016.9,44.0 L 1103.9,44.0 L 1112.9,70.0 L 1199.9,70.0 L 1208.9,44.0 L 1295.9,44.0 L 1304.9,70.0 L 1391.9,70.0 L 1400.9,44.0 L 1487.9,44.0 L 1496.9,70.0 L 1492.4,70.0"/>
+  <path class="w" d="M 307.1,110.0 L 316.1,136.0 M 307.1,136.0 L 316.1,110.0"/>
+  <path class="w" d="M 710.3,110.0 L 719.3,136.0 M 710.3,136.0 L 719.3,110.0"/>
+  <path class="w" d="M 739.1,110.0 L 748.1,123.0 M 739.1,136.0 L 748.1,123.0"/>
+  <line class="w" x1="748.1" y1="123.0" x2="1295.9" y2="123.0"/>
+  <path class="w" d="M 1295.9,123.0 L 1304.9,110.0 M 1295.9,123.0 L 1304.9,136.0"/>
+  <line class="w" x1="158.0" y1="110.0" x2="307.1" y2="110.0"/>
+  <line class="w" x1="316.1" y1="110.0" x2="710.3" y2="110.0"/>
+  <line class="w" x1="719.3" y1="110.0" x2="739.1" y2="110.0"/>
+  <line class="w" x1="1304.9" y1="110.0" x2="1492.4" y2="110.0"/>
+  <line class="w" x1="158.0" y1="136.0" x2="307.1" y2="136.0"/>
+  <line class="w" x1="316.1" y1="136.0" x2="710.3" y2="136.0"/>
+  <line class="w" x1="719.3" y1="136.0" x2="739.1" y2="136.0"/>
+  <line class="w" x1="1304.9" y1="136.0" x2="1492.4" y2="136.0"/>
+  <line class="w" x1="158.0" y1="189.0" x2="460.7" y2="189.0"/>
+  <path class="w" d="M 460.7,189.0 L 469.7,176.0 M 460.7,189.0 L 469.7,202.0"/>
+  <path class="w" d="M 700.7,176.0 L 709.7,189.0 M 700.7,202.0 L 709.7,189.0"/>
+  <line class="w" x1="709.7" y1="189.0" x2="1492.4" y2="189.0"/>
+  <line class="w" x1="469.7" y1="176.0" x2="700.7" y2="176.0"/>
+  <line class="w" x1="469.7" y1="202.0" x2="700.7" y2="202.0"/>
+  <path class="w" d="M 158.0,242.0 L 273.5,242.0 L 282.5,268.0 L 364.7,268.0 L 373.7,242.0 L 1492.4,242.0"/>
+  <path class="w" d="M 158.0,308.0 L 412.7,308.0 L 421.7,334.0 L 691.1,334.0 L 700.1,308.0 L 739.1,308.0 L 748.1,321.0 L 1295.9,321.0 L 1304.9,308.0 L 1492.4,308.0"/>
+  <path class="w" d="M 158.0,399.0 L 321.5,399.0 L 330.5,425.0 L 710.3,425.0 L 719.3,399.0 L 739.1,399.0 L 748.1,412.0 L 1295.9,412.0 L 1304.9,399.0 L 1492.4,399.0"/>
+  <path class="w" d="M 158.0,465.0 L 427.1,465.0 L 436.1,491.0 L 710.3,491.0 L 719.3,465.0 L 739.1,465.0 L 748.1,478.0 L 1295.9,478.0 L 1304.9,465.0 L 1492.4,465.0"/>
+  <path class="w" d="M 158.0,531.0 L 556.7,531.0 L 565.7,557.0 L 710.3,557.0 L 719.3,531.0 L 1492.4,531.0"/>
+  <path class="w" d="M 158.0,597.0 L 355.1,597.0 L 364.1,623.0 L 854.3,623.0 L 863.3,597.0 L 1492.4,597.0"/>
+  <path class="w" d="M 158.0,688.0 L 556.7,688.0 L 565.7,714.0 L 1046.3,714.0 L 1055.3,688.0 L 1492.4,688.0"/>
+  <path class="w" d="M 158.0,779.0 L 777.5,779.0 L 786.5,805.0 L 1238.3,805.0 L 1247.3,779.0 L 1492.4,779.0"/>
+  <line class="tick" x1="714.8" y1="76.0" x2="714.8" y2="94.0"/>
+  <line class="tick" x1="743.6" y1="76.0" x2="743.6" y2="94.0"/>
+  <line class="dim" x1="680.8" y1="85.0" x2="714.8" y2="85.0"/>
+  <path class="ah" d="M 714.8,85.0 L 706.8,80.4 L 706.8,89.6 Z"/>
+  <line class="dim" x1="743.6" y1="85.0" x2="777.6" y2="85.0"/>
+  <path class="ah" d="M 743.6,85.0 L 751.6,80.4 L 751.6,89.6 Z"/>
+  <circle class="disc" cx="791.1" cy="85.0" r="13.5"/>
+  <text class="num" x="791.1" y="89.2">7</text>
+  <line class="tick" x1="695.6" y1="340.0" x2="695.6" y2="358.0"/>
+  <line class="tick" x1="743.6" y1="340.0" x2="743.6" y2="358.0"/>
+  <line class="dim" x1="661.6" y1="349.0" x2="695.6" y2="349.0"/>
+  <path class="ah" d="M 695.6,349.0 L 687.6,344.4 L 687.6,353.6 Z"/>
+  <line class="dim" x1="743.6" y1="349.0" x2="777.6" y2="349.0"/>
+  <path class="ah" d="M 743.6,349.0 L 751.6,344.4 L 751.6,353.6 Z"/>
+  <circle class="disc" cx="791.1" cy="349.0" r="13.5"/>
+  <text class="num" x="791.1" y="353.2">16</text>
+  <line class="tick" x1="359.6" y1="629.0" x2="359.6" y2="647.0"/>
+  <line class="tick" x1="561.2" y1="629.0" x2="561.2" y2="647.0"/>
+  <line class="dim" x1="359.6" y1="638.0" x2="561.2" y2="638.0"/>
+  <path class="ah" d="M 359.6,638.0 L 367.6,633.4 L 367.6,642.6 Z"/>
+  <path class="ah" d="M 561.2,638.0 L 553.2,633.4 L 553.2,642.6 Z"/>
+  <circle class="disc" cx="460.4" cy="638.0" r="13.5"/>
+  <text class="num" x="460.4" y="642.2">35</text>
+  <line class="tick" x1="782.0" y1="629.0" x2="782.0" y2="647.0"/>
+  <line class="tick" x1="858.8" y1="629.0" x2="858.8" y2="647.0"/>
+  <line class="dim" x1="748.0" y1="638.0" x2="782.0" y2="638.0"/>
+  <path class="ah" d="M 782.0,638.0 L 774.0,633.4 L 774.0,642.6 Z"/>
+  <line class="dim" x1="858.8" y1="638.0" x2="892.8" y2="638.0"/>
+  <path class="ah" d="M 858.8,638.0 L 866.8,633.4 L 866.8,642.6 Z"/>
+  <circle class="disc" cx="906.3" cy="638.0" r="13.5"/>
+  <text class="num" x="906.3" y="642.2">37A</text>
+  <line class="tick" x1="532.4" y1="654.0" x2="532.4" y2="672.0"/>
+  <line class="tick" x1="561.2" y1="654.0" x2="561.2" y2="672.0"/>
+  <line class="dim" x1="498.4" y1="663.0" x2="532.4" y2="663.0"/>
+  <path class="ah" d="M 532.4,663.0 L 524.4,658.4 L 524.4,667.6 Z"/>
+  <line class="dim" x1="561.2" y1="663.0" x2="595.2" y2="663.0"/>
+  <path class="ah" d="M 561.2,663.0 L 569.2,658.4 L 569.2,667.6 Z"/>
+  <circle class="disc" cx="484.9" cy="663.0" r="13.5"/>
+  <text class="num" x="484.9" y="667.2">33</text>
+  <line class="tick" x1="561.2" y1="720.0" x2="561.2" y2="738.0"/>
+  <line class="tick" x1="782.0" y1="720.0" x2="782.0" y2="738.0"/>
+  <line class="dim" x1="561.2" y1="729.0" x2="782.0" y2="729.0"/>
+  <path class="ah" d="M 561.2,729.0 L 569.2,724.4 L 569.2,733.6 Z"/>
+  <path class="ah" d="M 782.0,729.0 L 774.0,724.4 L 774.0,733.6 Z"/>
+  <circle class="disc" cx="671.6" cy="729.0" r="13.5"/>
+  <text class="num" x="671.6" y="733.2">39A</text>
+  <line class="tick" x1="782.0" y1="720.0" x2="782.0" y2="738.0"/>
+  <line class="tick" x1="1050.8" y1="720.0" x2="1050.8" y2="738.0"/>
+  <line class="dim" x1="748.0" y1="729.0" x2="782.0" y2="729.0"/>
+  <path class="ah" d="M 782.0,729.0 L 774.0,724.4 L 774.0,733.6 Z"/>
+  <line class="dim" x1="1050.8" y1="729.0" x2="1084.8" y2="729.0"/>
+  <path class="ah" d="M 1050.8,729.0 L 1058.8,724.4 L 1058.8,733.6 Z"/>
+  <circle class="disc" cx="1098.3" cy="729.0" r="13.5"/>
+  <text class="num" x="1098.3" y="733.2">37</text>
+  <line class="tick" x1="1012.4" y1="745.0" x2="1012.4" y2="763.0"/>
+  <line class="tick" x1="1050.8" y1="745.0" x2="1050.8" y2="763.0"/>
+  <line class="dim" x1="978.4" y1="754.0" x2="1012.4" y2="754.0"/>
+  <path class="ah" d="M 1012.4,754.0 L 1004.4,749.4 L 1004.4,758.6 Z"/>
+  <line class="dim" x1="1050.8" y1="754.0" x2="1084.8" y2="754.0"/>
+  <path class="ah" d="M 1050.8,754.0 L 1058.8,749.4 L 1058.8,758.6 Z"/>
+  <circle class="disc" cx="964.9" cy="754.0" r="13.5"/>
+  <text class="num" x="964.9" y="758.2">34</text>
+  <line class="tick" x1="1050.8" y1="745.0" x2="1050.8" y2="763.0"/>
+  <line class="tick" x1="1300.4" y1="745.0" x2="1300.4" y2="763.0"/>
+  <line class="dim" x1="1050.8" y1="754.0" x2="1300.4" y2="754.0"/>
+  <path class="ah" d="M 1050.8,754.0 L 1058.8,749.4 L 1058.8,758.6 Z"/>
+  <path class="ah" d="M 1300.4,754.0 L 1292.4,749.4 L 1292.4,758.6 Z"/>
+  <circle class="disc" cx="1175.6" cy="754.0" r="13.5"/>
+  <text class="num" x="1175.6" y="758.2">39</text>
+  <line class="tick" x1="1242.8" y1="811.0" x2="1242.8" y2="829.0"/>
+  <line class="tick" x1="1300.4" y1="811.0" x2="1300.4" y2="829.0"/>
+  <line class="dim" x1="1208.8" y1="820.0" x2="1242.8" y2="820.0"/>
+  <path class="ah" d="M 1242.8,820.0 L 1234.8,815.4 L 1234.8,824.6 Z"/>
+  <line class="dim" x1="1300.4" y1="820.0" x2="1334.4" y2="820.0"/>
+  <path class="ah" d="M 1300.4,820.0 L 1308.4,815.4 L 1308.4,824.6 Z"/>
+  <circle class="disc" cx="1195.3" cy="820.0" r="13.5"/>
+  <text class="num" x="1195.3" y="824.2">58</text>
+  <line class="tick" x1="1050.8" y1="836.0" x2="1050.8" y2="854.0"/>
+  <line class="tick" x1="1300.4" y1="836.0" x2="1300.4" y2="854.0"/>
+  <line class="dim" x1="1050.8" y1="845.0" x2="1300.4" y2="845.0"/>
+  <path class="ah" d="M 1050.8,845.0 L 1058.8,840.4 L 1058.8,849.6 Z"/>
+  <path class="ah" d="M 1300.4,845.0 L 1292.4,840.4 L 1292.4,849.6 Z"/>
+  <circle class="disc" cx="1175.6" cy="845.0" r="13.5"/>
+  <text class="num" x="1175.6" y="849.2">59</text>
+</svg>

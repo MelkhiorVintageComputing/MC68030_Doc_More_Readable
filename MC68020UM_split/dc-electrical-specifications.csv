@@ -1,0 +1,34 @@
+table,pdf_page,printed_page,applies_to,characteristic,condition,symbol,min,max,unit,note
+maximum-ratings,275,10-1,MC68020/EC020,Supply Voltage,,VCC,,–0.3 to +7.0,V,"a maximum rating, not an operating condition"
+maximum-ratings,275,10-1,MC68020/EC020,Input Voltage,,Vin,,–0.5 to +7.0,V,"a maximum rating, not an operating condition"
+maximum-ratings,275,10-1,MC68020/EC020,Minimum Ambient Temperature,,TA,,0,°C,"a maximum rating, not an operating condition"
+maximum-ratings,275,10-1,MC68020/EC020,"Maximum Ambient Temperature PGA, PPGA, PQFP",,TA,,70,°C,"a maximum rating, not an operating condition"
+maximum-ratings,275,10-1,MC68020/EC020,Maximum Junction Temperature CQFP,,TJ,,110,°C,"a maximum rating, not an operating condition"
+maximum-ratings,275,10-1,MC68020/EC020,Storage Temperature Range,,Tstg,,–55 to 150,°C,"a maximum rating, not an operating condition"
+dc,278,10-4,MC68020,Input High Voltage,,VIH,2.0,VCC,V,(VCC = 5.0 Vdc ± 5%; GND = 0 Vdc ; Temperature within defined ranges)
+dc,278,10-4,MC68020,Input Low Voltage,,VIL,GND –0.5,0.8,V,(VCC = 5.0 Vdc ± 5%; GND = 0 Vdc ; Temperature within defined ranges)
+dc,278,10-4,MC68020,Input Leakage Current,"BERR, BR, BGACK, CLK, IPL2–IPL0, GND ≤ Vin ≤ VCC AVEC,DSACK1, DSACK0, CDIS",Iin,–1.0,1.0,µA,(VCC = 5.0 Vdc ± 5%; GND = 0 Vdc ; Temperature within defined ranges)
+dc,278,10-4,MC68020,Input Leakage Current,"HALT, RESET",Iin,–20,20,µA,(VCC = 5.0 Vdc ± 5%; GND = 0 Vdc ; Temperature within defined ranges)
+dc,278,10-4,MC68020,Hi-Z (Off-State) Leakage Current,"A31–A0, AS, DBEN, DS, D31–D0, @ 2.4 V/0.5 V FC2–FC0, R/W, RMC, SIZ1–SIZ0",ITSI,–20,20,µA,(VCC = 5.0 Vdc ± 5%; GND = 0 Vdc ; Temperature within defined ranges)
+dc,278,10-4,MC68020,Output High Voltage,"A31–A0, AS, BG, D31–D0, DBEN, DS, R/W, IOH = 400 µA ECS, IPEND, RMC, SIZ1–SIZ0, FC2–FC0",VOH,2.4,—,V,(VCC = 5.0 Vdc ± 5%; GND = 0 Vdc ; Temperature within defined ranges)
+dc,278,10-4,MC68020,Output Low Voltage,"IOL = 3.2 mA A31–A0, FC2–FC0, SIZ1–SIZ0, BG, D31–0",VOL,—,0.5,V,(VCC = 5.0 Vdc ± 5%; GND = 0 Vdc ; Temperature within defined ranges)
+dc,278,10-4,MC68020,Output Low Voltage,"IOL = 5.3 mA AS, DS, R/W, RMC, DBEN, IPEND,",VOL,—,0.5,V,(VCC = 5.0 Vdc ± 5%; GND = 0 Vdc ; Temperature within defined ranges)
+dc,278,10-4,MC68020,Output Low Voltage,"IOL = 2.0 mA ECS, OCS",VOL,—,0.5,V,(VCC = 5.0 Vdc ± 5%; GND = 0 Vdc ; Temperature within defined ranges)
+dc,278,10-4,MC68020,Output Low Voltage,"IOL = 10.7 mA HALT, RESET",VOL,—,0.5,V,(VCC = 5.0 Vdc ± 5%; GND = 0 Vdc ; Temperature within defined ranges)
+dc,278,10-4,MC68020,Power Dissipation (TA = 0°C),,PD,—,2.0,W,(VCC = 5.0 Vdc ± 5%; GND = 0 Vdc ; Temperature within defined ranges)
+dc,278,10-4,MC68020,Capacitance (see Note),,Cin,—,20,pF,(VCC = 5.0 Vdc ± 5%; GND = 0 Vdc ; Temperature within defined ranges)
+dc,278,10-4,MC68020,Load Capacitance,"ECS, OCS",CL,—,50,pF,(VCC = 5.0 Vdc ± 5%; GND = 0 Vdc ; Temperature within defined ranges)
+dc,278,10-4,MC68020,Load Capacitance,All Other,CL,—,130,pF,(VCC = 5.0 Vdc ± 5%; GND = 0 Vdc ; Temperature within defined ranges)
+dc,279,10-5,MC68EC020,Input High Voltage,,VIH,2.0,VCC,V,(VCC = 5.0 Vdc ± 5%; GND = 0 Vdc ; Temperature within defined ranges)
+dc,279,10-5,MC68EC020,Input Low Voltage,,VIL,GND –0.5,0.8,V,(VCC = 5.0 Vdc ± 5%; GND = 0 Vdc ; Temperature within defined ranges)
+dc,279,10-5,MC68EC020,Input Leakage Current,"BERR, BR, CLK, IPL2–IPL0, GND ≤ Vin ≤ VCC AVEC,DSACK1, DSACK0, CDIS,",Iin,–1.0,1.0,µA,(VCC = 5.0 Vdc ± 5%; GND = 0 Vdc ; Temperature within defined ranges)
+dc,279,10-5,MC68EC020,Input Leakage Current,"HALT, RESET",Iin,–20,20,µA,(VCC = 5.0 Vdc ± 5%; GND = 0 Vdc ; Temperature within defined ranges)
+dc,279,10-5,MC68EC020,Hi-Z (Off-State) Leakage Current,"A23–A0, AS, DS, D31–D0, FC2–FC0, @ 2.4 V/0.5 V R/W, RMC, SIZ1–SIZ0",ITSI,–20,20,µA,(VCC = 5.0 Vdc ± 5%; GND = 0 Vdc ; Temperature within defined ranges)
+dc,279,10-5,MC68EC020,Output High Voltage,"A23–A0, AS, BG, D31–D0, DS, R/W, IOH = 400 µA RMC, SIZ1–SIZ0, FC2–FC0",VOH,2.4,—,V,(VCC = 5.0 Vdc ± 5%; GND = 0 Vdc ; Temperature within defined ranges)
+dc,279,10-5,MC68EC020,Output Low Voltage,"IOL = 3.2 mA A23–A0, FC2–FC0, SIZ1–SIZ0, BG, D31–D0",VOL,—,0.5,V,(VCC = 5.0 Vdc ± 5%; GND = 0 Vdc ; Temperature within defined ranges)
+dc,279,10-5,MC68EC020,Output Low Voltage,"IOL = 5.3 mA AS, DS, R/W, RMC,",VOL,—,0.5,V,(VCC = 5.0 Vdc ± 5%; GND = 0 Vdc ; Temperature within defined ranges)
+dc,279,10-5,MC68EC020,Output Low Voltage,"IOL = 10.7 mA HALT, RESET",VOL,—,0.5,V,(VCC = 5.0 Vdc ± 5%; GND = 0 Vdc ; Temperature within defined ranges)
+dc,279,10-5,MC68EC020,Power Dissipation (TA = 0°C),f = 25 MHz,PINT,—,1.5,W,(VCC = 5.0 Vdc ± 5%; GND = 0 Vdc ; Temperature within defined ranges)
+dc,279,10-5,MC68EC020,Power Dissipation (TA = 0°C),f = 16 MHz,PINT,—,1.2,W,(VCC = 5.0 Vdc ± 5%; GND = 0 Vdc ; Temperature within defined ranges)
+dc,279,10-5,MC68EC020,Capacitance (see Note),,Cin,—,20,pF,(VCC = 5.0 Vdc ± 5%; GND = 0 Vdc ; Temperature within defined ranges)
+dc,279,10-5,MC68EC020,Load Capacitance,,CL,—,130,pF,(VCC = 5.0 Vdc ± 5%; GND = 0 Vdc ; Temperature within defined ranges)

@@ -1,11 +1,11 @@
 # Motorola M68000 documentation — split and extracted
 
-Five Motorola manuals, each broken into one PDF per section so the parts can be opened
-and navigated on their own, with a markdown index describing every part. Four of them
+Six Motorola manuals, each broken into one PDF per section so the parts can be opened
+and navigated on their own, with a markdown index describing every part. Five of them
 carry further extracted material: a per-processor instruction matrix and a condition-code
-reference for the programmer's reference manual, and machine-readable electrical specifications plus
-redrawn timing diagrams for the MC68030 data sheet, the MC68881/MC68882 manual and the
-M68000 user's manual.
+reference for the programmer's reference manual, and machine-readable electrical
+specifications plus redrawn timing diagrams for the MC68030 data sheet, the
+MC68881/MC68882 manual, the M68000 user's manual and the MC68020 user's manual.
 
 **The source PDFs are not in this repository** and never will be — see
 [Source documents](#source-documents) below for how to identify the exact editions
@@ -20,6 +20,7 @@ everything here was derived from.
 | [`MC68030EC_split/`](MC68030EC_split/) | MC68030 Electrical Specifications | 8 | specification CSVs, redrawn timing figures |
 | [`MC68881UM_split/`](MC68881UM_split/) | MC68881/MC68882 Floating-Point Coprocessor User's Manual | 23 | specification CSVs, redrawn timing figures |
 | [`MC68000UM_split/`](MC68000UM_split/) | M68000 8-/16-/32-Bit Microprocessors User's Manual | 19 | specification CSVs, redrawn timing figures |
+| [`MC68020UM_split/`](MC68020UM_split/) | MC68020/MC68EC020 Microprocessors User's Manual | 18 | specification CSVs, redrawn timing figures |
 
 ### [`MC68030UM_split/`](MC68030UM_split/README.md) — MC68030 User's Manual
 
@@ -147,6 +148,49 @@ printed as 550 ns where another table gives 50, §10.10 has two rows both number
 a pull-up resistor is specified as 1.1 Ω rather than 1.1 kΩ. Twenty-nine such findings
 are listed with the evidence in that directory's README.
 
+### [`MC68020UM_split/`](MC68020UM_split/README.md) — MC68020/MC68EC020 User's Manual
+
+The 306-page first edition as **18 PDFs**: front matter, contents, the two reference lists,
+the acronym list, the eleven numbered sections, Appendix A and the index. This one is not a
+scan — it has a real text layer, and it is the only manual here that arrives with an outline
+of its own, 227 bookmarks reaching every paragraph heading. Those are carried through and
+verified against the pages they claim, and **178 figure and table captions** are added, so a
+part can be opened at a particular diagram. Page conservation is proved the strong way: the
+concatenated text of the eighteen parts is byte-for-byte identical to the whole manual's.
+
+Also here:
+
+- **[`ac-electrical-specifications.csv`](MC68020UM_split/ac-electrical-specifications.csv)**
+  — §10.3's clock-input and read/write tables, 65 rows and 520 limits at 16.67, 20, 25 and
+  33.33 MHz, with [`ac-table-notes.csv`](MC68020UM_split/ac-table-notes.csv) for the
+  footnotes under them.
+- **[`dc-electrical-specifications.csv`](MC68020UM_split/dc-electrical-specifications.csv)**
+  and **[`thermal-characteristics.csv`](MC68020UM_split/thermal-characteristics.csv)** — the
+  maximum ratings, both DC tables, the thermal resistances and Tables 10-1 to 10-4.
+- **Four redrawn timing diagrams** — Figures 10-2 to 10-5 as scalable SVG, each with a
+  markdown page carrying the diagram beside the specifications marked on it. Figure 10-1
+  defines the measurement conventions rather than carrying specifications, so its legend and
+  notes are reproduced as text instead.
+
+Because the text layer is real, these tables are **parsed rather than transcribed** — the
+first in this repository where that was possible. What the text layer will not do is decode:
+the Type 1 fonts are MacRoman and every extractor hands back raw code points, and every Greek
+letter comes from the Symbol font, where `m` is µ. That is the difference between the
+**400 µA** of the output high voltage test condition and the **3.2 mA** of the output low
+voltage one, which a layout-preserving extraction renders identically as `mA`. The tables are
+therefore read out of `mutool`'s character stream, which carries the font and size of every
+glyph, and checked against poppler — which loses the distinction in exactly the places the
+generator claims to have found it.
+
+That reading turned up several ways in which this digitisation is not what it says it is.
+**All eleven pages of Section 11 carry a different manual's running footer** — `MC68838
+USER'S MANUAL`, folios 13-1 to 13-11. The acronym list is bound out of order, printed page v
+sitting after page xix. The note under Figure 10-2 misprints the 0.8 V threshold as **.08 V**,
+spells *otherwise* as **othervise**, and then physically breaks up, dropping "will be linear"
+altogether. And the AC table names the acknowledge signals collectively as **`DSACK≈`** — the
+Symbol font's *approximately equal* — ten times, defining it nowhere, where the other 454
+occurrences in the manual write `DSACK0` and `DSACK1` out in full.
+
 ## Source documents
 
 These are third-party copyrighted manuals and are **not tracked here** — `.gitignore`
@@ -160,6 +204,7 @@ derived material, place your own copies in the repository root and check them ag
 | `MC68030EC.pdf` | 574,322 | `d0de2af8cb4e806bc1d2f776baf1adb42174243167dcf9a6ed64d53cd812084e` |
 | `MC68881UM.pdf` | 9,440,147 | `bb8cbc5262212a431ecb56fd4e5ba6334ecdc5f5ff996bedd729180c91700f2c` |
 | `MC68000UM.pdf` | 11,152,468 | `e41cbe7e14dc7cb853f1185adb1dcd7043d2a2a3f43cdc909e0f6c146007a8e5` |
+| `MC68020UM.pdf` | 3,154,395 | `fbe70a64cd3c15141d2d351b992bc58247875975325714cd53c0dc6f2ebfdea8` |
 
 ```sh
 sha256sum -c <<'EOF'
@@ -168,6 +213,7 @@ sha256sum -c <<'EOF'
 d0de2af8cb4e806bc1d2f776baf1adb42174243167dcf9a6ed64d53cd812084e  MC68030EC.pdf
 bb8cbc5262212a431ecb56fd4e5ba6334ecdc5f5ff996bedd729180c91700f2c  MC68881UM.pdf
 e41cbe7e14dc7cb853f1185adb1dcd7043d2a2a3f43cdc909e0f6c146007a8e5  MC68000UM.pdf
+fbe70a64cd3c15141d2d351b992bc58247875975325714cd53c0dc6f2ebfdea8  MC68020UM.pdf
 EOF
 ```
 
@@ -180,6 +226,7 @@ Editions, for identification:
 | `MC68030EC.pdf` | MC68030 Electrical Specifications | `MC68030EC/D` Rev. 1, © 1990 Motorola | 19 |
 | `MC68881UM.pdf` | MC68881/MC68882 Floating-Point Coprocessor User's Manual | Second Edition, © 1989 Motorola, published by Prentice-Hall; reprinted 12/93 | 409 |
 | `MC68000UM.pdf` | M68000 8-/16-/32-Bit Microprocessors User's Manual | `M68000UM/AD` Rev. 5, Ninth Edition, © 1993 Motorola; printed 10/93 | 216 |
+| `MC68020UM.pdf` | MC68020/MC68EC020 Microprocessors User's Manual | First Edition, © 1992 Motorola; reprinted by Freescale, distilled 9/95 | 306 |
 
 A checksum mismatch does not necessarily mean the wrong manual — these scans circulate in
 several distinct digitisations. It does mean page numbers and bookmark offsets in the split
