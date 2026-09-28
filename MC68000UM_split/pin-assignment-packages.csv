@@ -1,0 +1,10 @@
+column,parts,package,figure,printed_page,pdf_page,pins
+dip64,"MC68000, MC68010, MC68HC000",64-pin dual in line,11-1,11-2,183,64
+pga68,"MC68000, MC68010, MC68HC000",68-lead pin grid array,11-2,11-3,184,68
+pga68_hc001,MC68HC001,68-lead pin grid array,11-2,11-3,184,68
+quad68,"MC68000, MC68HC000, MC68010",68-lead quad pack,11-3,11-4,185,68
+quad68_ec000,MC68EC000,68-lead quad pack,11-3,11-4,185,68
+quad68_hc001,MC68HC001,68-lead quad pack,11-3,11-5,186,68
+quad52,MC68008,52-lead quad pack,11-4,11-5,186,52
+dip48,MC68008,48-pin dual in line,11-5,11-6,187,48
+qfp64_ec000,MC68EC000,64-lead quad flat pack,11-6,11-7,188,64

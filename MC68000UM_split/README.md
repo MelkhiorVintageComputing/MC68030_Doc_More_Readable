@@ -252,7 +252,9 @@ wrong with it.
 * **Paragraph 3.4 contradicts itself about `BGACK`.** Its opening says the
   pin is missing from *"the 48-pin version of the MC68008 and MC68EC000"*;
   its own `BGACK` description a page later names only the 48-pin MC68008.
-  The pin assignments and Section 10 both side with the opening.
+  Section 10 sides with the opening, and so does the MC68EC000's 64-lead
+  quad flat pack — but its 68-lead quad pack prints a `BGACK` pin, on pin 13
+  (see [`pin-assignments.md`](pin-assignments.md)).
 * **The MC68EC000's `AVEC` pin is missing from Section 3.** It replaces
   `VPA` on that part, and it appears on Figure 3-3, in Section 5, in the
   MC68EC000 AC-table notes and in three pin assignments — but there is no
@@ -271,6 +273,20 @@ The page adds one table the source does not have: which of the six
 processors actually has each pin, collected from paragraphs 3.1 to 3.7 and
 the pin assignments in Section 11, with the page or figure every cell came
 from. That is where the two Section 3 findings above come from.
+
+## Pin assignments
+
+[`pin-assignments.md`](pin-assignments.md) puts the nine pin-assignment
+drawings of §11.1 (Figures 11-1 to 11-6, PDF pages 183–188) side by side: one
+row per signal, one column per package, the pin in each cell, and an empty
+cell where a package has no such pin — distinct from `NC`, which is a pin
+left unconnected. The same data is in
+[`pin-assignments.csv`](pin-assignments.csv), with the columns described in
+[`pin-assignment-packages.csv`](pin-assignment-packages.csv), both written by
+[`make-pin-assignments.py`](make-pin-assignments.py). The drawings were read
+by eye; the script refuses to write anything unless each package accounts
+for every pin exactly once and three cross-comparisons between related
+packages hold.
 
 ## The redrawn figures
 

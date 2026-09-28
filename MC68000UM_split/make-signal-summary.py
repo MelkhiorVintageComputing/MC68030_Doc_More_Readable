@@ -65,8 +65,9 @@ AVAIL = [
      'D15–D0<br>(D7–D0 in 8-bit mode)', 'p. 3-4'),
     ('`UDS`, `LDS`', '✓', '✓', '—', '—', '✓', 'p. 3-4'),
     ('`DS`', '—', '—', '✓', '✓', '—', 'p. 3-5;<br>Fig. 11-4, 11-5'),
-    ('`BGACK`', '✓', '✓', '—', '✓', '—',
-     'pp. 3-5, 3-6;<br>Fig. 11-3, 11-4, 11-5'),
+    ('`BGACK`', '✓', '✓', '—', '✓',
+     '— per p. 3-5 and Fig. 11-6;<br>pin 13 on the 68-lead<br>quad pack, Fig. 11-3',
+     'pp. 3-5, 3-6;<br>Fig. 11-3, 11-4, 11-5, 11-6'),
     ('`IPL0`, `IPL1`, `IPL2`', '✓', '✓', '`IPL0/IPL2` and `IPL1` only',
      '✓', '✓', 'p. 3-6;<br>Fig. 11-4, 11-5'),
     ('`MODE`', '—', '✓', '—', '—', '✓', 'p. 3-7;<br>Fig. 11-3, 11-6'),
@@ -140,9 +141,12 @@ Its opening says *"In the 48-pin version of the MC68008 and
 MC68EC000, no pin is available for the bus grant acknowledge signal"*; the
 `BGACK` paragraph a page later says only *"The 48-pin version of the
 MC68008 has no pin available for the bus grant acknowledge signal"*. The
-pin assignments settle it — the MC68EC000 has no `BGACK` — and so does
-Section 10, whose MC68EC000 arbitration table has no specification 37 or 46
-and whose Figure 10-14 has no `BGACK` row.
+pin assignments do not settle it, because they disagree with each other:
+the MC68EC000's 64-lead quad flat pack (Figure 11-6) has no `BGACK` pin, but
+its 68-lead quad pack (Figure 11-3) prints one, on pin 13 — see
+[`pin-assignments.md`](pin-assignments.md). Section 10 sides with the
+opening: its MC68EC000 arbitration table has no specification 37 or 46, and
+its Figure 10-14 has no `BGACK` row.
 
 ## Cross-checks
 
